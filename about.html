@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>О нас — BSL Dairy Products R&D Center</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    :root {
+      --primary: #1a4d7a;
+      --primary-light: #2a6b9e;
+      --accent: #e8b82a;
+      --bg-light: #f5f7fa;
+      --text-dark: #1e2a3a;
+      --text-muted: #5a6a7a;
+      --border-color: #dce1e8;
+      --card-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #fff;
+      color: var(--text-dark);
+      margin: 0;
+    }
+    .page { max-width: 1440px; margin: 0 auto; background: #fff; }
+    .topbar {
+      background: #fff;
+      border-bottom: 2px solid var(--border-color);
+      padding: 0 60px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .brand { font-weight: 700; font-size: 22px; color: var(--primary); }
+    .brand span { color: var(--accent); }
+    .nav { display: flex; gap: 28px; font-size: 15px; color: var(--text-muted); align-items: center; }
+    .nav a { color: var(--text-muted); text-decoration: none; }
+    .nav a:hover { color: var(--primary); }
+    .nav a.active { color: var(--primary); font-weight: 600; }
+    .nav a:last-child {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 10px 24px;
+      border-radius: 6px;
+    }
+    .nav a:last-child:hover { background: var(--primary-light); }
+    section { padding: 56px 72px; border-bottom: 1px solid var(--border-color); }
+    .label { color: var(--accent); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 12px; display: inline-block; margin-bottom: 12px; }
+    h1 { font-size: 40px; line-height: 1.1; color: var(--text-dark); margin: 0 0 12px; }
+    h2 { font-size: 30px; color: var(--text-dark); margin: 0 0 12px; }
+    .btn { background: var(--primary); border: none; color: #fff; padding: 12px 28px; border-radius: 6px; font-weight: 600; font-size: 15px; cursor: pointer; display: inline-block; text-decoration: none; }
+    .card { background: #fff; border-radius: 16px; border: 1px solid var(--border-color); padding: 28px; box-shadow: var(--card-shadow); }
+    .card h3 { font-size: 18px; color: var(--primary); margin: 0 0 8px; }
+    .card p { font-size: 15px; color: var(--text-muted); margin: 0; }
+    .two-col { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 48px; align-items: start; }
+    .gallery { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; margin-top: 28px; }
+    .gallery-item { background: var(--bg-light); border-radius: 12px; height: 200px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--border-color); color: var(--text-muted); font-size: 14px; }
+    .footer {
+      background: #1a2634;
+      color: #cfd8e3;
+      border-top: 4px solid var(--accent);
+      display: grid;
+      grid-template-columns: 1.2fr repeat(4,1fr);
+      gap: 32px;
+      padding: 48px 72px;
+    }
+    .footer strong { color: #fff; display: block; margin-bottom: 12px; }
+    .footer a { color: #b0c0d0; text-decoration: none; font-size: 14px; line-height: 1.8; }
+    .footer a:hover { color: #fff; }
+
+    @media (max-width: 1180px) {
+      .topbar { padding: 0 28px; }
+      section { padding: 40px 28px; }
+      .two-col { grid-template-columns: 1fr; gap: 24px; }
+      .gallery { grid-template-columns: 1fr 1fr; }
+      .footer { grid-template-columns: 1fr 1fr; padding: 32px 28px; }
+    }
+    @media (max-width: 700px) {
+      .topbar { height: 70px; }
+      .nav { display: none; }
+      .gallery { grid-template-columns: 1fr; }
+      .footer { grid-template-columns: 1fr; }
+      h1 { font-size: 30px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="topbar">
+      <a class="brand" href="index.html">BSL<span>dairy</span></a>
+      <nav class="nav">
+        <a href="news.html">Новости</a>
+        <a href="catalog.html">Каталог</a>
+        <a href="events.html">Мероприятия</a>
+        <a class="active" href="about.html">О нас</a>
+        <a href="contacts.html">Контакты</a>
+        <a href="contacts.html">Связаться</a>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section style="padding:40px 72px 20px; border-bottom:none;">
+      <span class="label">О нас</span>
+      <h1>BSL Dairy Products R&D Center</h1>
+      <p style="font-size:20px; color:var(--text-dark); max-width:700px;">Научно-исследовательский центр, объединяющий экспертов, технологии и передовые методики для развития молочной промышленности.</p>
+    </section>
+
+    <!-- ОСНОВНАЯ ИНФОРМАЦИЯ -->
+    <section style="padding:0 72px 40px; border-bottom:none;">
+      <div class="two-col">
+        <div>
+          <h2 style="font-size:28px;">Миссия и ценности</h2>
+          <p style="font-size:16px; color:var(--text-dark);">Мы создаём инновационные решения для молочной промышленности, обеспечивая высокое качество, безопасность и доступность продукции.</p>
+          <ul style="font-size:15px; color:var(--text-muted); padding-left:20px; line-height:1.8;">
+            <li><strong style="color:var(--text-dark);">Качество</strong> — строгий контроль на всех этапах производства</li>
+            <li><strong style="color:var(--text-dark);">Инновации</strong> — внедрение передовых технологий</li>
+            <li><strong style="color:var(--text-dark);">Надёжность</strong> — доверие партнёров и производителей</li>
+          </ul>
+          <div style="margin-top:16px;">
+            <a href="contacts.html" class="btn">Связаться с нами</a>
+          </div>
+        </div>
+        <div>
+          <div style="background:#f0f4f9; border-radius:16px; padding:32px; border:1px solid var(--border-color);">
+            <h3 style="font-size:18px; color:var(--primary); margin:0 0 8px;">Группа компаний BSL</h3>
+            <p style="font-size:14px; color:var(--text-muted);">BSL Dairy Products R&D Center входит в группу компаний BSL, которая объединяет предприятия полного цикла: от производства сырья до логистики и научных исследований.</p>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:16px;">
+              <div style="background:#fff; border-radius:8px; padding:12px; text-align:center; border:1px solid var(--border-color); font-weight:600; color:var(--primary); font-size:14px;">BSL Dairy</div>
+              <div style="background:#fff; border-radius:8px; padding:12px; text-align:center; border:1px solid var(--border-color); font-weight:600; color:var(--primary); font-size:14px;">BSL Agro</div>
+              <div style="background:#fff; border-radius:8px; padding:12px; text-align:center; border:1px solid var(--border-color); font-weight:600; color:var(--primary); font-size:14px;">BSL Logistics</div>
+              <div style="background:#fff; border-radius:8px; padding:12px; text-align:center; border:1px solid var(--border-color); font-weight:600; color:var(--primary); font-size:14px;">BSL Research</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- КЕЙСЫ -->
+    <section style="padding:0 72px 40px; border-bottom:none; background:var(--bg-light);">
+      <span class="label">Кейсы</span>
+      <h2 style="font-size:28px;">Наши проекты</h2>
+      <p style="color:var(--text-muted); max-width:700px;">Примеры успешных проектов, реализованных BSL R&D Center для производителей молочной продукции.</p>
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:24px; margin-top:24px;">
+        <div class="card" style="min-height:auto;">
+          <h3>Разработка йогурта с пробиотиками</h3>
+          <p>Создание рецептуры и технологии производства йогурта с высоким содержанием живых культур для одного из крупнейших производителей.</p>
+          <div style="font-size:13px; color:var(--text-muted); margin-top:12px;">2025–2026</div>
+        </div>
+        <div class="card" style="min-height:auto;">
+          <h3>Внедрение системы контроля качества</h3>
+          <p>Разработка и внедрение комплексной системы управления качеством на молочном заводе с использованием цифровых технологий.</p>
+          <div style="font-size:13px; color:var(--text-muted); margin-top:12px;">2024–2025</div>
+        </div>
+        <div class="card" style="min-height:auto;">
+          <h3>Оптимизация рецептуры твёрдых сыров</h3>
+          <p>Совершенствование рецептуры и технологии производства твёрдых сыров для повышения выхода и улучшения органолептических свойств.</p>
+          <div style="font-size:13px; color:var(--text-muted); margin-top:12px;">2025</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ГАЛЕРЕЯ -->
+    <section style="padding:0 72px 40px; border-bottom:none;">
+      <h2 style="font-size:28px; margin:0 0 8px;">Фотогалерея</h2>
+      <p style="color:var(--text-muted); margin-bottom:16px;">Лаборатории, оборудование и команда BSL R&D Center</p>
+      <div class="gallery">
+        <div class="gallery-item">📸 Лаборатория №1</div>
+        <div class="gallery-item">📸 Оборудование</div>
+        <div class="gallery-item">📸 Команда BSL</div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <section class="footer" style="border-bottom:none;">
+      <div>
+        <strong style="font-size:18px;">BSL Dairy Products</strong>
+        <p style="font-size:14px; color:#b0c0d0; max-width:300px;">Научно-исследовательский центр в области молочной промышленности.</p>
+        <p style="font-size:13px; margin-top:8px;">+7 (495) 123-45-67<br>info@chinadairy.ru</p>
+      </div>
+      <div>
+        <strong>Информация</strong>
+        <p><a href="about.html">О центре</a><br><a href="news.html">Новости</a><br><a href="catalog.html">Каталог</a><br><a href="events.html">Мероприятия</a></p>
+      </div>
+      <div>
+        <strong>Продукция</strong>
+        <p><a href="#">Молоко</a><br><a href="#">Йогурты</a><br><a href="#">Масло</a><br><a href="#">Сыры</a></p>
+      </div>
+      <div>
+        <strong>Документы</strong>
+        <p><a href="agreement.html">Согласие на обработку</a><br><a href="privacy-policy.html">Политика конфиденциальности</a></p>
+      </div>
+      <div>
+        <strong>Контакты</strong>
+        <p><a href="contacts.html">Связаться с нами</a><br>Telegram<br>WhatsApp</p>
+      </div>
+    </section>
+    <div style="background:#1a2634; border-top:1px solid #2a3a4a; padding:16px 72px; text-align:center; font-size:12px; color:#7a8a9a;">
+      © 2026 BSL Dairy Products R&D Center. Все права защищены.
+    </div>
+  </main>
+</body>
+</html>

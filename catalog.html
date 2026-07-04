@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Каталог продукции — BSL Dairy Products R&D Center</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    :root {
+      --primary: #1a4d7a;
+      --primary-light: #2a6b9e;
+      --accent: #e8b82a;
+      --bg-light: #f5f7fa;
+      --text-dark: #1e2a3a;
+      --text-muted: #5a6a7a;
+      --border-color: #dce1e8;
+      --card-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #fff;
+      color: var(--text-dark);
+      margin: 0;
+    }
+    .page { max-width: 1440px; margin: 0 auto; background: #fff; }
+    .topbar {
+      background: #fff;
+      border-bottom: 2px solid var(--border-color);
+      padding: 0 60px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .brand { font-weight: 700; font-size: 22px; color: var(--primary); }
+    .brand span { color: var(--accent); }
+    .nav { display: flex; gap: 28px; font-size: 15px; color: var(--text-muted); align-items: center; }
+    .nav a { color: var(--text-muted); text-decoration: none; }
+    .nav a:hover { color: var(--primary); }
+    .nav a.active { color: var(--primary); font-weight: 600; }
+    .nav a:last-child {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 10px 24px;
+      border-radius: 6px;
+    }
+    .nav a:last-child:hover { background: var(--primary-light); }
+    section { padding: 56px 72px; border-bottom: 1px solid var(--border-color); }
+    .label { color: var(--accent); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 12px; display: inline-block; margin-bottom: 12px; }
+    h1 { font-size: 40px; line-height: 1.1; color: var(--text-dark); margin: 0 0 12px; }
+    .btn { background: var(--primary); border: none; color: #fff; padding: 12px 28px; border-radius: 6px; font-weight: 600; font-size: 15px; cursor: pointer; display: inline-block; text-decoration: none; }
+    .card { background: #fff; border-radius: 16px; border: 1px solid var(--border-color); padding: 24px; box-shadow: var(--card-shadow); transition: transform 0.2s, box-shadow 0.2s; text-align: center; }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.08); }
+    .card h3 { font-size: 18px; color: var(--primary); margin: 0 0 6px; }
+    .card p { font-size: 14px; color: var(--text-muted); margin: 0 0 12px; }
+    .card .price { font-size: 20px; font-weight: 700; color: var(--text-dark); margin: 8px 0; }
+    .category-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 28px; }
+    .product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 28px; }
+    .product-card { background: #fff; border-radius: 16px; border: 1px solid var(--border-color); padding: 24px; text-align: center; box-shadow: var(--card-shadow); transition: transform 0.2s, box-shadow 0.2s; }
+    .product-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.08); }
+    .product-card .emoji { font-size: 56px; display: block; margin-bottom: 12px; }
+    .product-card h3 { font-size: 17px; color: var(--text-dark); margin: 0 0 4px; }
+    .product-card .subtitle { font-size: 13px; color: var(--text-muted); margin-bottom: 8px; }
+    .product-card .price { font-size: 18px; font-weight: 700; color: var(--primary); }
+    .footer {
+      background: #1a2634;
+      color: #cfd8e3;
+      border-top: 4px solid var(--accent);
+      display: grid;
+      grid-template-columns: 1.2fr repeat(4,1fr);
+      gap: 32px;
+      padding: 48px 72px;
+    }
+    .footer strong { color: #fff; display: block; margin-bottom: 12px; }
+    .footer a { color: #b0c0d0; text-decoration: none; font-size: 14px; line-height: 1.8; }
+    .footer a:hover { color: #fff; }
+
+    @media (max-width: 1180px) {
+      .topbar { padding: 0 28px; }
+      section { padding: 40px 28px; }
+      .category-grid { grid-template-columns: 1fr 1fr; }
+      .product-grid { grid-template-columns: 1fr 1fr; }
+      .footer { grid-template-columns: 1fr 1fr; padding: 32px 28px; }
+    }
+    @media (max-width: 700px) {
+      .topbar { height: 70px; }
+      .nav { display: none; }
+      .category-grid, .product-grid { grid-template-columns: 1fr; }
+      .footer { grid-template-columns: 1fr; }
+      h1 { font-size: 30px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="topbar">
+      <a class="brand" href="index.html">BSL<span>dairy</span></a>
+      <nav class="nav">
+        <a href="news.html">Новости</a>
+        <a class="active" href="catalog.html">Каталог</a>
+        <a href="events.html">Мероприятия</a>
+        <a href="about.html">О нас</a>
+        <a href="contacts.html">Контакты</a>
+        <a href="contacts.html">Связаться</a>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section style="padding:40px 72px 20px; border-bottom:none;">
+      <span class="label">Каталог</span>
+      <h1>Продукция BSL Dairy</h1>
+      <p style="font-size:18px; color:var(--text-muted); max-width:700px;">Широкий ассортимент молочной продукции, разработанный с учётом современных требований к качеству и безопасности.</p>
+    </section>
+
+    <!-- КАТЕГОРИИ -->
+    <section style="padding:0 72px 20px; border-bottom:none;">
+      <div class="category-grid">
+        <a href="#" style="text-decoration:none; background:#fff; border-radius:16px; padding:24px; text-align:center; border:1px solid var(--border-color); transition: transform 0.2s, box-shadow 0.2s;">
+          <div style="font-size:48px; margin-bottom:8px;">🥛</div>
+          <h3 style="font-size:17px; color:var(--text-dark); margin:0;">Молоко</h3>
+          <p style="font-size:13px; color:var(--text-muted); margin:0;">Цельное, пастеризованное, ультрапастеризованное</p>
+        </a>
+        <a href="#" style="text-decoration:none; background:#fff; border-radius:16px; padding:24px; text-align:center; border:1px solid var(--border-color); transition: transform 0.2s, box-shadow 0.2s;">
+          <div style="font-size:48px; margin-bottom:8px;">🍦</div>
+          <h3 style="font-size:17px; color:var(--text-dark); margin:0;">Йогурты</h3>
+          <p style="font-size:13px; color:var(--text-muted); margin:0;">Классические, греческие, с добавками</p>
+        </a>
+        <a href="#" style="text-decoration:none; background:#fff; border-radius:16px; padding:24px; text-align:center; border:1px solid var(--border-color); transition: transform 0.2s, box-shadow 0.2s;">
+          <div style="font-size:48px; margin-bottom:8px;">🧈</div>
+          <h3 style="font-size:17px; color:var(--text-dark); margin:0;">Масло и сливки</h3>
+          <p style="font-size:13px; color:var(--text-muted); margin:0;">Сливочное масло, топлёное масло, сливки</p>
+        </a>
+        <a href="#" style="text-decoration:none; background:#fff; border-radius:16px; padding:24px; text-align:center; border:1px solid var(--border-color); transition: transform 0.2s, box-shadow 0.2s;">
+          <div style="font-size:48px; margin-bottom:8px;">🧀</div>
+          <h3 style="font-size:17px; color:var(--text-dark); margin:0;">Сыры</h3>
+          <p style="font-size:13px; color:var(--text-muted); margin:0;">Твёрдые, полутвёрдые, рассольные</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- ТОВАРЫ -->
+    <section style="padding:0 72px 40px; border-bottom:none;">
+      <h2 style="font-size:28px; margin:0 0 8px;">Популярные продукты</h2>
+      <p style="color:var(--text-muted); margin-bottom:20px;">Образцы продукции, разработанные в BSL R&D Center</p>
+      <div class="product-grid">
+        <div class="product-card">
+          <span class="emoji">🥛</span>
+          <h3>Молоко пастеризованное 3,2%</h3>
+          <div class="subtitle">Объём: 1 л</div>
+          <div style="font-size:13px; color:var(--text-muted); margin:4px 0;">Срок годности: 10 дней</div>
+          <div class="price">от 89 ₽</div>
+          <a href="#" style="display:inline-block; margin-top:12px; background:var(--primary); color:#fff; padding:8px 20px; border-radius:6px; text-decoration:none; font-weight:600; font-size:14px;">Подробнее</a>
+        </div>
+        <div class="product-card">
+          <span class="emoji">🍦</span>
+          <h3>Йогурт греческий 2%</h3>
+          <div class="subtitle">Объём: 500 г</div>
+          <div style="font-size:13px; color:var(--text-muted); margin:4px 0;">Без добавок, натуральный</div>
+          <div class="price">от 129 ₽</div>
+          <a href="#" style="display:inline-block; margin-top:12px; background:var(--primary); color:#fff; padding:8px 20px; border-radius:6px; text-decoration:none; font-weight:600; font-size:14px;">Подробнее</a>
+        </div>
+        <div class="product-card">
+          <span class="emoji">🧈</span>
+          <h3>Масло сливочное 82,5%</h3>
+          <div class="subtitle">Объём: 180 г</div>
+          <div style="font-size:13px; color:var(--text-muted); margin:4px 0;">Из натуральных сливок</div>
+          <div class="price">от 159 ₽</div>
+          <a href="#" style="display:inline-block; margin-top:12px; background:var(--primary); color:#fff; padding:8px 20px; border-radius:6px; text-decoration:none; font-weight:600; font-size:14px;">Подробнее</a>
+        </div>
+        <div class="product-card">
+          <span class="emoji">🧀</span>
+          <h3>Сыр полутвёрдый 45%</h3>
+          <div class="subtitle">Вес: 200 г</div>
+          <div style="font-size:13px; color:var(--text-muted); margin:4px 0;">Созревание 60 дней</div>
+          <div class="price">от 189 ₽</div>
+          <a href="#" style="display:inline-block; margin-top:12px; background:var(--primary); color:#fff; padding:8px 20px; border-radius:6px; text-decoration:none; font-weight:600; font-size:14px;">Подробнее</a>
+        </div>
+        <div class="product-card">
+          <span class="emoji">🥛</span>
+          <h3>Молоко ультрапастеризованное 1,5%</h3>
+          <div class="subtitle">Объём: 1 л</div>
+          <div style="font-size:13px; color:var(--text-muted); margin:4px 0;">Срок хранения: 6 месяцев</div>
+          <div class="price">от 79 ₽</div>
+          <a href="#" style="display:inline-block; margin-top:12px; background:var(--primary); color:#fff; padding:8px 20px; border-radius:6px; text-decoration:none; font-weight:600; font-size:14px;">Подробнее</a>
+        </div>
+        <div class="product-card">
+          <span class="emoji">🍦</span>
+          <h3>Йогурт питьевой с клубникой</h3>
+          <div class="subtitle">Объём: 300 мл</div>
+          <div style="font-size:13px; color:var(--text-muted); margin:4px 0;">Натуральные ягоды</div>
+          <div class="price">от 99 ₽</div>
+          <a href="#" style="display:inline-block; margin-top:12px; background:var(--primary); color:#fff; padding:8px 20px; border-radius:6px; text-decoration:none; font-weight:600; font-size:14px;">Подробнее</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <section class="footer" style="border-bottom:none;">
+      <div>
+        <strong style="font-size:18px;">BSL Dairy Products</strong>
+        <p style="font-size:14px; color:#b0c0d0; max-width:300px;">Научно-исследовательский центр в области молочной промышленности.</p>
+        <p style="font-size:13px; margin-top:8px;">+7 (495) 123-45-67<br>info@chinadairy.ru</p>
+      </div>
+      <div>
+        <strong>Информация</strong>
+        <p><a href="about.html">О центре</a><br><a href="news.html">Новости</a><br><a href="catalog.html">Каталог</a><br><a href="events.html">Мероприятия</a></p>
+      </div>
+      <div>
+        <strong>Продукция</strong>
+        <p><a href="#">Молоко</a><br><a href="#">Йогурты</a><br><a href="#">Масло</a><br><a href="#">Сыры</a></p>
+      </div>
+      <div>
+        <strong>Документы</strong>
+        <p><a href="agreement.html">Согласие на обработку</a><br><a href="privacy-policy.html">Политика конфиденциальности</a></p>
+      </div>
+      <div>
+        <strong>Контакты</strong>
+        <p><a href="contacts.html">Связаться с нами</a><br>Telegram<br>WhatsApp</p>
+      </div>
+    </section>
+    <div style="background:#1a2634; border-top:1px solid #2a3a4a; padding:16px 72px; text-align:center; font-size:12px; color:#7a8a9a;">
+      © 2026 BSL Dairy Products R&D Center. Все права защищены.
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Мероприятия — BSL Dairy Products R&D Center</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    :root {
+      --primary: #1a4d7a;
+      --primary-light: #2a6b9e;
+      --accent: #e8b82a;
+      --bg-light: #f5f7fa;
+      --text-dark: #1e2a3a;
+      --text-muted: #5a6a7a;
+      --border-color: #dce1e8;
+      --card-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #fff;
+      color: var(--text-dark);
+      margin: 0;
+    }
+    .page { max-width: 1440px; margin: 0 auto; background: #fff; }
+    .topbar {
+      background: #fff;
+      border-bottom: 2px solid var(--border-color);
+      padding: 0 60px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .brand { font-weight: 700; font-size: 22px; color: var(--primary); }
+    .brand span { color: var(--accent); }
+    .nav { display: flex; gap: 28px; font-size: 15px; color: var(--text-muted); align-items: center; }
+    .nav a { color: var(--text-muted); text-decoration: none; }
+    .nav a:hover { color: var(--primary); }
+    .nav a.active { color: var(--primary); font-weight: 600; }
+    .nav a:last-child {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 10px 24px;
+      border-radius: 6px;
+    }
+    .nav a:last-child:hover { background: var(--primary-light); }
+    section { padding: 56px 72px; border-bottom: 1px solid var(--border-color); }
+    .label { color: var(--accent); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 12px; display: inline-block; margin-bottom: 12px; }
+    h1 { font-size: 40px; line-height: 1.1; color: var(--text-dark); margin: 0 0 12px; }
+    .btn { background: var(--primary); border: none; color: #fff; padding: 12px 28px; border-radius: 6px; font-weight: 600; font-size: 15px; cursor: pointer; display: inline-block; text-decoration: none; }
+    .card { background: #fff; border-radius: 16px; border: 1px solid var(--border-color); padding: 24px; box-shadow: var(--card-shadow); transition: transform 0.2s, box-shadow 0.2s; display: flex; gap: 20px; align-items: flex-start; }
+    .card:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.06); }
+    .card .date-box {
+      flex-shrink: 0;
+      background: var(--primary);
+      color: #fff;
+      border-radius: 12px;
+      padding: 12px 16px;
+      text-align: center;
+      min-width: 70px;
+    }
+    .card .date-box .day { font-size: 24px; font-weight: 700; line-height: 1; }
+    .card .date-box .month { font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; }
+    .card h3 { font-size: 18px; color: var(--text-dark); margin: 0 0 4px; }
+    .card p { font-size: 14px; color: var(--text-muted); margin: 0 0 8px; }
+    .card .meta { font-size: 13px; color: var(--text-muted); }
+    .event-grid { display: grid; grid-template-columns: 1fr; gap: 18px; margin-top: 28px; }
+    .archive-toggle { margin-top: 24px; text-align: center; }
+    .archive-toggle a { color: var(--primary); font-weight: 600; text-decoration: none; }
+    .footer {
+      background: #1a2634;
+      color: #cfd8e3;
+      border-top: 4px solid var(--accent);
+      display: grid;
+      grid-template-columns: 1.2fr repeat(4,1fr);
+      gap: 32px;
+      padding: 48px 72px;
+    }
+    .footer strong { color: #fff; display: block; margin-bottom: 12px; }
+    .footer a { color: #b0c0d0; text-decoration: none; font-size: 14px; line-height: 1.8; }
+    .footer a:hover { color: #fff; }
+
+    @media (max-width: 1180px) {
+      .topbar { padding: 0 28px; }
+      section { padding: 40px 28px; }
+      .footer { grid-template-columns: 1fr 1fr; padding: 32px 28px; }
+    }
+    @media (max-width: 700px) {
+      .topbar { height: 70px; }
+      .nav { display: none; }
+      .card { flex-direction: column; align-items: stretch; }
+      .card .date-box { align-self: flex-start; }
+      .footer { grid-template-columns: 1fr; }
+      h1 { font-size: 30px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="topbar">
+      <a class="brand" href="index.html">BSL<span>dairy</span></a>
+      <nav class="nav">
+        <a href="news.html">Новости</a>
+        <a href="catalog.html">Каталог</a>
+        <a class="active" href="events.html">Мероприятия</a>
+        <a href="about.html">О нас</a>
+        <a href="contacts.html">Контакты</a>
+        <a href="contacts.html">Связаться</a>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section style="padding:40px 72px 20px; border-bottom:none;">
+      <span class="label">Мероприятия</span>
+      <h1>События и форумы</h1>
+      <p style="font-size:18px; color:var(--text-muted); max-width:700px;">Присоединяйтесь к мероприятиям BSL Dairy Products R&D Center — семинары, конференции, вебинары и дни открытых дверей.</p>
+    </section>
+
+    <!-- ПРЕДСТОЯЩИЕ -->
+    <section style="padding:0 72px 20px; border-bottom:none;">
+      <h2 style="font-size:28px; margin:0 0 16px;">Предстоящие события</h2>
+      <div class="event-grid">
+        <div class="card">
+          <div class="date-box">
+            <div class="day">25</div>
+            <div class="month">Июл</div>
+          </div>
+          <div>
+            <h3>Вебинар: Современные методы контроля качества молочной продукции</h3>
+            <p>Онлайн-семинар с участием ведущих экспертов BSL R&D Center. Рассмотрим современные методики контроля качества, включая микробиологический анализ и оценку органолептических показателей.</p>
+            <div class="meta">🕐 14:00–16:00 (МСК) · 📍 Онлайн</div>
+            <a href="#" style="color:var(--primary); font-weight:600; font-size:14px; display:inline-block; margin-top:8px;">Зарегистрироваться →</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="date-box">
+            <div class="day">5</div>
+            <div class="month">Авг</div>
+          </div>
+          <div>
+            <h3>День открытых дверей в лабораториях BSL</h3>
+            <p>Приглашаем партнёров и производителей посетить научно-исследовательский центр BSL. Экскурсия по лабораториям, демонстрация оборудования, знакомство с командами разработчиков.</p>
+            <div class="meta">🕐 10:00–17:00 (МСК) · 📍 Москва, ул. Академическая, д. 10</div>
+            <a href="#" style="color:var(--primary); font-weight:600; font-size:14px; display:inline-block; margin-top:8px;">Зарегистрироваться →</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="date-box">
+            <div class="day">15</div>
+            <div class="month">Сен</div>
+          </div>
+          <div>
+            <h3>Конференция «Инновации в молочной промышленности 2026»</h3>
+            <p>Крупнейшее отраслевое событие с участием экспертов BSL. Обсуждение трендов, новых технологий, цифровизации и устойчивого развития в молочной отрасли.</p>
+            <div class="meta">🕐 09:30–18:00 (МСК) · 📍 Москва, МВЦ «Крокус Экспо»</div>
+            <a href="#" style="color:var(--primary); font-weight:600; font-size:14px; display:inline-block; margin-top:8px;">Зарегистрироваться →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- АРХИВ -->
+    <section style="padding:0 72px 40px; border-bottom:none;">
+      <h2 style="font-size:28px; margin:0 0 16px;">Архив прошедших мероприятий</h2>
+      <div class="event-grid" style="opacity:0.7;">
+        <div class="card" style="border-left:4px solid var(--border-color);">
+          <div class="date-box" style="background:var(--text-muted);">
+            <div class="day">10</div>
+            <div class="month">Июн</div>
+          </div>
+          <div>
+            <h3>Семинар по пищевой безопасности (НАССР)</h3>
+            <p>Обучающий семинар для производителей по внедрению системы НАССР на молочных предприятиях.</p>
+            <div class="meta">📍 Москва · Архив</div>
+          </div>
+        </div>
+        <div class="card" style="border-left:4px solid var(--border-color);">
+          <div class="date-box" style="background:var(--text-muted);">
+            <div class="day">20</div>
+            <div class="month">Май</div>
+          </div>
+          <div>
+            <h3>Вебинар: Новые подходы к разработке молочных продуктов</h3>
+            <p>Онлайн-семинар о современных трендах в разработке продуктов и использовании новых ингредиентов.</p>
+            <div class="meta">📍 Онлайн · Архив</div>
+          </div>
+        </div>
+      </div>
+      <div class="archive-toggle">
+        <a href="#">Показать все архивы →</a>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <section class="footer" style="border-bottom:none;">
+      <div>
+        <strong style="font-size:18px;">BSL Dairy Products</strong>
+        <p style="font-size:14px; color:#b0c0d0; max-width:300px;">Научно-исследовательский центр в области молочной промышленности.</p>
+        <p style="font-size:13px; margin-top:8px;">+7 (495) 123-45-67<br>info@chinadairy.ru</p>
+      </div>
+      <div>
+        <strong>Информация</strong>
+        <p><a href="about.html">О центре</a><br><a href="news.html">Новости</a><br><a href="catalog.html">Каталог</a><br><a href="events.html">Мероприятия</a></p>
+      </div>
+      <div>
+        <strong>Продукция</strong>
+        <p><a href="#">Молоко</a><br><a href="#">Йогурты</a><br><a href="#">Масло</a><br><a href="#">Сыры</a></p>
+      </div>
+      <div>
+        <strong>Документы</strong>
+        <p><a href="agreement.html">Согласие на обработку</a><br><a href="privacy-policy.html">Политика конфиденциальности</a></p>
+      </div>
+      <div>
+        <strong>Контакты</strong>
+        <p><a href="contacts.html">Связаться с нами</a><br>Telegram<br>WhatsApp</p>
+      </div>
+    </section>
+    <div style="background:#1a2634; border-top:1px solid #2a3a4a; padding:16px 72px; text-align:center; font-size:12px; color:#7a8a9a;">
+      © 2026 BSL Dairy Products R&D Center. Все права защищены.
+    </div>
+  </main>
+</body>
+</html>
