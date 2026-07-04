@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Новости — китайские технологии для молочной промышленности России | BSL R&D</title>
+  <title>Новости из Китая — DairyInfo | Молочная промышленность</title>
   <link rel="stylesheet" href="style.css">
   <style>
     /* ============================================================
@@ -145,9 +145,8 @@
       display: inline-block;
       margin-bottom: 8px;
     }
-    .section-label .flag-icon { margin-right: 6px; }
 
-    section { padding: 56px 72px; border-bottom: 1px solid var(--border-color); }
+    section { padding: 48px 72px; border-bottom: 1px solid var(--border-color); }
 
     h2 {
       font-size: 32px;
@@ -158,54 +157,17 @@
     }
     h2 .highlight { color: var(--china-red); }
 
-    .card {
-      background: #fff;
-      border-radius: 16px;
-      border: 1px solid var(--border-color);
-      padding: 28px;
-      box-shadow: var(--card-shadow);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
-    }
-    .card .tag {
-      display: inline-block;
-      font-size: 10px;
-      font-weight: 700;
-      padding: 2px 14px;
-      border-radius: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      margin-bottom: 8px;
-    }
-    .card .tag.china {
-      background: var(--china-red);
-      color: #fff;
-    }
-    .card .tag.russia {
-      background: #0039a6;
-      color: #fff;
-    }
-    .card .tag.business {
-      background: var(--accent);
-      color: var(--text-dark);
-    }
-    .card p { font-size: 15px; color: var(--text-muted); margin: 0; }
-
-    .grid-cols-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-    .grid-cols-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
-
     /* ===== ФИЛЬТРЫ ===== */
     .filter-bar {
       display: flex;
       gap: 10px;
       flex-wrap: wrap;
       margin: 16px 0 28px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border-color);
     }
     .filter-bar a {
-      padding: 6px 18px;
+      padding: 6px 20px;
       border-radius: 20px;
       border: 1px solid var(--border-color);
       font-size: 14px;
@@ -221,6 +183,77 @@
       background: var(--china-red);
       color: #fff;
       border-color: var(--china-red);
+    }
+
+    /* ===== ЛЕНТА НОВОСТЕЙ ===== */
+    .news-list {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .news-item {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 24px;
+      background: #fff;
+      border-radius: 16px;
+      border: 1px solid var(--border-color);
+      padding: 24px;
+      box-shadow: var(--card-shadow);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+    .news-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+    }
+    .news-item .image-placeholder {
+      background: var(--bg-light);
+      border-radius: 12px;
+      height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 14px;
+      border: 1px solid var(--border-color);
+      flex-shrink: 0;
+    }
+    .news-item .image-placeholder .icon { font-size: 36px; }
+    .news-item .content { flex: 1; }
+    .news-item .content .tag {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 14px;
+      border-radius: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 6px;
+    }
+    .news-item .content .tag.china { background: var(--china-red); color: #fff; }
+    .news-item .content .tag.russia { background: #0039a6; color: #fff; }
+    .news-item .content .tag.equipment { background: var(--accent); color: var(--text-dark); }
+    .news-item .content .date {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+    .news-item .content h3 {
+      font-size: 18px;
+      color: var(--text-dark);
+      margin: 0 0 8px;
+    }
+    .news-item .content p {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin: 0 0 8px;
+    }
+    .news-item .content .read-more {
+      color: var(--china-red);
+      font-weight: 600;
+      font-size: 14px;
     }
 
     /* ===== ПАГИНАЦИЯ ===== */
@@ -244,22 +277,22 @@
       color: #fff;
       border-color: var(--china-red);
     }
-    .pagination a:hover:not(.active) {
-      background: var(--bg-light);
-    }
+    .pagination a:hover:not(.active) { background: var(--bg-light); }
 
-    /* ===== CTA ===== */
-    .cta-section {
+    /* ===== ПОДПИСКА ===== */
+    .subscribe-section {
       background: var(--primary);
       color: #fff;
       border-radius: 20px;
-      padding: 48px 56px;
-      margin-top: 0;
-      border-bottom: none;
+      padding: 40px 56px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
     }
-    .cta-section h2 { color: #fff; }
-    .cta-section p { color: rgba(255,255,255,0.8); }
-    .cta-section .btn {
+    .subscribe-section h2 { color: #fff; font-size: 26px; }
+    .subscribe-section p { color: rgba(255,255,255,0.8); }
+    .subscribe-section .btn {
       background: var(--china-red);
       color: #fff;
       border: none;
@@ -270,8 +303,21 @@
       text-decoration: none;
       display: inline-block;
       transition: background .2s;
+      text-align: center;
     }
-    .cta-section .btn:hover { background: var(--china-red-light); }
+    .subscribe-section .btn:hover { background: var(--china-red-light); }
+    .subscribe-section input {
+      height: 48px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.1);
+      padding: 0 18px;
+      color: #fff;
+      font-size: 15px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .subscribe-section input::placeholder { color: rgba(255,255,255,0.5); }
 
     /* ===== ФУТЕР ===== */
     .footer {
@@ -286,197 +332,211 @@
     .footer strong { color: #fff; display: block; margin-bottom: 12px; }
     .footer a { color: #b0c0d0; text-decoration: none; font-size: 14px; line-height: 1.8; }
     .footer a:hover { color: #fff; }
-    .footer .china-contact { color: var(--accent); font-weight: 600; }
 
     /* ===== АДАПТИВ ===== */
     @media (max-width: 1180px) {
       .topbar { padding: 0 28px; }
-      section { padding: 40px 28px; }
-      .hero-news { padding: 32px 28px; }
-      .hero-news h1 { font-size: 32px; }
-      .grid-cols-2, .grid-cols-3 { grid-template-columns: 1fr 1fr; }
+      section { padding: 36px 28px; }
+      .hero-news { padding: 40px 28px; }
+      .hero-news h1 { font-size: 34px; }
       .footer { grid-template-columns: 1fr 1fr; padding: 32px 28px; }
+      .subscribe-section { grid-template-columns: 1fr; padding: 32px 28px; }
+      .news-item { grid-template-columns: 1fr; }
+      .news-item .image-placeholder { height: 120px; }
     }
     @media (max-width: 700px) {
       .topbar { height: 70px; padding: 0 16px; }
       .nav { display: none; }
-      .grid-cols-2, .grid-cols-3 { grid-template-columns: 1fr; }
       .hero-news h1 { font-size: 26px; }
       .footer { grid-template-columns: 1fr; }
-      .cta-section { padding: 28px 20px; }
+      .subscribe-section { padding: 24px 20px; }
+      .filter-bar a { font-size: 13px; padding: 4px 14px; }
+      .news-item { padding: 16px; }
     }
   </style>
 </head>
 <body>
   <main class="page">
 
-    <!-- ============================================================ -->
-    <!-- HEADER -->
-    <!-- ============================================================ -->
+    <!-- ===== HEADER ===== -->
     <header class="topbar">
       <a class="brand" href="index.html">
-        <span class="flag">🇨🇳</span>
-        BSL<span>R&D</span>
+        <span class="flag">🥛</span>
+        Dairy<span>Info</span>
         <span class="sub">China · Russia</span>
       </a>
       <nav class="nav">
         <a href="index.html">Главная</a>
+        <a href="reviews.html">Обзоры</a>
         <a class="active" href="news.html">Новости</a>
-        <a href="catalog.html">Оборудование</a>
-        <a href="events.html">События</a>
-        <a href="about.html">О компании</a>
+        <a href="events.html">Мероприятия</a>
+        <a href="about.html">О ресурсе</a>
         <a href="contacts.html">Контакты</a>
-        <a href="contacts.html">Связаться</a>
       </nav>
     </header>
 
-    <!-- ============================================================ -->
-    <!-- HERO -->
-    <!-- ============================================================ -->
+    <!-- ===== HERO ===== -->
     <section class="hero-news">
-      <span class="label">🇨🇳🇷🇺 Новости</span>
+      <span class="label">🇨🇳 Новости из Китая</span>
       <h1>
-        События на рынке молочной продукции <span class="highlight">Китая и России</span>
+        События на рынке молочной продукции <span class="highlight">Китая</span>
       </h1>
       <p>
-        Технологии, поставки, партнёрства, отраслевые события — всё, что важно для
-        производителей молочной продукции, работающих с Китаем.
+        Актуальные новости китайского рынка молочной продукции: изменения
+        законодательства, новые стандарты, статистика импорта и экспорта,
+        технологические инновации и инвестиции.
       </p>
     </section>
 
-    <!-- ============================================================ -->
-    <!-- ФИЛЬТРЫ -->
-    <!-- ============================================================ -->
+    <!-- ===== ФИЛЬТРЫ ===== -->
     <section style="padding:0 72px 20px; border-bottom:none;">
       <div class="filter-bar">
         <a href="#" class="active">Все новости</a>
-        <a href="#">🇨🇳 Китай</a>
-        <a href="#">🇷🇺 Россия</a>
-        <a href="#">📦 Поставки</a>
+        <a href="#">📈 Рынок и статистика</a>
+        <a href="#">⚖️ Законодательство</a>
+        <a href="#">🏭 Производство</a>
+        <a href="#">📦 Экспорт / Импорт</a>
         <a href="#">🔬 Технологии</a>
-        <a href="#">🤝 Партнёрства</a>
       </div>
     </section>
 
-    <!-- ============================================================ -->
-    <!-- ЛЕНТА НОВОСТЕЙ -->
-    <!-- ============================================================ -->
+    <!-- ===== ЛЕНТА НОВОСТЕЙ ===== -->
     <section style="padding:0 72px 40px; border-bottom:none;">
-      <div class="grid-cols-2">
-        <!-- Новость 1 -->
-        <div class="card">
-          <span class="tag china">🇨🇳 Китай</span>
-          <div style="font-size:12px; color:var(--text-muted); margin-bottom:4px;">15 июня 2026</div>
-          <h3 style="font-size:18px; color:var(--text-dark); margin:0 0 8px;">
-            Новые стандарты качества в Китае: что важно для экспортёров
-          </h3>
-          <p style="font-size:14px; color:var(--text-muted);">
-            Обновление требований к молочной продукции в КНР. Как российским производителям
-            подготовиться к изменениям и сохранить доступ на китайский рынок.
-          </p>
-          <a href="#" style="color:var(--china-red); font-weight:600; font-size:14px; display:inline-block; margin-top:12px;">Читать →</a>
-        </div>
+      <div class="news-list">
 
-        <!-- Новость 2 -->
-        <div class="card">
-          <span class="tag russia">🇷🇺 Россия</span>
-          <div style="font-size:12px; color:var(--text-muted); margin-bottom:4px;">12 июня 2026</div>
-          <h3 style="font-size:18px; color:var(--text-dark); margin:0 0 8px;">
-            Форум «Молочная индустрия России 2026» — итоги
-          </h3>
-          <p style="font-size:14px; color:var(--text-muted);">
-            BSL R&D представил китайские технологии на главном отраслевом событии года.
-            Подписаны новые соглашения о поставках оборудования для российских заводов.
-          </p>
-          <a href="#" style="color:var(--china-red); font-weight:600; font-size:14px; display:inline-block; margin-top:12px;">Читать →</a>
-        </div>
+        <!-- НОВОСТЬ 1 -->
+        <a href="news/2026/04/kitaj-uvelichivaet-import-suhogo-moloka.html" class="news-item">
+          <div class="image-placeholder">
+            <span class="icon">📦</span>
+          </div>
+          <div class="content">
+            <span class="tag china">🇨🇳 Китай</span>
+            <div class="date">18 апреля 2026</div>
+            <h3>Китай увеличивает импорт сухого молока из России на 42%</h3>
+            <p>
+              По данным таможенной статистики КНР, импорт сухого молока из Российской
+              Федерации в Китай вырос на 42% в первом квартале 2026 года. Основные
+              причины — рост внутреннего потребления и снижение производства в Китае.
+            </p>
+            <span class="read-more">Читать полностью →</span>
+          </div>
+        </a>
 
-        <!-- Новость 3 -->
-        <div class="card">
-          <span class="tag business">🤝 Партнёрство</span>
-          <div style="font-size:12px; color:var(--text-muted); margin-bottom:4px;">8 июня 2026</div>
-          <h3 style="font-size:18px; color:var(--text-dark); margin:0 0 8px;">
-            Новое партнёрство: китайский производитель оборудования — российский завод
-          </h3>
-          <p style="font-size:14px; color:var(--text-muted);">
-            BSL R&D выступил мостом в сделке между китайским заводом и российским
-            производителем молочной продукции. Сроки поставки — 3 месяца.
-          </p>
-          <a href="#" style="color:var(--china-red); font-weight:600; font-size:14px; display:inline-block; margin-top:12px;">Читать →</a>
-        </div>
+        <!-- НОВОСТЬ 2 -->
+        <a href="news/2026/03/novye-standarty-kachestva-kitaj.html" class="news-item">
+          <div class="image-placeholder">
+            <span class="icon">⚖️</span>
+          </div>
+          <div class="content">
+            <span class="tag china">🇨🇳 Китай</span>
+            <div class="date">12 марта 2026</div>
+            <h3>Китай утвердил новые национальные стандарты качества для молочной продукции</h3>
+            <p>
+              Государственное управление по надзору за рынком КНР утвердило новые
+              стандарты качества для молочной продукции. Новые требования ужесточают
+              контроль за содержанием белка и микробиологическими показателями.
+              Стандарты вступают в силу с 1 июля 2026 года.
+            </p>
+            <span class="read-more">Читать полностью →</span>
+          </div>
+        </a>
 
-        <!-- Новость 4 -->
-        <div class="card">
-          <span class="tag china">🇨🇳 Китай</span>
-          <div style="font-size:12px; color:var(--text-muted); margin-bottom:4px;">5 июня 2026</div>
-          <h3 style="font-size:18px; color:var(--text-dark); margin:0 0 8px;">
-            Китайские технологии переработки молока — новый уровень для российских заводов
-          </h3>
-          <p style="font-size:14px; color:var(--text-muted);">
-            Обзор современных китайских решений для переработки молока: мембранные
-            технологии, ультрафильтрация, автоматизированные системы управления.
-          </p>
-          <a href="#" style="color:var(--china-red); font-weight:600; font-size:14px; display:inline-block; margin-top:12px;">Читать →</a>
-        </div>
+        <!-- НОВОСТЬ 3 -->
+        <a href="news/2026/02/kitaj-krupnejshij-importer-moloka.html" class="news-item">
+          <div class="image-placeholder">
+            <span class="icon">📊</span>
+          </div>
+          <div class="content">
+            <span class="tag china">🇨🇳 Китай</span>
+            <div class="date">20 февраля 2026</div>
+            <h3>Китай стал крупнейшим импортёром молочной продукции в мире</h3>
+            <p>
+              По данным Продовольственной и сельскохозяйственной организации ООН (ФАО),
+              Китай обогнал США по объёму импорта молочной продукции. За 2025 год
+              Китай импортировал молочной продукции на $15,2 млрд, что на 28% больше,
+              чем в 2024 году.
+            </p>
+            <span class="read-more">Читать полностью →</span>
+          </div>
+        </a>
 
-        <!-- Новость 5 -->
-        <div class="card">
-          <span class="tag russia">🇷🇺 Россия</span>
-          <div style="font-size:12px; color:var(--text-muted); margin-bottom:4px;">1 июня 2026</div>
-          <h3 style="font-size:18px; color:var(--text-dark); margin:0 0 8px;">
-            Запуск новой линии на заводе в Ставрополе — китайское оборудование в работе
-          </h3>
-          <p style="font-size:14px; color:var(--text-muted);">
-            Завершён шеф-монтаж китайской линии розлива йогуртов. Производительность
-            выросла на 30%, запуск прошёл в штатном режиме.
-          </p>
-          <a href="#" style="color:var(--china-red); font-weight:600; font-size:14px; display:inline-block; margin-top:12px;">Читать →</a>
-        </div>
+        <!-- НОВОСТЬ 4 -->
+        <a href="news/2026/01/kitaj-investicii-molochnoe-zhivotnovodstvo.html" class="news-item">
+          <div class="image-placeholder">
+            <span class="icon">💰</span>
+          </div>
+          <div class="content">
+            <span class="tag china">🇨🇳 Китай</span>
+            <div class="date">25 января 2026</div>
+            <h3>Китай инвестирует $2 млрд в развитие молочного животноводства до 2028 года</h3>
+            <p>
+              Правительство КНР объявило о пятилетней программе инвестиций в молочное
+              животноводство. Цель — снизить зависимость от импорта сырого молока и
+              повысить его качество. К 2028 году планируется увеличить производство
+              сырого молока на 20%.
+            </p>
+            <span class="read-more">Читать полностью →</span>
+          </div>
+        </a>
 
-        <!-- Новость 6 -->
-        <div class="card">
-          <span class="tag business">📦 Поставки</span>
-          <div style="font-size:12px; color:var(--text-muted); margin-bottom:4px;">28 мая 2026</div>
-          <h3 style="font-size:18px; color:var(--text-dark); margin:0 0 8px;">
-            Новая партия лабораторного оборудования из Китая поступила в Москву
-          </h3>
-          <p style="font-size:14px; color:var(--text-muted);">
-            Анализаторы состава молока и микробиологическое оборудование прошли
-            таможенное оформление и готовятся к отправке заказчикам.
-          </p>
-          <a href="#" style="color:var(--china-red); font-weight:600; font-size:14px; display:inline-block; margin-top:12px;">Читать →</a>
-        </div>
+        <!-- НОВОСТЬ 5 -->
+        <a href="news/2025/12/kitaj-eksport-molochnoj-produkcii.html" class="news-item">
+          <div class="image-placeholder">
+            <span class="icon">📦</span>
+          </div>
+          <div class="content">
+            <span class="tag china">🇨🇳 Китай</span>
+            <div class="date">10 декабря 2025</div>
+            <h3>Китайские производители молочной продукции наращивают экспорт в Азию</h3>
+            <p>
+              Китайские компании Inner Mongolia Yili и China Mengniu Dairy увеличили
+              экспорт молочной продукции в страны Юго-Восточной Азии на 35% за 2025 год.
+              Основные позиции — сухое молоко, сыворотка и детские смеси.
+            </p>
+            <span class="read-more">Читать полностью →</span>
+          </div>
+        </a>
 
-        <!-- Новость 7 -->
-        <div class="card">
-          <span class="tag china">🇨🇳 Китай</span>
-          <div style="font-size:12px; color:var(--text-muted); margin-bottom:4px;">22 мая 2026</div>
-          <h3 style="font-size:18px; color:var(--text-dark); margin:0 0 8px;">
-            Китай запускает цифровую платформу для контроля качества молока
-          </h3>
-          <p style="font-size:14px; color:var(--text-muted);">
-            Новая государственная система отслеживания качества молочной продукции в КНР.
-            Как это повлияет на импортёров и экспортёров.
-          </p>
-          <a href="#" style="color:var(--china-red); font-weight:600; font-size:14px; display:inline-block; margin-top:12px;">Читать →</a>
-        </div>
+        <!-- НОВОСТЬ 6 -->
+        <a href="news/2025/11/kitaj-novye-tehnologii-molochnaya-promyshlennost.html" class="news-item">
+          <div class="image-placeholder">
+            <span class="icon">🔬</span>
+          </div>
+          <div class="content">
+            <span class="tag china">🇨🇳 Китай</span>
+            <div class="date">15 ноября 2025</div>
+            <h3>Китайские учёные разработали новый метод анализа качества молока</h3>
+            <p>
+              Исследователи из Пекинского университета представили новый метод
+              экспресс-анализа качества молока с использованием искусственного
+              интеллекта. Технология позволяет определять состав молока за 30 секунд
+              с точностью до 98%.
+            </p>
+            <span class="read-more">Читать полностью →</span>
+          </div>
+        </a>
 
-        <!-- Новость 8 -->
-        <div class="card">
-          <span class="tag russia">🇷🇺 Россия</span>
-          <div style="font-size:12px; color:var(--text-muted); margin-bottom:4px;">18 мая 2026</div>
-          <h3 style="font-size:18px; color:var(--text-dark); margin:0 0 8px;">
-            Обучение персонала: китайские технологии на российских заводах
-          </h3>
-          <p style="font-size:14px; color:var(--text-muted);">
-            Инженеры BSL R&D провели обучение для технологов трёх российских заводов
-            по работе с китайским оборудованием и методикам контроля качества.
-          </p>
-          <a href="#" style="color:var(--china-red); font-weight:600; font-size:14px; display:inline-block; margin-top:12px;">Читать →</a>
-        </div>
+        <!-- НОВОСТЬ 7 -->
+        <a href="news/2025/10/kitaj-novyj-zavod-suhogo-moloka.html" class="news-item">
+          <div class="image-placeholder">
+            <span class="icon">🏭</span>
+          </div>
+          <div class="content">
+            <span class="tag china">🇨🇳 Китай</span>
+            <div class="date">5 октября 2025</div>
+            <h3>В провинции Хэйлунцзян открыт новый завод по производству сухого молока</h3>
+            <p>
+              Китайская компания China Feihe Limited открыла новый завод по производству
+              сухого молока мощностью 100 тысяч тонн в год. Завод полностью автоматизирован
+              и соответствует международным стандартам качества.
+            </p>
+            <span class="read-more">Читать полностью →</span>
+          </div>
+        </a>
+
       </div>
 
-      <!-- Пагинация -->
+      <!-- ===== ПАГИНАЦИЯ ===== -->
       <div class="pagination">
         <a href="#" class="active">1</a>
         <a href="#">2</a>
@@ -486,64 +546,58 @@
       </div>
     </section>
 
-    <!-- ============================================================ -->
-    <!-- CTA — ПОДПИСКА -->
-    <!-- ============================================================ -->
-    <section style="padding:0 72px 56px;">
-      <div class="cta-section" style="display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center;">
+    <!-- ===== ПОДПИСКА ===== -->
+    <section style="padding:0 72px 48px;">
+      <div class="subscribe-section">
         <div>
           <span class="section-label" style="color:rgba(255,255,255,0.5);">✉️ Подписка</span>
-          <h2 style="color:#fff; font-size:28px;">Будьте в курсе событий на рынке Китая и России</h2>
+          <h2 style="color:#fff; font-size:26px;">Будьте в курсе новостей из Китая</h2>
           <p style="color:rgba(255,255,255,0.8);">
-            Подпишитесь на нашу рассылку — только полезные новости о технологиях,
-            поставках, отраслевых событиях и изменениях в законодательстве.
+            Подпишитесь на рассылку — только полезные новости о китайском рынке,
+            оборудовании и технологиях для молочной промышленности.
           </p>
         </div>
         <div style="display:flex; flex-direction:column; gap:12px;">
-          <input type="email" placeholder="Ваш email" style="height:48px; border-radius:8px; border:1px solid rgba(255,255,255,0.2); background:rgba(255,255,255,0.1); padding:0 18px; color:#fff; font-size:15px;">
+          <input type="email" placeholder="Ваш email">
           <div style="display:flex; gap:12px;">
             <input type="checkbox" id="agree" style="width:18px; height:18px; accent-color:var(--china-red); margin-top:2px;">
             <label for="agree" style="font-size:13px; color:rgba(255,255,255,0.6);">Я согласен на обработку персональных данных</label>
           </div>
-          <a href="#" class="btn" style="background:var(--china-red); color:#fff; border:none; padding:14px; border-radius:8px; font-weight:600; text-align:center; text-decoration:none;">Подписаться →</a>
+          <a href="#" class="btn" onclick="alert('Спасибо! Вы подписаны на рассылку.'); return false;">Подписаться →</a>
         </div>
       </div>
     </section>
 
-    <!-- ============================================================ -->
-    <!-- ФУТЕР -->
-    <!-- ============================================================ -->
+    <!-- ===== ФУТЕР ===== -->
     <section class="footer" style="border-bottom:none;">
       <div>
-        <strong style="font-size:18px;">🇨🇳 BSL R&D</strong>
+        <strong style="font-size:18px;">🥛 DairyInfo</strong>
         <p style="font-size:14px; color:#b0c0d0; max-width:300px;">
-          Китайские технологии для российского молочного рынка.
+          Информационный ресурс о китайском оборудовании и технологиях для молочной промышленности.
         </p>
         <p style="font-size:13px; margin-top:8px; color:#b0c0d0;">
-          <span class="china-contact">🇨🇳 Шанхай:</span> +86 136 0125 3137<br>
-          <span class="china-contact">🇷🇺 Москва:</span> +7 (495) 123-45-67<br>
-          ✉️ info@chinadairy.ru
+          ✉️ info@dairyinfo.ru
         </p>
       </div>
       <div>
-        <strong>О компании</strong>
-        <p><a href="about.html">О BSL R&D</a><br><a href="about.html#projects">Проекты в РФ</a><br><a href="about.html#partners">Партнёры в Китае</a></p>
-      </div>
-      <div>
-        <strong>Оборудование</strong>
-        <p><a href="catalog.html">Технологическое</a><br><a href="catalog.html">Лабораторное</a><br><a href="catalog.html">Инжиниринг</a></p>
+        <strong>Обзоры</strong>
+        <p><a href="reviews.html">Линии розлива</a><br><a href="reviews.html">Пастеризаторы</a><br><a href="reviews.html">Анализаторы</a><br><a href="reviews.html">Гомогенизаторы</a></p>
       </div>
       <div>
         <strong>Информация</strong>
-        <p><a href="news.html">Новости</a><br><a href="events.html">События</a><br><a href="blog.html">Статьи</a></p>
+        <p><a href="news.html">Новости</a><br><a href="events.html">Мероприятия</a><br><a href="about.html">О ресурсе</a></p>
       </div>
       <div>
         <strong>Документы</strong>
         <p><a href="agreement.html">Согласие на обработку</a><br><a href="privacy-policy.html">Политика конфиденциальности</a></p>
       </div>
+      <div>
+        <strong>Контакты</strong>
+        <p><a href="contacts.html">Связаться с нами</a></p>
+      </div>
     </section>
     <div style="background:#1a2634; border-top:1px solid #2a3a4a; padding:16px 72px; text-align:center; font-size:12px; color:#7a8a9a;">
-      © 2026 BSL R&D. 🇨🇳 Шанхай · 🇷🇺 Москва
+      © 2026 DairyInfo — информационный ресурс о китайском оборудовании для молочной промышленности.
     </div>
 
   </main>

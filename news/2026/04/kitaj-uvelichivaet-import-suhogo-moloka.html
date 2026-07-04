@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Китай увеличивает импорт сухого молока из России на 42% — DairyInfo</title>
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    /* ============================================================
+       СТИЛИ ДЛЯ КАРТОЧКИ НОВОСТИ
+       ============================================================ */
+    :root {
+      --primary: #1a2a4a;
+      --primary-light: #2a4a7a;
+      --accent: #e8b82a;
+      --china-red: #cc0000;
+      --china-red-light: #e84040;
+      --bg-light: #f5f7fa;
+      --text-dark: #1a2a3a;
+      --text-muted: #5a6a7a;
+      --border-color: #dce1e8;
+      --card-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    }
+
+    body {
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+      background: #fff;
+      color: var(--text-dark);
+      margin: 0;
+    }
+
+    .page { max-width: 1440px; margin: 0 auto; background: #fff; }
+
+    /* ===== HEADER ===== */
+    .topbar {
+      background: #fff;
+      border-bottom: 3px solid var(--china-red);
+      padding: 0 60px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .brand {
+      font-weight: 700;
+      font-size: 22px;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .brand .flag { font-size: 28px; line-height: 1; }
+    .brand span { color: var(--china-red); }
+    .brand .sub {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 400;
+      display: block;
+      letter-spacing: 0.04em;
+    }
+
+    .nav {
+      display: flex;
+      gap: 28px;
+      font-size: 15px;
+      color: var(--text-muted);
+      align-items: center;
+    }
+    .nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color .2s;
+      position: relative;
+    }
+    .nav a:hover { color: var(--primary); }
+    .nav a.active { color: var(--primary); font-weight: 600; }
+    .nav a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--china-red);
+    }
+    .nav a:last-child {
+      background: var(--china-red);
+      color: #fff;
+      border: none;
+      padding: 10px 28px;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: background .2s;
+    }
+    .nav a:last-child:hover { background: var(--china-red-light); color: #fff; }
+
+    /* ===== БРЕДКРАМБЫ ===== */
+    .breadcrumbs {
+      padding: 16px 72px 0;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+    .breadcrumbs a { color: var(--china-red); text-decoration: none; }
+    .breadcrumbs a:hover { text-decoration: underline; }
+    .breadcrumbs span { color: var(--text-muted); }
+
+    /* ===== ОБЩИЕ СТИЛИ ===== */
+    section { padding: 40px 72px; border-bottom: 1px solid var(--border-color); }
+
+    h1 {
+      font-size: 36px;
+      color: var(--text-dark);
+      margin: 0 0 12px;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+    h2 {
+      font-size: 28px;
+      color: var(--text-dark);
+      margin: 0 0 12px;
+      line-height: 1.1;
+    }
+    .section-label {
+      color: var(--china-red);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-size: 12px;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+    .label-tag {
+      display: inline-block;
+      background: var(--china-red);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 14px;
+      border-radius: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 8px;
+    }
+
+    .news-content { max-width: 860px; margin: 0 auto; }
+    .news-content .meta {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .news-content .text-block {
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--text-dark);
+    }
+    .news-content .text-block p { margin: 0 0 16px; color: var(--text-dark); }
+    .news-content .text-block .source {
+      margin-top: 24px;
+      padding: 16px 20px;
+      background: var(--bg-light);
+      border-radius: 12px;
+      border-left: 4px solid var(--china-red);
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+    .news-content .text-block .source a { color: var(--china-red); text-decoration: none; }
+    .news-content .text-block .source a:hover { text-decoration: underline; }
+
+    .image-placeholder {
+      background: var(--bg-light);
+      border-radius: 16px;
+      height: 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      flex-direction: column;
+      margin-bottom: 24px;
+    }
+    .image-placeholder .icon { font-size: 64px; margin-bottom: 8px; }
+
+    /* ===== СВЯЗАННЫЕ НОВОСТИ ===== */
+    .related-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 24px;
+      margin-top: 20px;
+    }
+    .related-card {
+      background: #fff;
+      border-radius: 16px;
+      border: 1px solid var(--border-color);
+      padding: 20px;
+      transition: transform .2s, box-shadow .2s;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    .related-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--card-shadow);
+    }
+    .related-card .cat { font-size: 12px; color: var(--china-red); font-weight: 600; }
+    .related-card h4 { font-size: 16px; margin: 4px 0; color: var(--text-dark); }
+    .related-card p { font-size: 14px; color: var(--text-muted); margin: 0; }
+
+    /* ===== ПОДПИСКА ===== */
+    .subscribe-section {
+      background: var(--primary);
+      color: #fff;
+      border-radius: 20px;
+      padding: 40px 56px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .subscribe-section h2 { color: #fff; font-size: 26px; }
+    .subscribe-section p { color: rgba(255,255,255,0.8); }
+    .subscribe-section .btn {
+      background: var(--china-red);
+      color: #fff;
+      border: none;
+      padding: 14px 36px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 16px;
+      text-decoration: none;
+      display: inline-block;
+      transition: background .2s;
+      text-align: center;
+    }
+    .subscribe-section .btn:hover { background: var(--china-red-light); }
+    .subscribe-section input {
+      height: 48px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.1);
+      padding: 0 18px;
+      color: #fff;
+      font-size: 15px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .subscribe-section input::placeholder { color: rgba(255,255,255,0.5); }
+
+    /* ===== ФУТЕР ===== */
+    .footer {
+      background: #1a2634;
+      color: #cfd8e3;
+      border-top: 4px solid var(--china-red);
+      display: grid;
+      grid-template-columns: 1.2fr repeat(4, 1fr);
+      gap: 32px;
+      padding: 48px 72px;
+    }
+    .footer strong { color: #fff; display: block; margin-bottom: 12px; }
+    .footer a { color: #b0c0d0; text-decoration: none; font-size: 14px; line-height: 1.8; }
+    .footer a:hover { color: #fff; }
+
+    /* ===== АДАПТИВ ===== */
+    @media (max-width: 1180px) {
+      .topbar, .breadcrumbs { padding: 0 28px; }
+      .breadcrumbs { padding-top: 12px; }
+      section { padding: 32px 28px; }
+      .related-grid { grid-template-columns: 1fr 1fr; }
+      .footer { grid-template-columns: 1fr 1fr; padding: 32px 28px; }
+      .subscribe-section { grid-template-columns: 1fr; padding: 32px 28px; }
+      .news-content { max-width: 100%; }
+    }
+    @media (max-width: 700px) {
+      .topbar { height: 70px; padding: 0 16px; }
+      .nav { display: none; }
+      h1 { font-size: 26px; }
+      .related-grid { grid-template-columns: 1fr; }
+      .footer { grid-template-columns: 1fr; }
+      .subscribe-section { padding: 24px 20px; }
+      .news-content .meta { flex-direction: column; gap: 6px; }
+      .image-placeholder { height: 160px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <!-- ===== HEADER ===== -->
+    <header class="topbar">
+      <a class="brand" href="/index.html">
+        <span class="flag">🥛</span>
+        Dairy<span>Info</span>
+        <span class="sub">China · Russia</span>
+      </a>
+      <nav class="nav">
+        <a href="/index.html">Главная</a>
+        <a href="/reviews.html">Обзоры</a>
+        <a class="active" href="/news.html">Новости</a>
+        <a href="/events.html">Мероприятия</a>
+        <a href="/about.html">О ресурсе</a>
+        <a href="/contacts.html">Контакты</a>
+      </nav>
+    </header>
+
+    <!-- ===== БРЕДКРАМБЫ ===== -->
+    <div class="breadcrumbs">
+      <a href="/index.html">Главная</a>
+      <span> / </span>
+      <a href="/news.html">Новости</a>
+      <span> / </span>
+      <span>Китай увеличивает импорт сухого молока из России на 42%</span>
+    </div>
+
+    <!-- ===== НОВОСТЬ ===== -->
+    <section style="border-bottom:none;">
+      <div class="news-content">
+        <span class="label-tag">🇨🇳 Новость из Китая</span>
+        <h1>Китай увеличивает импорт сухого молока из России на 42%</h1>
+
+        <div class="meta">
+          <span>📅 18 апреля 2026</span>
+          <span>📰 Источник: DairyReporter / Reuters</span>
+          <span>🏷️ #китай #импорт #сухое_молоко</span>
+        </div>
+
+        <div class="image-placeholder">
+          <span class="icon">📦</span>
+          <div>Иллюстрация: контейнерные перевозки между Китаем и Россией</div>
+        </div>
+
+        <div class="text-block">
+          <p>
+            <strong>По данным таможенной статистики Китайской Народной Республики,
+            импорт сухого молока из Российской Федерации в Китай вырос на 42%
+            в первом квартале 2026 года по сравнению с аналогичным периодом 2025 года.</strong>
+          </p>
+
+          <p>
+            Всего за январь–март 2026 года Китай импортировал из России
+            18,5 тысячи тонн сухого молока. Это рекордный показатель за последние
+            пять лет. Общая стоимость поставок составила около $48 млн.
+          </p>
+
+          <p>
+            <strong>Основные причины роста импорта:</strong>
+            <br>
+            — Снижение внутреннего производства сухого молока в Китае из-за
+            эпидемиологических ограничений в молочном животноводстве;
+            <br>
+            — Рост потребительского спроса на молочную продукцию в Китае;
+            <br>
+            — Конкурентные цены российских производителей по сравнению с
+            поставщиками из Новой Зеландии и стран ЕС.
+          </p>
+
+          <p>
+            Аналитики прогнозируют дальнейший рост импорта сухого молока из России
+            до конца 2026 года. Ожидается, что Россия может войти в тройку
+            крупнейших поставщиков сухого молока в Китай к концу года.
+          </p>
+
+          <div class="source">
+            <strong>📎 Источник:</strong>
+            <a href="https://www.reuters.com/markets/commodities/china-imports-russian-skim-milk-powder-rise-42-first-quarter-2026-04-18/" target="_blank">
+              Reuters — China's imports of Russian skim milk powder rise 42% in Q1
+            </a>
+            <br>
+            <span style="font-size:13px;">Материал переработан и адаптирован для информационного ресурса.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== СВЯЗАННЫЕ НОВОСТИ ===== -->
+    <section style="background:var(--bg-light);">
+      <span class="section-label">📰 Другие новости</span>
+      <h2>Ещё новости <span class="highlight">из Китая</span></h2>
+      <div class="related-grid">
+        <a href="/news/2026/03/novye-standarty-kachestva-kitaj.html" class="related-card">
+          <div class="cat">🇨🇳 Новость</div>
+          <h4>Китай утвердил новые стандарты качества для молочной продукции</h4>
+          <p>Новые требования вступают в силу с 1 июля 2026 года.</p>
+        </a>
+        <a href="/news/2026/02/kitaj-krupnejshij-importer-moloka.html" class="related-card">
+          <div class="cat">🇨🇳 Новость</div>
+          <h4>Китай стал крупнейшим импортёром молочной продукции в мире</h4>
+          <p>По данным ФАО, Китай обогнал США по объёму импорта.</p>
+        </a>
+        <a href="/news/2026/01/kitaj-investicii-molochnoe-zhivotnovodstvo.html" class="related-card">
+          <div class="cat">🇨🇳 Новость</div>
+          <h4>Китай инвестирует $2 млрд в развитие молочного животноводства</h4>
+          <p>Пятилетняя программа до 2028 года.</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- ===== ПОДПИСКА ===== -->
+    <section style="padding:0 72px 48px;">
+      <div class="subscribe-section">
+        <div>
+          <span class="section-label" style="color:rgba(255,255,255,0.5);">✉️ Подписка</span>
+          <h2 style="color:#fff; font-size:26px;">Будьте в курсе новостей из Китая</h2>
+          <p style="color:rgba(255,255,255,0.8);">
+            Подпишитесь на рассылку — только полезные новости о китайском рынке,
+            оборудовании и технологиях для молочной промышленности.
+          </p>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          <input type="email" placeholder="Ваш email">
+          <div style="display:flex; gap:12px;">
+            <input type="checkbox" id="agree" style="width:18px; height:18px; accent-color:var(--china-red); margin-top:2px;">
+            <label for="agree" style="font-size:13px; color:rgba(255,255,255,0.6);">Я согласен на обработку персональных данных</label>
+          </div>
+          <a href="#" class="btn" onclick="alert('Спасибо! Вы подписаны на рассылку.'); return false;">Подписаться →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ФУТЕР ===== -->
+    <section class="footer" style="border-bottom:none;">
+      <div>
+        <strong style="font-size:18px;">🥛 DairyInfo</strong>
+        <p style="font-size:14px; color:#b0c0d0; max-width:300px;">
+          Информационный ресурс о китайском оборудовании и технологиях для молочной промышленности.
+        </p>
+        <p style="font-size:13px; margin-top:8px; color:#b0c0d0;">
+          ✉️ info@dairyinfo.ru
+        </p>
+      </div>
+      <div>
+        <strong>Обзоры</strong>
+        <p><a href="/reviews.html">Линии розлива</a><br><a href="/reviews.html">Пастеризаторы</a><br><a href="/reviews.html">Анализаторы</a><br><a href="/reviews.html">Гомогенизаторы</a></p>
+      </div>
+      <div>
+        <strong>Информация</strong>
+        <p><a href="/news.html">Новости</a><br><a href="/events.html">Мероприятия</a><br><a href="/about.html">О ресурсе</a></p>
+      </div>
+      <div>
+        <strong>Документы</strong>
+        <p><a href="/agreement.html">Согласие на обработку</a><br><a href="/privacy-policy.html">Политика конфиденциальности</a></p>
+      </div>
+      <div>
+        <strong>Контакты</strong>
+        <p><a href="/contacts.html">Связаться с нами</a></p>
+      </div>
+    </section>
+    <div style="background:#1a2634; border-top:1px solid #2a3a4a; padding:16px 72px; text-align:center; font-size:12px; color:#7a8a9a;">
+      © 2026 DairyInfo — информационный ресурс о китайском оборудовании для молочной промышленности.
+    </div>
+
+  </main>
+</body>
+</html>
