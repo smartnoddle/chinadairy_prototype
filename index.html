@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BSL Dairy Products R&D Center — инновации в молочной отрасли</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Корпоративный стиль для chinadairy.ru */
+    :root {
+      --primary: #1a4d7a;   /* Тёмно-синий, как на dairyunion.ru */
+      --primary-light: #2a6b9e;
+      --accent: #e8b82a;    /* Золотой/жёлтый для акцентов */
+      --bg-light: #f5f7fa;
+      --text-dark: #1e2a3a;
+      --text-muted: #5a6a7a;
+      --border-color: #dce1e8;
+      --card-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #fff;
+      color: var(--text-dark);
+    }
+    .page {
+      max-width: 1440px;
+      margin: 0 auto;
+      background: #fff;
+    }
+    .topbar {
+      background: #fff;
+      border-bottom: 2px solid var(--border-color);
+      padding: 0 60px;
+      height: 80px;
+    }
+    .brand {
+      font-weight: 700;
+      font-size: 22px;
+      color: var(--primary);
+    }
+    .brand span {
+      color: var(--accent);
+    }
+    .nav a {
+      color: var(--text-muted);
+      font-size: 15px;
+      font-weight: 500;
+    }
+    .nav a:hover {
+      color: var(--primary);
+    }
+    .nav a:last-child {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 10px 24px;
+    }
+    .nav a:last-child:hover {
+      background: var(--primary-light);
+    }
+    .btn {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #fff;
+      font-weight: 600;
+      border-radius: 6px;
+    }
+    .btn-secondary {
+      background: transparent;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+    }
+    .btn-secondary:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+    .label {
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+    h1, h2, h3 {
+      color: var(--text-dark);
+    }
+    .hero {
+      background: linear-gradient(135deg, #f0f4f9 0%, #e6ecf5 100%);
+      min-height: 600px;
+    }
+    .visual {
+      background: linear-gradient(145deg, #ffffff, #e8edf4);
+      border-color: var(--border-color);
+      border-radius: 20px;
+    }
+    .card {
+      border-radius: 16px;
+      border-color: var(--border-color);
+      box-shadow: var(--card-shadow);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+    }
+    .card h3 {
+      color: var(--primary);
+    }
+    .footer {
+      background: #1a2634;
+      color: #cfd8e3;
+      border-top: 4px solid var(--accent);
+    }
+    .footer strong {
+      color: #fff;
+    }
+    .footer a {
+      color: #b0c0d0;
+    }
+    .footer a:hover {
+      color: #fff;
+    }
+    .section-title {
+      font-size: 34px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .section-subtitle {
+      color: var(--text-muted);
+      font-size: 18px;
+      max-width: 700px;
+    }
+    .kicker {
+      background: rgba(26, 77, 122, 0.08);
+      border-color: var(--border-color);
+      color: var(--text-muted);
+      font-size: 13px;
+      border-radius: 20px;
+    }
+    .cta {
+      background: var(--primary);
+      border-radius: 20px;
+      padding: 48px 56px;
+    }
+    .cta h2 {
+      color: #fff;
+    }
+    .cta p {
+      color: rgba(255,255,255,0.85);
+    }
+    .cta .input {
+      background: rgba(255,255,255,0.15);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    .cta .btn {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: var(--text-dark);
+    }
+    .cta .btn:hover {
+      background: #d4a820;
+      border-color: #d4a820;
+    }
+    .faq-item {
+      border-radius: 12px;
+      border-color: var(--border-color);
+    }
+    .faq-item .question {
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+    .faq-item.open .question {
+      color: var(--primary);
+    }
+    /* Адаптив */
+    @media (max-width: 1180px) {
+      .topbar { padding: 0 28px; }
+      section { padding: 56px 28px; }
+      .hero { min-height: 480px; }
+      .grid.cols-3 { grid-template-columns: 1fr 1fr; }
+      .grid.cols-4 { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 700px) {
+      .topbar { height: 70px; }
+      .nav { display: none; }
+      .hero { min-height: 400px; }
+      .grid.cols-2, .grid.cols-3, .grid.cols-4 { grid-template-columns: 1fr; }
+      h1 { font-size: 32px; }
+      h2 { font-size: 26px; }
+      .cta { padding: 32px 24px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <!-- ===== HEADER ===== -->
+    <header class="topbar">
+      <a class="brand" href="index.html">BSL<span>dairy</span></a>
+      <nav class="nav">
+        <a href="news.html">Новости</a>
+        <a href="catalog.html">Каталог</a>
+        <a href="events.html">Мероприятия</a>
+        <a href="about.html">О нас</a>
+        <a href="contacts.html">Контакты</a>
+        <a href="contacts.html">Связаться</a>
+      </nav>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" style="display:grid; grid-template-columns:1.1fr 0.9fr; gap:48px; align-items:center; padding:60px 72px;">
+      <div>
+        <span class="label">Инновационный центр</span>
+        <h1 style="font-size:48px; line-height:1.1; max-width:700px;">Исследования и разработки в области молочных продуктов</h1>
+        <p style="font-size:20px; color:var(--text-muted); max-width:600px;">BSL Dairy Products R&D Center — экспертиза, качество и инновации для производителей молочной продукции.</p>
+        <div class="actions" style="margin-top:28px;">
+          <a class="btn" href="about.html">О центре</a>
+          <a class="btn-secondary" href="catalog.html" style="display:inline-flex; align-items:center; justify-content:center; min-height:52px; padding:0 24px; border-radius:6px; font-weight:600;">Каталог продукции</a>
+        </div>
+        <div class="kicker-row" style="margin-top:24px;">
+          <span class="kicker">🔬 Научный подход</span>
+          <span class="kicker">🥛 Качество продукции</span>
+          <span class="kicker">📈 Развитие отрасли</span>
+        </div>
+      </div>
+      <div class="visual" style="height:400px; background:linear-gradient(145deg, #e8edf4, #d5dee9); display:flex; align-items:center; justify-content:center; border:none; border-radius:20px;">
+        <div style="text-align:center; color:var(--primary);">
+          <div style="font-size:80px; margin-bottom:8px;">🥛</div>
+          <span style="font-size:16px; font-weight:600; color:var(--text-dark);">BSL Dairy Products</span>
+          <div style="font-size:14px; color:var(--text-muted);">R&D Center</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== О ЦЕНТРЕ ===== -->
+    <section style="padding:60px 72px; background:var(--bg-light);">
+      <div class="two-col" style="display:grid; grid-template-columns:0.9fr 1.1fr; gap:48px;">
+        <div>
+          <span class="label">О центре</span>
+          <h2 style="font-size:34px;">Научно-исследовательский центр молочной продукции</h2>
+        </div>
+        <div>
+          <p style="font-size:18px; color:var(--text-dark);">BSL Dairy Products R&D Center — это современный научно-исследовательский центр, специализирующийся на разработке инновационных решений в области молочной промышленности. Мы объединяем экспертов, технологии и передовые методики для создания качественных и безопасных продуктов питания.</p>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:24px;">
+            <div style="background:#fff; border-radius:12px; padding:20px; border:1px solid var(--border-color);">
+              <h3 style="font-size:18px; margin:0 0 6px; color:var(--primary);">10+</h3>
+              <p style="font-size:14px; color:var(--text-muted); margin:0;">лет экспертизы</p>
+            </div>
+            <div style="background:#fff; border-radius:12px; padding:20px; border:1px solid var(--border-color);">
+              <h3 style="font-size:18px; margin:0 0 6px; color:var(--primary);">50+</h3>
+              <p style="font-size:14px; color:var(--text-muted); margin:0;">реализованных проектов</p>
+            </div>
+            <div style="background:#fff; border-radius:12px; padding:20px; border:1px solid var(--border-color);">
+              <h3 style="font-size:18px; margin:0 0 6px; color:var(--primary);">100+</h3>
+              <p style="font-size:14px; color:var(--text-muted); margin:0;">партнёров по всей стране</p>
+            </div>
+            <div style="background:#fff; border-radius:12px; padding:20px; border:1px solid var(--border-color);">
+              <h3 style="font-size:18px; margin:0 0 6px; color:var(--primary);">5</h3>
+              <p style="font-size:14px; color:var(--text-muted); margin:0;">собственных лабораторий</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== НОВОСТИ ===== -->
+    <section style="padding:60px 72px;">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; margin-bottom:8px;">
+        <span class="label">Новости</span>
+        <a href="news.html" style="color:var(--primary); font-weight:600;">Все новости →</a>
+      </div>
+      <h2 style="font-size:34px;">Последние события и публикации</h2>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:28px;">
+        <div class="card" style="padding:24px; min-height:auto;">
+          <div style="font-size:12px; color:var(--text-muted); margin-bottom:8px;">15 июня 2026</div>
+          <h3 style="font-size:18px;">Новый стандарт качества для молочной продукции</h3>
+          <p style="font-size:15px; color:var(--text-muted);">BSL R&D Center представил обновлённые методики контроля качества сырья и готовой продукции.</p>
+          <a href="#" style="color:var(--primary); font-weight:600; display:inline-block; margin-top:12px;">Читать →</a>
+        </div>
+        <div class="card" style="padding:24px; min-height:auto;">
+          <div style="font-size:12px; color:var(--text-muted); margin-bottom:8px;">10 июня 2026</div>
+          <h3 style="font-size:18px;">Внедрение цифровых технологий в производство</h3>
+          <p style="font-size:15px; color:var(--text-muted);">Как искусственный интеллект и IoT помогают оптимизировать процессы на молочных заводах.</p>
+          <a href="#" style="color:var(--primary); font-weight:600; display:inline-block; margin-top:12px;">Читать →</a>
+        </div>
+        <div class="card" style="padding:24px; min-height:auto;">
+          <div style="font-size:12px; color:var(--text-muted); margin-bottom:8px;">5 июня 2026</div>
+          <h3 style="font-size:18px;">Международный форум «Молочная индустрия 2026»</h3>
+          <p style="font-size:15px; color:var(--text-muted);">BSL принял участие в главном отраслевом событии года. Делимся ключевыми выводами.</p>
+          <a href="#" style="color:var(--primary); font-weight:600; display:inline-block; margin-top:12px;">Читать →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== КАТАЛОГ ===== -->
+    <section style="padding:60px 72px; background:var(--bg-light);">
+      <span class="label">Каталог продукции</span>
+      <h2 style="font-size:34px;">Категории продукции</h2>
+      <p style="color:var(--text-muted); max-width:700px;">Широкий ассортимент молочной продукции, разработанный с учётом современных требований к качеству и безопасности.</p>
+      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin-top:28px;">
+        <a href="#" style="text-decoration:none; color:inherit; background:#fff; border-radius:16px; padding:28px; text-align:center; border:1px solid var(--border-color); transition: transform 0.2s, box-shadow 0.2s;">
+          <div style="font-size:48px; margin-bottom:8px;">🥛</div>
+          <h3 style="font-size:16px; color:var(--text-dark);">Молоко</h3>
+          <p style="font-size:13px; color:var(--text-muted);">Цельное, пастеризованное, ультрапастеризованное</p>
+        </a>
+        <a href="#" style="text-decoration:none; color:inherit; background:#fff; border-radius:16px; padding:28px; text-align:center; border:1px solid var(--border-color); transition: transform 0.2s, box-shadow 0.2s;">
+          <div style="font-size:48px; margin-bottom:8px;">🍦</div>
+          <h3 style="font-size:16px; color:var(--text-dark);">Йогурты</h3>
+          <p style="font-size:13px; color:var(--text-muted);">Классические, греческие, с добавками</p>
+        </a>
+        <a href="#" style="text-decoration:none; color:inherit; background:#fff; border-radius:16px; padding:28px; text-align:center; border:1px solid var(--border-color); transition: transform 0.2s, box-shadow 0.2s;">
+          <div style="font-size:48px; margin-bottom:8px;">🧈</div>
+          <h3 style="font-size:16px; color:var(--text-dark);">Масло и сливки</h3>
+          <p style="font-size:13px; color:var(--text-muted);">Сливочное масло, топлёное масло, сливки</p>
+        </a>
+        <a href="#" style="text-decoration:none; color:inherit; background:#fff; border-radius:16px; padding:28px; text-align:center; border:1px solid var(--border-color); transition: transform 0.2s, box-shadow 0.2s;">
+          <div style="font-size:48px; margin-bottom:8px;">🧀</div>
+          <h3 style="font-size:16px; color:var(--text-dark);">Сыры</h3>
+          <p style="font-size:13px; color:var(--text-muted);">Твёрдые, полутвёрдые, рассольные</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- ===== МЕРОПРИЯТИЯ ===== -->
+    <section style="padding:60px 72px;">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; margin-bottom:8px;">
+        <span class="label">Мероприятия</span>
+        <a href="events.html" style="color:var(--primary); font-weight:600;">Все мероприятия →</a>
+      </div>
+      <h2 style="font-size:34px;">Предстоящие события</h2>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:28px;">
+        <div style="display:flex; gap:20px; background:#fff; border-radius:16px; padding:24px; border:1px solid var(--border-color);">
+          <div style="flex-shrink:0; background:var(--primary); color:#fff; border-radius:12px; padding:12px 16px; text-align:center; min-width:70px;">
+            <div style="font-size:22px; font-weight:700;">25</div>
+            <div style="font-size:12px;">ИЮЛ</div>
+          </div>
+          <div>
+            <h3 style="font-size:18px; margin:0 0 4px;">Вебинар: Современные методы контроля качества</h3>
+            <p style="font-size:14px; color:var(--text-muted); margin:0;">Онлайн-семинар с участием ведущих экспертов BSL R&D Center.</p>
+            <a href="#" style="color:var(--primary); font-weight:600; font-size:14px; display:inline-block; margin-top:8px;">Подробнее →</a>
+          </div>
+        </div>
+        <div style="display:flex; gap:20px; background:#fff; border-radius:16px; padding:24px; border:1px solid var(--border-color);">
+          <div style="flex-shrink:0; background:var(--primary); color:#fff; border-radius:12px; padding:12px 16px; text-align:center; min-width:70px;">
+            <div style="font-size:22px; font-weight:700;">5</div>
+            <div style="font-size:12px;">АВГ</div>
+          </div>
+          <div>
+            <h3 style="font-size:18px; margin:0 0 4px;">День открытых дверей в лабораториях BSL</h3>
+            <p style="font-size:14px; color:var(--text-muted); margin:0;">Экскурсия по научно-исследовательскому центру для партнёров.</p>
+            <a href="#" style="color:var(--primary); font-weight:600; font-size:14px; display:inline-block; margin-top:8px;">Подробнее →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ПАРТНЁРЫ ===== -->
+    <section style="padding:60px 72px; background:var(--bg-light); text-align:center;">
+      <span class="label">Партнёры</span>
+      <h2 style="font-size:34px;">Компании группы BSL</h2>
+      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:24px; margin-top:28px; align-items:center;">
+        <div style="background:#fff; border-radius:16px; padding:24px; border:1px solid var(--border-color); font-weight:600; color:var(--primary);">BSL Dairy</div>
+        <div style="background:#fff; border-radius:16px; padding:24px; border:1px solid var(--border-color); font-weight:600; color:var(--primary);">BSL Agro</div>
+        <div style="background:#fff; border-radius:16px; padding:24px; border:1px solid var(--border-color); font-weight:600; color:var(--primary);">BSL Logistics</div>
+        <div style="background:#fff; border-radius:16px; padding:24px; border:1px solid var(--border-color); font-weight:600; color:var(--primary);">BSL Research</div>
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section style="padding:60px 72px;">
+      <div class="cta" style="display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center;">
+        <div>
+          <span class="label" style="color:rgba(255,255,255,0.7);">Подписка</span>
+          <h2 style="color:#fff; font-size:30px;">Будьте в курсе новостей</h2>
+          <p style="color:rgba(255,255,255,0.8);">Подпишитесь на нашу рассылку и получайте актуальную информацию о событиях, исследованиях и новых продуктах.</p>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          <input type="email" placeholder="Ваш email" style="height:52px; border-radius:8px; border:1px solid rgba(255,255,255,0.2); background:rgba(255,255,255,0.12); padding:0 18px; font-size:16px; color:#fff;">
+          <a class="btn" href="#" onclick="alert('Спасибо! Вы подписаны на рассылку.'); return false;" style="background:var(--accent); border-color:var(--accent); color:var(--text-dark); text-align:center;">Подписаться</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <section class="footer" style="display:grid; grid-template-columns:1.2fr repeat(4,1fr); gap:32px; padding:48px 72px; border-bottom:none;">
+      <div>
+        <strong style="font-size:18px;">BSL Dairy Products</strong>
+        <p style="font-size:14px; color:#b0c0d0; max-width:300px;">Научно-исследовательский центр в области молочной промышленности.</p>
+        <p style="font-size:13px; margin-top:8px;">+7 (495) 123-45-67<br>info@chinadairy.ru</p>
+      </div>
+      <div>
+        <strong>Информация</strong>
+        <p><a href="about.html">О центре</a><br><a href="news.html">Новости</a><br><a href="catalog.html">Каталог</a><br><a href="events.html">Мероприятия</a></p>
+      </div>
+      <div>
+        <strong>Продукция</strong>
+        <p><a href="#">Молоко</a><br><a href="#">Йогурты</a><br><a href="#">Масло</a><br><a href="#">Сыры</a></p>
+      </div>
+      <div>
+        <strong>Документы</strong>
+        <p><a href="agreement.html">Согласие на обработку</a><br><a href="privacy-policy.html">Политика конфиденциальности</a></p>
+      </div>
+      <div>
+        <strong>Контакты</strong>
+        <p><a href="contacts.html">Связаться с нами</a><br>Telegram<br>WhatsApp</p>
+      </div>
+    </section>
+    <div style="background:#1a2634; border-top:1px solid #2a3a4a; padding:16px 72px; text-align:center; font-size:12px; color:#7a8a9a;">
+      © 2026 BSL Dairy Products R&D Center. Все права защищены.
+    </div>
+  </main>
+</body>
+</html>
