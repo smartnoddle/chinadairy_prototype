@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>События и мероприятия — BSL R&D | Китай-Россия</title>
+  <title>Мероприятия молочной отрасли — Китай и Россия | DairyInfo</title>
   <link rel="stylesheet" href="style.css">
   <style>
     /* ============================================================
-       СТИЛИ ДЛЯ СТРАНИЦЫ СОБЫТИЙ
+       СТИЛИ ДЛЯ СТРАНИЦЫ МЕРОПРИЯТИЙ
        ============================================================ */
     :root {
       --primary: #1a2a4a;
@@ -145,9 +145,8 @@
       display: inline-block;
       margin-bottom: 8px;
     }
-    .section-label .flag-icon { margin-right: 6px; }
 
-    section { padding: 56px 72px; border-bottom: 1px solid var(--border-color); }
+    section { padding: 48px 72px; border-bottom: 1px solid var(--border-color); }
 
     h2 {
       font-size: 32px;
@@ -157,6 +156,11 @@
       letter-spacing: -0.02em;
     }
     h2 .highlight { color: var(--china-red); }
+    h3 {
+      font-size: 18px;
+      color: var(--text-dark);
+      margin: 0 0 4px;
+    }
 
     /* ===== КАРТОЧКА СОБЫТИЯ ===== */
     .event-card {
@@ -177,12 +181,18 @@
 
     .event-card .date-box {
       flex-shrink: 0;
-      background: var(--china-red);
-      color: #fff;
       border-radius: 12px;
       padding: 12px 16px;
       text-align: center;
       min-width: 70px;
+    }
+    .event-card .date-box.china {
+      background: var(--china-red);
+      color: #fff;
+    }
+    .event-card .date-box.russia {
+      background: #0039a6;
+      color: #fff;
     }
     .event-card .date-box .day {
       font-size: 24px;
@@ -204,7 +214,7 @@
       border-radius: 12px;
       text-transform: uppercase;
       letter-spacing: 0.04em;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
     .event-card .event-body .tag.china {
       background: var(--china-red);
@@ -219,15 +229,10 @@
       color: var(--text-dark);
     }
 
-    .event-card .event-body h3 {
-      font-size: 18px;
-      color: var(--text-dark);
-      margin: 0 0 4px;
-    }
     .event-card .event-body p {
       font-size: 14px;
       color: var(--text-muted);
-      margin: 0 0 8px;
+      margin: 0 0 6px;
     }
     .event-card .event-body .meta {
       font-size: 13px;
@@ -244,7 +249,7 @@
     }
     .event-card .event-body .btn-event {
       display: inline-block;
-      margin-top: 10px;
+      margin-top: 8px;
       color: var(--china-red);
       font-weight: 600;
       font-size: 14px;
@@ -253,7 +258,7 @@
     }
     .event-card .event-body .btn-event:hover { color: var(--china-red-light); }
 
-    .event-grid { display: grid; grid-template-columns: 1fr; gap: 18px; margin-top: 24px; }
+    .event-grid { display: grid; grid-template-columns: 1fr; gap: 18px; margin-top: 20px; }
 
     /* ===== АРХИВ ===== */
     .archive-section {
@@ -265,6 +270,7 @@
     }
     .archive-section .event-card .date-box {
       background: var(--text-muted);
+      color: #fff;
     }
 
     .archive-toggle {
@@ -278,18 +284,38 @@
     }
     .archive-toggle a:hover { text-decoration: underline; }
 
-    /* ===== CTA ===== */
-    .cta-section {
+    /* ===== ЦЕННОСТЬ УЧАСТИЯ ===== */
+    .value-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 18px;
+      margin-top: 24px;
+    }
+    .value-item {
+      background: #fff;
+      border-radius: 16px;
+      padding: 24px;
+      border: 1px solid var(--border-color);
+      text-align: center;
+    }
+    .value-item .icon { font-size: 36px; display: block; margin-bottom: 8px; }
+    .value-item h4 { font-size: 16px; color: var(--text-dark); margin: 0 0 4px; }
+    .value-item p { font-size: 13px; color: var(--text-muted); margin: 0; }
+
+    /* ===== ПОДПИСКА ===== */
+    .subscribe-section {
       background: var(--primary);
       color: #fff;
       border-radius: 20px;
-      padding: 48px 56px;
-      margin-top: 0;
-      border-bottom: none;
+      padding: 40px 56px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
     }
-    .cta-section h2 { color: #fff; }
-    .cta-section p { color: rgba(255,255,255,0.8); }
-    .cta-section .btn {
+    .subscribe-section h2 { color: #fff; font-size: 26px; }
+    .subscribe-section p { color: rgba(255,255,255,0.8); }
+    .subscribe-section .btn {
       background: var(--china-red);
       color: #fff;
       border: none;
@@ -300,8 +326,21 @@
       text-decoration: none;
       display: inline-block;
       transition: background .2s;
+      text-align: center;
     }
-    .cta-section .btn:hover { background: var(--china-red-light); }
+    .subscribe-section .btn:hover { background: var(--china-red-light); }
+    .subscribe-section input {
+      height: 48px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.1);
+      padding: 0 18px;
+      color: #fff;
+      font-size: 15px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .subscribe-section input::placeholder { color: rgba(255,255,255,0.5); }
 
     /* ===== ФУТЕР ===== */
     .footer {
@@ -316,128 +355,99 @@
     .footer strong { color: #fff; display: block; margin-bottom: 12px; }
     .footer a { color: #b0c0d0; text-decoration: none; font-size: 14px; line-height: 1.8; }
     .footer a:hover { color: #fff; }
-    .footer .china-contact { color: var(--accent); font-weight: 600; }
 
     /* ===== АДАПТИВ ===== */
     @media (max-width: 1180px) {
       .topbar { padding: 0 28px; }
-      section { padding: 40px 28px; }
-      .hero-events { padding: 32px 28px; }
-      .hero-events h1 { font-size: 32px; }
+      section { padding: 36px 28px; }
+      .hero-events { padding: 40px 28px; }
+      .hero-events h1 { font-size: 34px; }
+      .value-grid { grid-template-columns: 1fr 1fr; }
       .footer { grid-template-columns: 1fr 1fr; padding: 32px 28px; }
+      .subscribe-section { grid-template-columns: 1fr; padding: 32px 28px; }
     }
     @media (max-width: 700px) {
       .topbar { height: 70px; padding: 0 16px; }
       .nav { display: none; }
-      .event-card {
-        flex-direction: column;
-        align-items: stretch;
-      }
+      .event-card { flex-direction: column; align-items: stretch; }
       .event-card .date-box { align-self: flex-start; }
+      .value-grid { grid-template-columns: 1fr; }
       .hero-events h1 { font-size: 26px; }
       .footer { grid-template-columns: 1fr; }
-      .cta-section { padding: 28px 20px; }
-      .cta-section .cta-grid { grid-template-columns: 1fr; }
+      .subscribe-section { padding: 24px 20px; }
     }
   </style>
 </head>
 <body>
   <main class="page">
 
-    <!-- ============================================================ -->
-    <!-- HEADER -->
-    <!-- ============================================================ -->
+    <!-- ===== HEADER ===== -->
     <header class="topbar">
       <a class="brand" href="index.html">
-        <span class="flag">🇨🇳</span>
-        BSL<span>R&D</span>
+        <span class="flag">🥛</span>
+        Dairy<span>Info</span>
         <span class="sub">China · Russia</span>
       </a>
       <nav class="nav">
         <a href="index.html">Главная</a>
+        <a href="reviews.html">Обзоры</a>
         <a href="news.html">Новости</a>
-        <a href="catalog.html">Оборудование</a>
-        <a class="active" href="events.html">События</a>
-        <a href="about.html">О компании</a>
+        <a class="active" href="events.html">Мероприятия</a>
+        <a href="about.html">О ресурсе</a>
         <a href="contacts.html">Контакты</a>
-        <a href="contacts.html">Связаться</a>
       </nav>
     </header>
 
-    <!-- ============================================================ -->
-    <!-- HERO -->
-    <!-- ============================================================ -->
+    <!-- ===== HERO ===== -->
     <section class="hero-events">
-      <span class="label">🇨🇳🇷🇺 События</span>
+      <span class="label">📅 Мероприятия</span>
       <h1>
-        Где встретиться: <span class="highlight">отраслевые события в России и Китае</span>
+        Отраслевые события <span class="highlight">в Китае и России</span>
       </h1>
       <p>
-        Выставки, конференции, вебинары и дни открытых дверей — присоединяйтесь
-        к мероприятиям BSL R&D и партнёров. Встречаемся в Китае и России.
+        Выставки, конференции, семинары и вебинары для производителей
+        и переработчиков молочной продукции. Встречаемся в Китае и России.
       </p>
     </section>
 
-    <!-- ============================================================ -->
-    <!-- ПРЕДСТОЯЩИЕ СОБЫТИЯ -->
-    <!-- ============================================================ -->
+    <!-- ===== ПРЕДСТОЯЩИЕ СОБЫТИЯ ===== -->
     <section>
-      <span class="section-label"><span class="flag-icon">📅</span> Предстоящие</span>
+      <span class="section-label">📅 Предстоящие</span>
       <h2>
         Ближайшие события <span class="highlight">в Китае и России</span>
       </h2>
       <p style="color:var(--text-muted); max-width:700px;">
-        Приглашаем производителей, технологов и руководителей заводов на наши
-        мероприятия. Участие бесплатное, регистрация обязательна.
+        Приглашаем производителей, технологов и руководителей заводов на
+        отраслевые мероприятия. Участие бесплатное, регистрация обязательна.
       </p>
 
       <div class="event-grid">
-        <!-- Событие 1 -->
-        <div class="event-card">
-          <div class="date-box">
-            <div class="day">25</div>
-            <div class="month">Июл</div>
-          </div>
-          <div class="event-body">
-            <span class="tag online">💻 Онлайн</span>
-            <h3>Вебинар: Китайский опыт для российских производителей</h3>
-            <p>
-              Как китайские заводы управляют качеством молочной продукции.
-              Практические кейсы, стандарты, цифровые решения.
-            </p>
-            <div class="meta">
-              <span class="location">🕐 14:00–16:00 (МСК)</span>
-              <span class="location">📍 Онлайн (Яндекс.Телемост)</span>
-            </div>
-            <a href="#" class="btn-event">Зарегистрироваться →</a>
-          </div>
-        </div>
 
-        <!-- Событие 2 -->
+        <!-- Событие 1: China Dairy Expo -->
         <div class="event-card">
-          <div class="date-box">
-            <div class="day">5</div>
-            <div class="month">Авг</div>
+          <div class="date-box china">
+            <div class="day">8</div>
+            <div class="month">Окт</div>
           </div>
           <div class="event-body">
             <span class="tag china">🇨🇳 Китай</span>
-            <h3>День открытых дверей в лабораториях BSL в Шанхае</h3>
+            <h3>China Dairy Expo 2026</h3>
             <p>
-              Экскурсия по научно-исследовательскому центру BSL в Шанхае.
-              Демонстрация оборудования, встречи с китайскими технологами.
-              Онлайн-трансляция для участников из России.
+              Крупнейшая международная выставка молочной отрасли в Китае.
+              Свыше 500 участников из 30 стран. Демонстрация оборудования,
+              технологий, ингредиентов и готовой продукции.
             </p>
             <div class="meta">
-              <span class="location">🕐 10:00–17:00 (Шанхай)</span>
-              <span class="location">📍 Шанхай, Китай + Онлайн</span>
+              <span class="location">📍 Пекин, Китайский международный выставочный центр</span>
+              <span class="location">🕐 10:00–18:00</span>
             </div>
-            <a href="#" class="btn-event">Зарегистрироваться →</a>
+            <a href="#" class="btn-event">Подробнее о выставке →</a>
           </div>
         </div>
 
-        <!-- Событие 3 -->
+        <!-- Событие 2: Конференция в Москве -->
         <div class="event-card">
-          <div class="date-box">
+          <div class="date-box russia">
             <div class="day">15</div>
             <div class="month">Сен</div>
           </div>
@@ -445,51 +455,70 @@
             <span class="tag russia">🇷🇺 Россия</span>
             <h3>Конференция «Инновации в молочной промышленности 2026»</h3>
             <p>
-              Крупнейшее отраслевое событие года с участием BSL R&D.
-              Китайские технологии для российских производителей — доклады, стенды,
-              переговоры, нетворкинг.
+              Крупнейшее отраслевое событие года с участием ведущих экспертов.
+              Доклады о китайских технологиях, оборудовании и трендах рынка.
             </p>
             <div class="meta">
-              <span class="location">🕐 09:30–18:00 (МСК)</span>
               <span class="location">📍 Москва, МВЦ «Крокус Экспо»</span>
+              <span class="location">🕐 09:30–18:00</span>
+            </div>
+            <a href="#" class="btn-event">Подробнее о конференции →</a>
+          </div>
+        </div>
+
+        <!-- Событие 3: Вебинар -->
+        <div class="event-card">
+          <div class="date-box china">
+            <div class="day">12</div>
+            <div class="month">Сен</div>
+          </div>
+          <div class="event-body">
+            <span class="tag online">💻 Онлайн</span>
+            <h3>Вебинар: Китайский рынок молочной продукции — возможности для России</h3>
+            <p>
+              Аналитика китайского рынка молочной продукции: стандарты,
+              требования, логистика, перспективные ниши для российского экспорта.
+            </p>
+            <div class="meta">
+              <span class="location">📍 Онлайн (Яндекс.Телемост)</span>
+              <span class="location">🕐 14:00–16:00 (МСК)</span>
             </div>
             <a href="#" class="btn-event">Зарегистрироваться →</a>
           </div>
         </div>
 
-        <!-- Событие 4 -->
+        <!-- Событие 4: День открытых дверей -->
         <div class="event-card">
-          <div class="date-box">
-            <div class="day">8</div>
-            <div class="month">Окт</div>
+          <div class="date-box russia">
+            <div class="day">5</div>
+            <div class="month">Авг</div>
           </div>
           <div class="event-body">
-            <span class="tag china">🇨🇳 Китай</span>
-            <h3>Международная выставка China Dairy Expo</h3>
+            <span class="tag russia">🇷🇺 Россия</span>
+            <h3>День открытых дверей в лабораторном центре</h3>
             <p>
-              Крупнейшая выставка молочной отрасли в Китае. BSL R&D представляет
-              оборудование и технологии для российского рынка.
+              Экскурсия по лабораторному центру, демонстрация китайского
+              оборудования для контроля качества молочной продукции.
             </p>
             <div class="meta">
-              <span class="location">🕐 10:00–18:00 (Пекин)</span>
-              <span class="location">📍 Пекин, Китай</span>
+              <span class="location">📍 Москва, ул. Академическая, д. 10</span>
+              <span class="location">🕐 10:00–17:00</span>
             </div>
-            <a href="#" class="btn-event">Подробнее →</a>
+            <a href="#" class="btn-event">Записаться →</a>
           </div>
         </div>
+
       </div>
     </section>
 
-    <!-- ============================================================ -->
-    <!-- АРХИВ ПРОШЕДШИХ -->
-    <!-- ============================================================ -->
+    <!-- ===== АРХИВ ПРОШЕДШИХ ===== -->
     <section class="archive-section">
-      <span class="section-label"><span class="flag-icon">📁</span> Архив</span>
+      <span class="section-label">📁 Архив</span>
       <h2>
         Прошедшие события <span class="highlight">— материалы доступны</span>
       </h2>
       <p style="color:var(--text-muted); max-width:700px;">
-        Записи вебинаров, презентации и фотоотчёты с мероприятий BSL R&D.
+        Записи вебинаров, презентации и фотоотчёты с мероприятий.
       </p>
 
       <div class="event-grid">
@@ -500,7 +529,7 @@
           </div>
           <div class="event-body">
             <span class="tag online">💻 Онлайн</span>
-            <h3>Вебинар: Китайские стандарты качества для экспортёров</h3>
+            <h3>Вебинар: Китайские стандарты качества для молочной продукции</h3>
             <p>Запись вебинара и презентация доступны по ссылке.</p>
             <div class="meta">
               <span class="location">📎 Материалы доступны</span>
@@ -516,8 +545,8 @@
           </div>
           <div class="event-body">
             <span class="tag russia">🇷🇺 Россия</span>
-            <h3>Семинар по пищевой безопасности (НАССР) с китайскими экспертами</h3>
-            <p>Обучающий семинар для российских производителей.</p>
+            <h3>Семинар по пищевой безопасности с китайскими экспертами</h3>
+            <p>Презентации и материалы семинара доступны для скачивания.</p>
             <div class="meta">
               <span class="location">📎 Презентации доступны</span>
             </div>
@@ -527,13 +556,13 @@
 
         <div class="event-card">
           <div class="date-box">
-            <div class="day">5</div>
-            <div class="month">Май</div>
+            <div class="day">15</div>
+            <div class="month">Апр</div>
           </div>
           <div class="event-body">
             <span class="tag china">🇨🇳 Китай</span>
-            <h3>Онлайн-экскурсия по заводу в провинции Цзянсу</h3>
-            <p>Виртуальный тур по китайскому заводу-партнёру BSL R&D.</p>
+            <h3>Онлайн-экскурсия по заводу в провинции Хэбэй</h3>
+            <p>Виртуальный тур по китайскому заводу-производителю оборудования.</p>
             <div class="meta">
               <span class="location">📎 Запись доступна</span>
             </div>
@@ -547,98 +576,89 @@
       </div>
     </section>
 
-    <!-- ============================================================ -->
-    <!-- ПОЧЕМУ СТОИТ ПРИСУТСТВОВАТЬ -->
-    <!-- ============================================================ -->
+    <!-- ===== ЦЕННОСТЬ УЧАСТИЯ ===== -->
     <section>
-      <span class="section-label"><span class="flag-icon">🤝</span> Зачем участвовать</span>
+      <span class="section-label">🤝 Зачем участвовать</span>
       <h2>
         Что вы получите <span class="highlight">на наших мероприятиях</span>
       </h2>
-      <div style="display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:18px; margin-top:24px;">
-        <div style="background:#fff; border-radius:16px; padding:24px; border:1px solid var(--border-color); text-align:center;">
-          <div style="font-size:36px; margin-bottom:8px;">🔬</div>
-          <h3 style="font-size:16px;">Китайские технологии</h3>
-          <p style="font-size:13px; color:var(--text-muted);">Узнайте о передовых китайских решениях для молочной отрасли.</p>
+
+      <div class="value-grid">
+        <div class="value-item">
+          <span class="icon">🔬</span>
+          <h4>Новые технологии</h4>
+          <p>Узнайте о передовых китайских решениях для молочной отрасли</p>
         </div>
-        <div style="background:#fff; border-radius:16px; padding:24px; border:1px solid var(--border-color); text-align:center;">
-          <div style="font-size:36px; margin-bottom:8px;">🤝</div>
-          <h3 style="font-size:16px;">Прямые контакты</h3>
-          <p style="font-size:13px; color:var(--text-muted);">Встреча с инженерами и технологами из Китая и России.</p>
+        <div class="value-item">
+          <span class="icon">🤝</span>
+          <h4>Деловые контакты</h4>
+          <p>Встречи с экспертами из Китая и России, поиск партнёров</p>
         </div>
-        <div style="background:#fff; border-radius:16px; padding:24px; border:1px solid var(--border-color); text-align:center;">
-          <div style="font-size:36px; margin-bottom:8px;">📦</div>
-          <h3 style="font-size:16px;">Реальные кейсы</h3>
-          <p style="font-size:13px; color:var(--text-muted);">Примеры внедрения китайского оборудования на российских заводах.</p>
+        <div class="value-item">
+          <span class="icon">📦</span>
+          <h4>Реальные кейсы</h4>
+          <p>Примеры внедрения китайского оборудования на российских заводах</p>
         </div>
-        <div style="background:#fff; border-radius:16px; padding:24px; border:1px solid var(--border-color); text-align:center;">
-          <div style="font-size:36px; margin-bottom:8px;">📄</div>
-          <h3 style="font-size:16px;">Документы и стандарты</h3>
-          <p style="font-size:13px; color:var(--text-muted);">Информация о сертификации, стандартах КНР и РФ, законодательстве.</p>
+        <div class="value-item">
+          <span class="icon">📄</span>
+          <h4>Документы и стандарты</h4>
+          <p>Информация о сертификации, стандартах КНР и РФ</p>
         </div>
       </div>
     </section>
 
-    <!-- ============================================================ -->
-    <!-- CTA -->
-    <!-- ============================================================ -->
-    <section style="padding:0 72px 56px;">
-      <div class="cta-section" style="display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center;">
+    <!-- ===== ПОДПИСКА ===== -->
+    <section style="padding:0 72px 48px;">
+      <div class="subscribe-section">
         <div>
-          <span class="section-label" style="color:rgba(255,255,255,0.5);">🇨🇳 Организовать встречу</span>
-          <h2 style="color:#fff; font-size:28px;">Хотите встретиться с командой BSL R&D?</h2>
+          <span class="section-label" style="color:rgba(255,255,255,0.5);">✉️ Подписка</span>
+          <h2 style="color:#fff; font-size:26px;">Получайте анонсы мероприятий</h2>
           <p style="color:rgba(255,255,255,0.8);">
-            Расскажите, где и когда вам удобно встретиться — мы приедем к вам
-            на завод или организуем онлайн-встречу с нашими экспертами в Китае.
+            Подпишитесь на рассылку и первыми узнавайте о предстоящих
+            выставках, конференциях и вебинарах в Китае и России.
           </p>
-          <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:16px;">
-            <span style="background:rgba(255,255,255,0.08); padding:6px 16px; border-radius:20px; font-size:13px; color:rgba(255,255,255,0.6);">📞 +86 136 0125 3137</span>
-            <span style="background:rgba(255,255,255,0.08); padding:6px 16px; border-radius:20px; font-size:13px; color:rgba(255,255,255,0.6);">✉️ info@chinadairy.ru</span>
-          </div>
         </div>
         <div style="display:flex; flex-direction:column; gap:12px;">
-          <input type="text" placeholder="Ваше имя" style="height:48px; border-radius:8px; border:1px solid rgba(255,255,255,0.2); background:rgba(255,255,255,0.1); padding:0 18px; color:#fff; font-size:15px;">
-          <input type="tel" placeholder="Телефон" style="height:48px; border-radius:8px; border:1px solid rgba(255,255,255,0.2); background:rgba(255,255,255,0.1); padding:0 18px; color:#fff; font-size:15px;">
-          <input type="text" placeholder="Где и когда встретиться?" style="height:48px; border-radius:8px; border:1px solid rgba(255,255,255,0.2); background:rgba(255,255,255,0.1); padding:0 18px; color:#fff; font-size:15px;">
-          <a href="#" class="btn" style="background:var(--china-red); color:#fff; border:none; padding:14px; border-radius:8px; font-weight:600; text-align:center; text-decoration:none;">Договориться о встрече →</a>
+          <input type="email" placeholder="Ваш email">
+          <div style="display:flex; gap:12px;">
+            <input type="checkbox" id="agree" style="width:18px; height:18px; accent-color:var(--china-red); margin-top:2px;">
+            <label for="agree" style="font-size:13px; color:rgba(255,255,255,0.6);">Я согласен на обработку персональных данных</label>
+          </div>
+          <a href="#" class="btn" onclick="alert('Спасибо! Вы подписаны на рассылку.'); return false;">Подписаться →</a>
         </div>
       </div>
     </section>
 
-    <!-- ============================================================ -->
-    <!-- ФУТЕР -->
-    <!-- ============================================================ -->
+    <!-- ===== ФУТЕР ===== -->
     <section class="footer" style="border-bottom:none;">
       <div>
-        <strong style="font-size:18px;">🇨🇳 BSL R&D</strong>
+        <strong style="font-size:18px;">🥛 DairyInfo</strong>
         <p style="font-size:14px; color:#b0c0d0; max-width:300px;">
-          Китайские технологии для российского молочного рынка.
+          Информационный ресурс о китайском оборудовании и технологиях для молочной промышленности.
         </p>
         <p style="font-size:13px; margin-top:8px; color:#b0c0d0;">
-          <span class="china-contact">🇨🇳 Шанхай:</span> +86 136 0125 3137<br>
-          <span class="china-contact">🇷🇺 Москва:</span> +7 (495) 123-45-67<br>
-          ✉️ info@chinadairy.ru
+          ✉️ info@dairyinfo.ru
         </p>
       </div>
       <div>
-        <strong>О компании</strong>
-        <p><a href="about.html">О BSL R&D</a><br><a href="about.html#projects">Проекты в РФ</a><br><a href="about.html#partners">Партнёры в Китае</a></p>
-      </div>
-      <div>
-        <strong>Оборудование</strong>
-        <p><a href="catalog.html">Технологическое</a><br><a href="catalog.html">Лабораторное</a><br><a href="catalog.html">Инжиниринг</a></p>
+        <strong>Обзоры</strong>
+        <p><a href="reviews.html">Линии розлива</a><br><a href="reviews.html">Пастеризаторы</a><br><a href="reviews.html">Анализаторы</a><br><a href="reviews.html">Гомогенизаторы</a></p>
       </div>
       <div>
         <strong>Информация</strong>
-        <p><a href="news.html">Новости</a><br><a href="events.html">События</a><br><a href="blog.html">Статьи</a></p>
+        <p><a href="news.html">Новости</a><br><a href="events.html">Мероприятия</a><br><a href="about.html">О ресурсе</a></p>
       </div>
       <div>
         <strong>Документы</strong>
         <p><a href="agreement.html">Согласие на обработку</a><br><a href="privacy-policy.html">Политика конфиденциальности</a></p>
       </div>
+      <div>
+        <strong>Контакты</strong>
+        <p><a href="contacts.html">Связаться с нами</a></p>
+      </div>
     </section>
     <div style="background:#1a2634; border-top:1px solid #2a3a4a; padding:16px 72px; text-align:center; font-size:12px; color:#7a8a9a;">
-      © 2026 BSL R&D. 🇨🇳 Шанхай · 🇷🇺 Москва
+      © 2026 DairyInfo — информационный ресурс о китайском оборудовании для молочной промышленности.
     </div>
 
   </main>
