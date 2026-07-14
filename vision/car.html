@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hyundai Santa Fe 2025 — карточка автомобиля | Vision Trade Motors</title>
+
+    <!-- Google Fonts (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet" />
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+    <style>
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #fcf9f6;
+            --bg-secondary: #f5f0eb;
+            --bg-card: #ffffff;
+            --bg-input: #f1ede8;
+            --border-gold: #b8953a;
+            --gold-light: #e8d08a;
+            --gold: #c9a84c;
+            --gold-dark: #9f8033;
+            --red: #b22222;
+            --red-dark: #8b1a1a;
+            --text-primary: #1e1a16;
+            --text-secondary: #4d443d;
+            --text-muted: #8a7e74;
+            --shadow-gold: 0 4px 30px rgba(201, 168, 76, .10);
+            --shadow-red: 0 4px 30px rgba(178, 34, 34, .08);
+            --radius: 20px;
+            --radius-sm: 12px;
+            --transition: .35s cubic-bezier(.25, .46, .45, .94);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            font-weight: 400;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .semi {
+            font-weight: 600;
+        }
+        .medium {
+            font-weight: 500;
+        }
+        .light {
+            font-weight: 300;
+        }
+
+        /* ===== GOLD SHIMMER ===== */
+        @keyframes shimmer {
+            0% {
+                background-position: -200% center;
+            }
+            100% {
+                background-position: 200% center;
+            }
+        }
+
+        .gold-shimmer {
+            background: linear-gradient(90deg,
+                    var(--gold-dark) 0%,
+                    var(--gold-light) 30%,
+                    var(--gold) 50%,
+                    var(--gold-light) 70%,
+                    var(--gold-dark) 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmer 5s linear infinite;
+        }
+
+        .gold-border {
+            border: 1px solid rgba(201, 168, 76, .20);
+            box-shadow: var(--shadow-gold);
+        }
+        .gold-border:hover {
+            border-color: var(--gold);
+            box-shadow: 0 4px 40px rgba(201, 168, 76, .15);
+        }
+
+        /* ===== CONTAINER ===== */
+        .container {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ===== HEADER (белый фон) ===== */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: #ffffff;
+            border-bottom: 1px solid rgba(201, 168, 76, .12);
+            transition: var(--transition);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, .02);
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 76px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 42px;
+            width: auto;
+            display: block;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: .02em;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: var(--transition);
+        }
+        .nav a:hover {
+            color: var(--text-primary);
+        }
+        .nav a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: linear-gradient(145deg, var(--red), var(--red-dark));
+            color: #fff !important;
+            padding: 8px 22px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 13px;
+            letter-spacing: .04em;
+            border: 1px solid rgba(255, 255, 255, .08);
+            transition: var(--transition);
+        }
+        .nav-cta::after {
+            display: none !important;
+        }
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-red);
+            background: linear-gradient(145deg, #cc2828, var(--red-dark));
+        }
+        .nav-cta i {
+            margin-right: 8px;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 26px;
+            cursor: pointer;
+        }
+
+        /* ===== BREADCRUMBS ===== */
+        .breadcrumbs {
+            padding: 100px 0 20px;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+        .breadcrumbs a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        .breadcrumbs a:hover {
+            color: var(--gold-dark);
+        }
+        .breadcrumbs span {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        /* ===== CAR DETAIL ===== */
+        .car-detail {
+            padding-bottom: 80px;
+        }
+
+        .car-detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+        }
+
+        /* ===== GALLERY ===== */
+        .gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .gallery-main {
+            border-radius: var(--radius);
+            overflow: hidden;
+            background: #f0ece6;
+            aspect-ratio: 16/10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(201, 168, 76, .06);
+        }
+        .gallery-main img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-thumbs {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+        .gallery-thumbs .thumb {
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            aspect-ratio: 16/10;
+            background: #f0ece6;
+            border: 2px solid transparent;
+            transition: var(--transition);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .gallery-thumbs .thumb:hover {
+            border-color: var(--gold);
+        }
+        .gallery-thumbs .thumb.active {
+            border-color: var(--gold-dark);
+        }
+        .gallery-thumbs .thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* ===== INFO ===== */
+        .car-info {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .car-title {
+            font-size: 32px;
+            font-weight: 600;
+            letter-spacing: -.02em;
+            line-height: 1.1;
+        }
+        .car-title .gold-shimmer {
+            display: inline-block;
+        }
+
+        .car-badge-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .car-badge {
+            display: inline-block;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+            background: rgba(201, 168, 76, .08);
+            color: var(--gold-dark);
+            border: 1px solid rgba(201, 168, 76, .06);
+        }
+        .car-badge.red {
+            background: rgba(178, 34, 34, .06);
+            color: var(--red);
+            border-color: rgba(178, 34, 34, .06);
+        }
+
+        .car-specs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px 24px;
+            background: var(--bg-card);
+            padding: 20px 24px;
+            border-radius: var(--radius-sm);
+            border: 1px solid rgba(201, 168, 76, .04);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, .02);
+        }
+        .car-specs .spec-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, .02);
+        }
+        .car-specs .spec-item:last-child {
+            border-bottom: none;
+        }
+        .car-specs .spec-label {
+            font-size: 14px;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+        .car-specs .spec-value {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        /* ===== PRICE CALC ===== */
+        .price-calc {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            padding: 28px 32px;
+            border: 1px solid rgba(201, 168, 76, .08);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .price-calc .calc-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .price-calc .calc-title i {
+            color: var(--gold-dark);
+        }
+
+        .calc-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, .02);
+            font-size: 15px;
+        }
+        .calc-row:last-child {
+            border-bottom: none;
+        }
+        .calc-row .label {
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+        .calc-row .value {
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+        .calc-row .value.gold {
+            color: var(--gold-dark);
+            font-weight: 600;
+        }
+        .calc-row.total {
+            padding-top: 16px;
+            margin-top: 8px;
+            border-top: 2px solid rgba(201, 168, 76, .15);
+            font-size: 20px;
+        }
+        .calc-row.total .label {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        .calc-row.total .value {
+            font-weight: 700;
+            color: var(--gold-dark);
+            font-size: 24px;
+        }
+
+        .calc-note {
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--text-muted);
+            font-weight: 400;
+            background: rgba(201, 168, 76, .04);
+            padding: 12px 16px;
+            border-radius: var(--radius-sm);
+            border: 1px solid rgba(201, 168, 76, .04);
+        }
+        .calc-note i {
+            margin-right: 8px;
+            color: var(--gold-dark);
+        }
+
+        /* ===== ACTIONS ===== */
+        .car-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 8px;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(145deg, var(--red), var(--red-dark));
+            color: #fff;
+            padding: 14px 36px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 15px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, .06);
+        }
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-red);
+            background: linear-gradient(145deg, #cc2828, var(--red-dark));
+        }
+
+        .btn-gold {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: transparent;
+            color: var(--gold-dark);
+            padding: 14px 36px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 15px;
+            border: 1px solid rgba(201, 168, 76, .30);
+            cursor: pointer;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        .btn-gold:hover {
+            background: rgba(201, 168, 76, .06);
+            border-color: var(--gold);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-gold);
+        }
+
+        /* ===== FOOTER (белый фон) ===== */
+        .footer {
+            padding: 48px 0 32px;
+            border-top: 1px solid rgba(201, 168, 76, .04);
+            background: #ffffff;
+        }
+        .footer-inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 32px;
+        }
+        .footer-brand .logo img {
+            height: 36px;
+        }
+        .footer-brand p {
+            font-size: 13px;
+            color: var(--text-muted);
+            font-weight: 400;
+            margin-top: 6px;
+            max-width: 260px;
+        }
+        .footer-links {
+            display: flex;
+            gap: 48px;
+            flex-wrap: wrap;
+        }
+        .footer-links-col h5 {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: .08em;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+        .footer-links-col a {
+            display: block;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 400;
+            padding: 4px 0;
+            transition: var(--transition);
+        }
+        .footer-links-col a:hover {
+            color: var(--gold-dark);
+        }
+        .footer-bottom {
+            margin-top: 32px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(0, 0, 0, .02);
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+            font-size: 12px;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .car-detail-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            .gallery-main {
+                aspect-ratio: 16/9;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav {
+                display: none;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .nav.open {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 76px;
+                left: 0;
+                right: 0;
+                background: #ffffff;
+                padding: 24px;
+                gap: 20px;
+                border-bottom: 1px solid rgba(201, 168, 76, .06);
+                box-shadow: 0 20px 40px rgba(0, 0, 0, .02);
+            }
+            .header-inner {
+                height: 64px;
+            }
+            .breadcrumbs {
+                padding-top: 80px;
+            }
+            .car-title {
+                font-size: 26px;
+            }
+            .car-specs {
+                grid-template-columns: 1fr;
+                padding: 16px 20px;
+            }
+            .price-calc {
+                padding: 20px 20px;
+            }
+            .calc-row.total .value {
+                font-size: 20px;
+            }
+            .car-actions {
+                flex-direction: column;
+            }
+            .car-actions .btn-primary,
+            .car-actions .btn-gold {
+                width: 100%;
+                justify-content: center;
+            }
+            .footer-inner {
+                flex-direction: column;
+            }
+            .footer-links {
+                gap: 32px;
+            }
+            .container {
+                padding: 0 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-thumbs {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 8px;
+            }
+            .car-title {
+                font-size: 22px;
+            }
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fade-up {
+            animation: fadeUp .8s ease forwards;
+        }
+        .delay-1 {
+            animation-delay: .1s;
+        }
+        .delay-2 {
+            animation-delay: .2s;
+        }
+        .delay-3 {
+            animation-delay: .3s;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== HEADER (белый фон) ===== -->
+    <header class="header" id="header">
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <img src="https://optim.tildacdn.com/tild3734-3433-4634-b965-663464653736/-/resize/264x/-/format/webp/hori.png.webp"
+                alt="Vision Trade Motors" />
+            </a>
+
+            <nav class="nav" id="nav">
+                <a href="#">Главная</a>
+                <a href="#">Каталог</a>
+                <a href="#">О компании</a>
+                <a href="#">Отзывы</a>
+                <a href="#">Контакты</a>
+                <a href="#" class="nav-cta"><i class="fab fa-telegram"></i> Связаться</a>
+            </nav>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Меню">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- ===== BREADCRUMBS ===== -->
+    <div class="breadcrumbs">
+        <div class="container">
+            <a href="#">Главная</a> / <a href="#">Каталог</a> / <a href="#">Hyundai</a> / <span>Santa Fe 2025</span>
+        </div>
+    </div>
+
+    <!-- ===== CAR DETAIL ===== -->
+    <section class="car-detail">
+        <div class="container">
+            <div class="car-detail-grid">
+
+                <!-- GALLERY -->
+                <div class="gallery animate-fade-up delay-1">
+                    <div class="gallery-main">
+                        <img src="https://optim.tildacdn.com/tild3434-6432-4734-a565-343836323434/-/resize/560x/-/format/webp/IMG_4315.JPG.webp"
+                        alt="Hyundai Santa Fe 2025" />
+                    </div>
+                    <div class="gallery-thumbs">
+                        <div class="thumb active">
+                            <img src="https://optim.tildacdn.com/tild3434-6432-4734-a565-343836323434/-/resize/560x/-/format/webp/IMG_4315.JPG.webp" alt="Фото 1" />
+                        </div>
+                        <div class="thumb">
+                            <img src="https://optim.tildacdn.com/tild6439-6636-4534-b864-336262323136/-/resize/560x/-/format/webp/IMG_4316.JPG.webp" alt="Фото 2" />
+                        </div>
+                        <div class="thumb">
+                            <img src="https://optim.tildacdn.com/tild3161-3437-4838-b765-383165343464/-/resize/560x/-/format/webp/IMG_4317.JPG.webp" alt="Фото 3" />
+                        </div>
+                        <div class="thumb">
+                            <img src="https://optim.tildacdn.com/tild3033-3233-4231-b832-383832393733/-/resize/560x/-/format/webp/IMG_4318.JPG.webp" alt="Фото 4" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- INFO -->
+                <div class="car-info animate-fade-up delay-2">
+
+                    <div>
+                        <div class="car-title">
+                            Hyundai Santa Fe <span class="gold-shimmer">2025</span>
+                        </div>
+                        <div class="car-badge-row" style="margin-top:8px;">
+                            <span class="car-badge red"><i class="fas fa-star"></i> Новое</span>
+                            <span class="car-badge"><i class="fas fa-check-circle"></i> В наличии</span>
+                            <span class="car-badge"><i class="fas fa-shield-alt"></i> Гарантия</span>
+                        </div>
+                    </div>
+
+                    <!-- Характеристики -->
+                    <div class="car-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">Год выпуска</span>
+                            <span class="spec-value">2025</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Пробег</span>
+                            <span class="spec-value">12 км</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Двигатель</span>
+                            <span class="spec-value">2.5 л / 281 л.с.</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Коробка передач</span>
+                            <span class="spec-value">Автомат (8 ступ.)</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Привод</span>
+                            <span class="spec-value">Полный</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Топливо</span>
+                            <span class="spec-value">Бензин</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Цвет</span>
+                            <span class="spec-value">Тёмно-серый металлик</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">VIN</span>
+                            <span class="spec-value">KMHS281B7PU123456</span>
+                        </div>
+                    </div>
+
+                    <!-- Калькулятор стоимости -->
+                    <div class="price-calc gold-border">
+                        <div class="calc-title">
+                            <i class="fas fa-calculator"></i> Расчёт стоимости «под ключ» до Владивостока
+                        </div>
+
+                        <div class="calc-row">
+                            <span class="label">Цена в Корее (Encar)</span>
+                            <span class="value">42 500 000 ₩</span>
+                        </div>
+                        <div class="calc-row">
+                            <span class="label">Доставка (море + страховка)</span>
+                            <span class="value">1 850 000 ₽</span>
+                        </div>
+                        <div class="calc-row">
+                            <span class="label">Таможенная пошлина</span>
+                            <span class="value">890 000 ₽</span>
+                        </div>
+                        <div class="calc-row">
+                            <span class="label">Акциз</span>
+                            <span class="value">124 000 ₽</span>
+                        </div>
+                        <div class="calc-row">
+                            <span class="label">НДС</span>
+                            <span class="value">312 000 ₽</span>
+                        </div>
+                        <div class="calc-row">
+                            <span class="label">Утилизационный сбор</span>
+                            <span class="value">52 000 ₽</span>
+                        </div>
+                        <div class="calc-row">
+                            <span class="label">Сертификация / СБКТС</span>
+                            <span class="value">45 000 ₽</span>
+                        </div>
+
+                        <div class="calc-row total">
+                            <span class="label">Итого <span style="font-weight:400;color:var(--text-muted);font-size:14px;">(под ключ)</span></span>
+                            <span class="value">4 990 000 ₽</span>
+                        </div>
+
+                        <div class="calc-note">
+                            <i class="fas fa-info-circle"></i>
+                            Курс ЦБ РФ: 1 ₩ = 0,075 ₽ (обновлено сегодня). Расчёт ориентировочный, итоговая цена может меняться при изменении курса и таможенных ставок.
+                        </div>
+                    </div>
+
+                    <!-- Кнопки -->
+                    <div class="car-actions">
+                        <a href="#" class="btn-primary">
+                            <i class="fab fa-telegram"></i> Отправить запрос
+                        </a>
+                        <a href="#" class="btn-gold">
+                            <i class="fas fa-phone-alt"></i> Позвонить
+                        </a>
+                        <a href="#" class="btn-gold" style="padding:14px 24px;">
+                            <i class="fas fa-heart"></i> В избранное
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER (белый фон) ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <img src="https://optim.tildacdn.com/tild3734-3433-4634-b965-663464653736/-/resize/264x/-/format/webp/hori.png.webp"
+                        alt="Vision Trade Motors" style="height:36px;" />
+                    </a>
+                    <p>Основанная в Корее торгово-экспортная компания. Помощь в подборе, оформлении и доставке авто в Россию.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-links-col">
+                        <h5>Навигация</h5>
+                        <a href="#">Главная</a>
+                        <a href="#">Каталог</a>
+                        <a href="#">О компании</a>
+                        <a href="#">Отзывы</a>
+                        <a href="#">Контакты</a>
+                    </div>
+                    <div class="footer-links-col">
+                        <h5>Контакты</h5>
+                        <a href="#"><i class="fab fa-telegram" style="width:18px;"></i> @noddle</a>
+                        <a href="#"><i class="fas fa-phone" style="width:18px;"></i> +82 1067793445</a>
+                        <a href="#"><i class="fas fa-envelope" style="width:18px;"></i> visiontrade2022@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2026 Vision Trade Motors. Все права защищены.</span>
+                <span>Маркетинг и дизайн — Артём Молчанов · Made on Tilda</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== MOBILE MENU TOGGLE ===== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggle = document.getElementById('menuToggle');
+            const nav = document.getElementById('nav');
+
+            toggle.addEventListener('click', function() {
+                nav.classList.toggle('open');
+                const icon = toggle.querySelector('i');
+                if (nav.classList.contains('open')) {
+                    icon.className = 'fas fa-times';
+                } else {
+                    icon.className = 'fas fa-bars';
+                }
+            });
+
+            nav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    nav.classList.remove('open');
+                    toggle.querySelector('i').className = 'fas fa-bars';
+                });
+            });
+
+            // Переключение активного превью
+            const thumbs = document.querySelectorAll('.gallery-thumbs .thumb');
+            const mainImg = document.querySelector('.gallery-main img');
+
+            thumbs.forEach(thumb => {
+                thumb.addEventListener('click', function() {
+                    thumbs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    const imgSrc = this.querySelector('img').src;
+                    mainImg.src = imgSrc;
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
