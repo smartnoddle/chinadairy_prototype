@@ -1,0 +1,2152 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Мещерский экстрим — квадро-прогулки и отдых в Мещёре</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,700;14..32,800;14..32,900&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <style>
+        /* ----- RESET & BASE ----- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Manrope', sans-serif;
+            background: #0b0a0a;
+            color: #f0ede8;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ----- GLOW TEXT (gold shimmer) ----- */
+        .glow-text {
+            background: linear-gradient(135deg, #f7c948 0%, #d98c2e 30%, #f7d48a 50%, #d98c2e 70%, #f7c948 100%);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmerGold 5s ease-in-out infinite;
+            display: inline-block;
+        }
+
+        @keyframes shimmerGold {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .glow-text-static {
+            background: linear-gradient(135deg, #f7c948, #d98c2e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* ----- BUTTONS ----- */
+        .btn-primary {
+            background: linear-gradient(135deg, #e8b13c, #c47d1a);
+            border: none;
+            padding: 16px 44px;
+            border-radius: 60px;
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: #0b0a0a;
+            letter-spacing: 0.5px;
+            box-shadow: 0 8px 30px rgba(196, 125, 26, 0.5);
+            transition: all 0.25s;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-family: 'Manrope', sans-serif;
+            border: 1px solid #f7d48a;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-primary:hover {
+            transform: scale(1.03);
+            box-shadow: 0 12px 40px rgba(196, 125, 26, 0.7);
+            background: linear-gradient(135deg, #f7c84a, #d48d20);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #c8a87c;
+            padding: 14px 40px;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #f0ede8;
+            transition: all 0.2s;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-family: 'Manrope', sans-serif;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-outline:hover {
+            background: #c8a87c20;
+            border-color: #f0dbb0;
+            transform: scale(1.02);
+        }
+
+        .btn-gold {
+            background: #e8b13c;
+            border: none;
+            padding: 14px 40px;
+            border-radius: 60px;
+            font-weight: 800;
+            font-size: 1rem;
+            color: #0b0a0a;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: 'Manrope', sans-serif;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-gold:hover {
+            background: #f7c84a;
+            transform: scale(1.02);
+        }
+
+        .btn-outline-gold {
+            background: transparent;
+            border: 2px solid #e8b13c;
+            padding: 12px 36px;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 1rem;
+            color: #f7d48a;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: 'Manrope', sans-serif;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-outline-gold:hover {
+            background: #e8b13c20;
+            transform: scale(1.02);
+        }
+
+        .btn-sm {
+            background: transparent;
+            border: 1.5px solid #c8a87c;
+            padding: 10px 28px;
+            border-radius: 40px;
+            color: #f0ede8;
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: 'Manrope', sans-serif;
+        }
+        .btn-sm:hover {
+            background: #c8a87c20;
+            border-color: #e8d5b0;
+        }
+
+        /* ----- HEADER ----- */
+        .header {
+            padding: 16px 0;
+            border-bottom: 1px solid #2a221b;
+            background: #0b0a0a;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        .logo-wrap {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            flex-shrink: 0;
+            border: 2px solid #e8b13c;
+        }
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .logo-text {
+            font-size: 1.3rem;
+            font-weight: 900;
+            color: #f7d48a;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+        }
+        .logo-text span {
+            font-weight: 400;
+            color: #8a7a6a;
+            font-size: 0.8rem;
+            display: block;
+        }
+        .header-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .header-nav a {
+            color: #bcb0a0;
+            text-decoration: none;
+            transition: 0.2s;
+            position: relative;
+        }
+        .header-nav a:hover {
+            color: #f7d48a;
+        }
+        .header-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #e8b13c;
+            transition: 0.3s;
+        }
+        .header-nav a:hover::after {
+            width: 100%;
+        }
+        .header-phone {
+            font-weight: 700;
+            color: #f7d48a;
+            font-size: 1.1rem;
+            white-space: nowrap;
+        }
+
+        /* ----- HERO (with season toggle + video) ----- */
+        .hero {
+            position: relative;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            background: #0b0a0a;
+            overflow: hidden;
+            padding: 40px 0 60px;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 20% 40%, rgba(80, 40, 10, 0.8) 0%, transparent 60%),
+                radial-gradient(circle at 80% 70%, rgba(30, 20, 10, 0.9) 0%, transparent 50%),
+                linear-gradient(135deg, #0a0806 0%, #1f170e 100%);
+            z-index: 0;
+        }
+        .hero-video-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            overflow: hidden;
+            opacity: 0.35;
+            transition: opacity 0.6s ease;
+        }
+        .hero-video-bg .season-summer { display: block; }
+        .hero-video-bg .season-winter { display: none; }
+        .hero.season-winter .hero-video-bg .season-summer { display: none; }
+        .hero.season-winter .hero-video-bg .season-winter { display: block; }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+
+        /* Hero Grid (текст + видео) */
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-text {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Season Toggle */
+        .season-toggle {
+            display: flex;
+            gap: 8px;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(8px);
+            border: 1px solid #c8a87c40;
+            border-radius: 60px;
+            padding: 6px;
+            margin-bottom: 24px;
+            width: fit-content;
+        }
+        .season-toggle button {
+            background: transparent;
+            border: none;
+            padding: 8px 24px;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: #8a7a6a;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Manrope', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .season-toggle button.active {
+            background: #e8b13c;
+            color: #0b0a0a;
+            box-shadow: 0 4px 20px rgba(232, 177, 60, 0.4);
+        }
+        .season-toggle button:hover:not(.active) {
+            color: #f0ede8;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(8px);
+            border: 1px solid #c8a87c40;
+            padding: 8px 20px 8px 16px;
+            border-radius: 60px;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #d4c5a2;
+            margin-bottom: 20px;
+            width: fit-content;
+        }
+        .hero-badge span {
+            background: #c8a87c;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .hero h1 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 900;
+            font-size: clamp(2.8rem, 8vw, 4.8rem);
+            line-height: 1.05;
+            letter-spacing: -0.03em;
+            color: #f5ede0;
+            text-shadow: 0 8px 30px rgba(0, 0, 0, 0.8);
+            max-width: 900px;
+        }
+        .hero h1 .highlight {
+            background: linear-gradient(135deg, #f7c948, #d98c2e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 40px #d98c2e40;
+        }
+
+        .hero-sub {
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            font-weight: 600;
+            color: #cdc0ab;
+            max-width: 640px;
+            margin: 16px 0 20px;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+            line-height: 1.4;
+        }
+
+        .hero-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px 30px;
+            font-weight: 600;
+            color: #cdc0ab;
+            margin-bottom: 16px;
+        }
+
+        .hero-cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            align-items: center;
+            margin: 16px 0 28px;
+        }
+
+        .hero-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px 40px;
+            padding-top: 20px;
+            border-top: 1px solid #c8a87c30;
+        }
+        .hero-stats .stat {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #cfc3ae;
+        }
+        .hero-stats .stat .icon {
+            font-size: 1.4rem;
+        }
+
+        /* ----- ВИДЕО (справа) ----- */
+        .hero-video-wrapper {
+            position: relative;
+            z-index: 2;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+            border: 1px solid #c8a87c30;
+            background: #0b0a0a;
+        }
+
+    .hero-video-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 9 / 16; /* вертикальное видео */
+    max-height: 80vh;
+    background: #0b0a0a;
+    border-radius: 24px;
+    overflow: hidden;
+    }
+
+        .hero-video-container video,
+        .hero-video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border: none;
+        }
+
+        /* ----- SECTIONS ----- */
+        section {
+            padding: 80px 0;
+            border-bottom: 1px solid #2a221b;
+        }
+
+        .section-title {
+            font-family: 'Inter', sans-serif;
+            font-weight: 800;
+            font-size: clamp(2rem, 3.8vw, 3.2rem);
+            letter-spacing: -0.02em;
+            margin-bottom: 16px;
+            color: #f5ede0;
+            line-height: 1.1;
+        }
+        .section-title .accent {
+            color: #e8b13c;
+        }
+
+        .section-desc {
+            font-size: 1.15rem;
+            color: #bcb0a0;
+            max-width: 720px;
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+
+        /* ----- SLIDESHOW (Hero images) ----- */
+        .slideshow {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            min-height: 400px;
+            overflow: hidden;
+            border-radius: 24px;
+        }
+        .slideshow .slide {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transition: opacity 1s ease;
+            background-size: cover;
+            background-position: center;
+        }
+        .slideshow .slide.active {
+            opacity: 1;
+        }
+
+        .slideshow-dots {
+            position: absolute;
+            bottom: 16px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 5;
+        }
+        .slideshow-dots .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: 0.3s;
+            border: none;
+        }
+        .slideshow-dots .dot.active {
+            background: #e8b13c;
+            transform: scale(1.2);
+        }
+
+        /* ----- SEGMENT / JTBD ----- */
+        .segment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+        .segment-card {
+            background: #16120e;
+            border-radius: 28px;
+            padding: 36px 28px;
+            border: 1px solid #2f251e;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        .segment-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #e8b13c, #a5712a);
+            opacity: 0.5;
+        }
+        .segment-card:hover {
+            transform: translateY(-6px);
+            border-color: #c8a87c60;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+        }
+        .segment-card .emoji-big {
+            font-size: 3rem;
+            margin-bottom: 12px;
+        }
+        .segment-card h3 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 6px;
+            color: #f0e3d4;
+        }
+        .segment-card .trigger {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #d4b68a;
+            background: #2a1f16;
+            display: inline-block;
+            padding: 4px 14px;
+            border-radius: 30px;
+            margin: 8px 0 14px;
+        }
+        .segment-card p {
+            color: #c9bbaa;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        /* ----- TIMELINE (scenario) ----- */
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            margin: 30px 0 20px;
+        }
+        .timeline-day {
+            background: #14100c;
+            border-radius: 24px;
+            padding: 28px 32px;
+            border-left: 6px solid #c8a87c;
+        }
+        .timeline-day h4 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #e8d5b0;
+            margin-bottom: 16px;
+        }
+        .timeline-step {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 12px 20px;
+            padding: 14px 0;
+            border-bottom: 1px solid #2a1f16;
+        }
+        .timeline-step:last-child {
+            border-bottom: 0;
+        }
+        .time {
+            font-weight: 700;
+            color: #e8b13c;
+            min-width: 60px;
+            font-size: 0.9rem;
+        }
+        .what {
+            font-weight: 700;
+            color: #f0ede8;
+            flex: 1;
+            min-width: 180px;
+        }
+        .emotion {
+            color: #bcb0a0;
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+
+        /* ----- ROUTES (маршруты) ----- */
+        .routes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .route-card {
+            background: #14100c;
+            border-radius: 24px;
+            padding: 28px 24px;
+            border: 1px solid #2a1f16;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        .route-card:hover {
+            border-color: #e8b13c60;
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+        .route-card .badge {
+            display: inline-block;
+            background: #2a1f16;
+            color: #d4b68a;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 4px 12px;
+            border-radius: 30px;
+            margin-bottom: 10px;
+        }
+        .route-card h3 {
+            font-size: 1.5rem;
+            color: #f0ede8;
+            margin-bottom: 6px;
+        }
+        .route-card .price {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: #f7d48a;
+            margin: 10px 0;
+        }
+        .route-card .price small {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #bcb0a0;
+        }
+        .route-card .desc {
+            color: #bcb0a0;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 14px;
+        }
+        .route-card .meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 16px;
+            font-size: 0.85rem;
+            color: #8a7a6a;
+            margin-top: 8px;
+        }
+        .route-card .meta span {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* ----- TARIFFS (туры) ----- */
+        .tariff-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 34px;
+            margin-top: 24px;
+        }
+        .tariff-card {
+            background: #16120e;
+            border-radius: 28px;
+            padding: 36px 28px;
+            border: 1px solid #2f251e;
+            transition: all 0.3s;
+            position: relative;
+        }
+        .tariff-card.popular {
+            border-color: #e8b13c;
+            box-shadow: 0 0 30px #e8b13c20;
+        }
+        .tariff-card .price {
+            font-size: 2.4rem;
+            font-weight: 900;
+            color: #f7d48a;
+            margin: 16px 0 8px;
+        }
+        .tariff-card .price small {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #bcb0a0;
+        }
+        .tariff-card ul {
+            list-style: none;
+            margin: 20px 0;
+        }
+        .tariff-card ul li {
+            padding: 6px 0;
+            color: #d4c5b0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .tariff-card ul li::before {
+            content: '⚡';
+            color: #e8b13c;
+        }
+        .badge-season {
+            background: #2a1f16;
+            color: #e8b13c;
+            font-size: 0.75rem;
+            padding: 6px 16px;
+            border-radius: 30px;
+            display: inline-block;
+            margin-top: 12px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        /* ----- INCLUDES (что входит) ----- */
+        .includes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .include-item {
+            background: #14100c;
+            padding: 20px 18px;
+            border-radius: 16px;
+            border: 1px solid #2a1f16;
+            text-align: center;
+        }
+        .include-item .icon {
+            font-size: 2.4rem;
+            margin-bottom: 6px;
+        }
+        .include-item h4 {
+            color: #f0ede8;
+            font-size: 1rem;
+        }
+        .include-item p {
+            color: #8a7a6a;
+            font-size: 0.85rem;
+        }
+
+        /* ----- AUDIENCE (кому подойдёт) ----- */
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+        }
+        .audience-item {
+            background: #14100c;
+            padding: 24px 20px;
+            border-radius: 20px;
+            border: 1px solid #2a1f16;
+            text-align: center;
+            transition: 0.3s;
+        }
+        .audience-item:hover {
+            border-color: #e8b13c40;
+        }
+        .audience-item .icon {
+            font-size: 2.8rem;
+            margin-bottom: 8px;
+        }
+        .audience-item h4 {
+            color: #f0ede8;
+            font-size: 1.1rem;
+        }
+        .audience-item p {
+            color: #8a7a6a;
+            font-size: 0.9rem;
+            margin-top: 4px;
+        }
+
+        /* ----- COMBO ----- */
+        .combo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .combo-card {
+            background: #14100c;
+            border-radius: 24px;
+            padding: 28px 24px;
+            border: 1px solid #2a1f16;
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        .combo-card:hover {
+            border-color: #e8b13c40;
+        }
+        .combo-card .combo-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 16px;
+        }
+        .combo-card h4 {
+            font-size: 1.3rem;
+            color: #f7d48a;
+            margin-bottom: 8px;
+        }
+        .combo-card p {
+            color: #bcb0a0;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* ----- GIFT (подарочный сертификат) ----- */
+        .gift-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        .gift-content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .gift-content .big-icon {
+            font-size: 4rem;
+        }
+        .gift-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .gift-features span {
+            background: #2a1f16;
+            padding: 8px 20px;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            color: #d4c5b0;
+            border: 1px solid #3a2f26;
+        }
+        .gift-card-visual {
+            background: linear-gradient(145deg, #1f180f, #0b0a0a);
+            border-radius: 28px;
+            padding: 40px 32px;
+            border: 2px solid #e8b13c;
+            text-align: center;
+            box-shadow: 0 0 60px #e8b13c20;
+            position: relative;
+            overflow: hidden;
+        }
+        .gift-card-visual::before {
+            content: '🎁';
+            font-size: 6rem;
+            position: absolute;
+            opacity: 0.05;
+            right: -20px;
+            bottom: -20px;
+            transform: rotate(15deg);
+        }
+        .gift-card-visual .price-tag {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #f7d48a;
+            margin: 16px 0;
+        }
+        .gift-card-visual .gift-label {
+            background: #e8b13c;
+            color: #0b0a0a;
+            font-weight: 800;
+            padding: 6px 24px;
+            border-radius: 40px;
+            display: inline-block;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ----- WINTER (зимний период) ----- */
+        .winter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 34px;
+        }
+        .winter-card {
+            background: #14100c;
+            border-radius: 24px;
+            padding: 32px 28px;
+            border: 1px solid #2a1f16;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+        .winter-card:hover {
+            border-color: #6ab0e6;
+            transform: translateY(-4px);
+            box-shadow: 0 10px 40px rgba(106, 176, 230, 0.1);
+        }
+        .winter-card .winter-icon {
+            font-size: 2.8rem;
+            margin-bottom: 12px;
+        }
+        .winter-card h4 {
+            font-size: 1.4rem;
+            color: #f0e3d4;
+            margin-bottom: 8px;
+        }
+        .winter-card p {
+            color: #bcb0a0;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* ----- ADVANTAGES (почему мы) ----- */
+        .advantage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 34px;
+        }
+        .advantage-item {
+            background: #14100c;
+            padding: 32px 26px;
+            border-radius: 24px;
+            border: 1px solid #2a1f16;
+        }
+        .advantage-item h4 {
+            font-size: 1.4rem;
+            color: #f0e3d4;
+            margin-bottom: 8px;
+        }
+        .advantage-item p {
+            color: #bcb0a0;
+            font-size: 0.95rem;
+        }
+
+        /* ----- YANDEX REVIEWS BLOCK ----- */
+        .yandex-reviews {
+            background: #14100c;
+            border-radius: 24px;
+            padding: 32px 28px;
+            border: 1px solid #2a1f16;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .yandex-reviews .left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .yandex-reviews .rating {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .yandex-reviews .rating .stars {
+            color: #f7c948;
+            font-size: 1.6rem;
+            letter-spacing: 4px;
+        }
+        .yandex-reviews .rating .score {
+            font-size: 2rem;
+            font-weight: 900;
+            color: #f7d48a;
+        }
+        .yandex-reviews .rating .label {
+            font-size: 0.9rem;
+            color: #8a7a6a;
+        }
+        .yandex-reviews .reviews-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .yandex-reviews .reviews-link .ya-icon {
+            width: 32px;
+            height: 32px;
+        }
+        .yandex-reviews .reviews-link a {
+            color: #f7d48a;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: 0.2s;
+        }
+        .yandex-reviews .reviews-link a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+        .yandex-reviews .count {
+            color: #8a7a6a;
+            font-size: 0.9rem;
+        }
+
+        /* ----- REVIEWS (гостевые) ----- */
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .review-card {
+            background: #14100c;
+            border-radius: 24px;
+            padding: 30px 28px;
+            border: 1px solid #2a1f16;
+            transition: all 0.3s;
+        }
+        .review-card:hover {
+            border-color: #c8a87c40;
+            transform: translateY(-4px);
+        }
+        .review-card .stars {
+            color: #f7c948;
+            font-size: 1.2rem;
+            letter-spacing: 3px;
+            margin-bottom: 12px;
+        }
+        .review-card .text {
+            font-size: 1rem;
+            color: #d4c5b0;
+            line-height: 1.6;
+            margin-bottom: 16px;
+            font-style: italic;
+        }
+        .review-card .author {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .review-card .avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2a1f16, #3a2f26);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #e8b13c;
+        }
+        .review-card .name {
+            font-weight: 700;
+            color: #f0ede8;
+        }
+        .review-card .from {
+            font-size: 0.8rem;
+            color: #8a7a6a;
+        }
+
+        /* ----- HOW TO GET (как добраться) ----- */
+        .how-to-get-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        .how-to-get-card {
+            background: #14100c;
+            border-radius: 24px;
+            padding: 28px 24px;
+            border: 1px solid #2a1f16;
+        }
+        .how-to-get-card .icon {
+            font-size: 2.4rem;
+            margin-bottom: 12px;
+        }
+        .how-to-get-card h4 {
+            color: #f7d48a;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+        .how-to-get-card p {
+            color: #bcb0a0;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        .how-to-get-card .price-tag {
+            color: #8a7a6a;
+            font-size: 0.85rem;
+            margin-top: 8px;
+        }
+        .how-to-get-card a {
+            color: #e8b13c;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 12px;
+        }
+        .how-to-get-card a:hover {
+            text-decoration: underline;
+        }
+
+        .how-to-get-bottom {
+            background: #14100c;
+            border-radius: 24px;
+            padding: 28px 32px;
+            border: 1px solid #2a1f16;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+        .how-to-get-bottom .info {
+            font-weight: 700;
+            color: #f0ede8;
+            font-size: 1.1rem;
+        }
+        .how-to-get-bottom .sub {
+            color: #8a7a6a;
+            font-size: 0.95rem;
+        }
+
+        /* ----- HOUSES (где жить) ----- */
+        .houses-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+        .houses-feature {
+            background: #14100c;
+            border-radius: 20px;
+            padding: 24px 20px;
+            border: 1px solid #2a1f16;
+            text-align: center;
+        }
+        .houses-feature .icon {
+            font-size: 2.8rem;
+        }
+        .houses-feature h4 {
+            color: #f0ede8;
+            font-size: 1.1rem;
+            margin-top: 8px;
+        }
+        .houses-feature p {
+            color: #8a7a6a;
+            font-size: 0.9rem;
+        }
+
+        .houses-main {
+            background: #16120e;
+            border-radius: 28px;
+            padding: 36px 32px;
+            border: 1px solid #2f251e;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        .houses-main .left {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #f7d48a;
+            margin-bottom: 8px;
+        }
+        .houses-main ul {
+            list-style: none;
+            color: #bcb0a0;
+            font-size: 1rem;
+            line-height: 2;
+        }
+        .houses-main ul li::before {
+            content: '✓ ';
+            color: #e8b13c;
+        }
+        .houses-main .quote {
+            color: #8a7a6a;
+            font-style: italic;
+            border-top: 1px solid #2a1f16;
+            padding-top: 16px;
+            margin-top: 16px;
+        }
+        .houses-main .right {
+            background: linear-gradient(145deg, #1f180f, #0b0a0a);
+            border-radius: 24px;
+            padding: 32px 24px;
+            border: 1px solid #e8b13c40;
+            text-align: center;
+        }
+        .houses-main .right .icon-big {
+            font-size: 3rem;
+        }
+        .houses-main .right .title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #f0ede8;
+            margin: 12px 0 4px;
+        }
+        .houses-main .right .sub {
+            color: #8a7a6a;
+            font-size: 0.9rem;
+        }
+
+        /* ----- FAQ ----- */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+        .faq-item {
+            background: #14100c;
+            padding: 28px;
+            border-radius: 20px;
+            border: 1px solid #2a1f16;
+        }
+        .faq-item h4 {
+            color: #f7d48a;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+        .faq-item p {
+            color: #c9bbaa;
+            font-size: 0.95rem;
+        }
+
+        /* ----- BOOKING ----- */
+        .booking-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 24px;
+        }
+        .booking-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .step {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            background: #14100c;
+            padding: 18px 24px;
+            border-radius: 60px;
+            border: 1px solid #2a1f16;
+        }
+        .step-num {
+            background: #e8b13c;
+            color: #0b0a0a;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+        }
+        .step-text {
+            font-weight: 700;
+            color: #f0ede8;
+        }
+
+        .form-wrap {
+            background: #14100c;
+            padding: 36px;
+            border-radius: 28px;
+            border: 1px solid #2f251e;
+        }
+        .form-wrap input,
+        .form-wrap select,
+        .form-wrap textarea {
+            width: 100%;
+            padding: 14px 18px;
+            margin-bottom: 16px;
+            background: #201b16;
+            border: 1px solid #2f251e;
+            border-radius: 14px;
+            color: #f0ede8;
+            font-family: 'Manrope', sans-serif;
+            font-size: 1rem;
+        }
+        .form-wrap input:focus,
+        .form-wrap select:focus {
+            outline: 2px solid #e8b13c;
+            border-color: transparent;
+        }
+        .form-wrap button {
+            width: 100%;
+            padding: 16px;
+            background: #e8b13c;
+            border: none;
+            border-radius: 60px;
+            font-weight: 800;
+            font-size: 1.1rem;
+            color: #0b0a0a;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .form-wrap button:hover {
+            background: #f7c84a;
+        }
+
+        /* ----- FOOTER ----- */
+        .footer {
+            padding: 60px 0 40px;
+            border-top: 1px solid #2a1f16;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+        }
+        .footer a {
+            color: #bcb0a0;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+        .footer a:hover {
+            color: #f7d48a;
+        }
+
+        /* ----- RESPONSIVE ----- */
+        @media (max-width: 1024px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .hero-video-wrapper {
+                max-width: 600px;
+                margin: 0 auto;
+            }
+            .gift-grid {
+                grid-template-columns: 1fr;
+            }
+            .booking-grid {
+                grid-template-columns: 1fr;
+            }
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+            .houses-main {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 800px) {
+            .header-nav {
+                display: none;
+            }
+            .header-inner {
+                justify-content: space-between;
+            }
+            .hero h1 {
+                font-size: 2.6rem;
+            }
+            .hero {
+                min-height: 60vh;
+                padding: 30px 0 40px;
+            }
+            section {
+                padding: 50px 0;
+            }
+            .gift-card-visual {
+                padding: 28px 20px;
+            }
+            .season-toggle button {
+                padding: 6px 16px;
+                font-size: 0.8rem;
+            }
+            .routes-grid,
+            .tariff-grid,
+            .winter-grid,
+            .advantage-grid,
+            .how-to-get-grid {
+                grid-template-columns: 1fr;
+            }
+            .yandex-reviews {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .yandex-reviews .left {
+                width: 100%;
+            }
+            .how-to-get-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-video-wrapper {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="header">
+    <div class="container header-inner">
+        <div class="logo-wrap">
+            <div class="logo-icon">
+                <img src="https://avatars.mds.yandex.net/get-altay/19862889/2a0000019e9781e4064530187c1a8a6b9cac/XS" alt="Мещера Трейл" />
+            </div>
+            <div class="logo-text">
+                Мещера Трейл
+                <span>прокат квадроциклов</span>
+            </div>
+        </div>
+        <nav class="header-nav">
+            <a href="#routes">Маршруты</a>
+            <a href="#tariffs">Туры</a>
+            <a href="#combo">Комбо</a>
+            <a href="#reviews">Отзывы</a>
+            <a href="#faq">Вопросы</a>
+            <a href="#booking">Бронирование</a>
+        </nav>
+        <div class="header-phone">📞 +7 (903) 584-40-64</div>
+    </div>
+</header>
+
+<!-- ===== HERO with SEASON TOGGLE + VIDEO ===== -->
+<section class="hero season-summer" id="hero">
+    <div class="hero-video-bg">
+        <!-- Summer (default) -->
+        <div class="season-summer slideshow" id="heroSlideshow">
+            <div class="slide active" style="background-image: url('https://static.tildacdn.com/tild6132-3666-4163-a466-353231306232/2026-05-10-12-07-45.webp');"></div>
+            <div class="slide" style="background-image: url('https://static.tildacdn.com/tild3732-3534-4466-b534-313938643530/IMG_2552.webp');"></div>
+            <div class="slide" style="background-image: url('https://static.tildacdn.com/tild3738-6134-4531-b830-646163343135/photo.webp');"></div>
+            <div class="slideshow-dots" id="heroDots">
+                <button class="dot active" data-index="0"></button>
+                <button class="dot" data-index="1"></button>
+                <button class="dot" data-index="2"></button>
+            </div>
+        </div>
+        <!-- Winter -->
+        <div class="season-winter slideshow" id="heroWinterSlideshow">
+            <div class="slide active" style="background-image: url('https://static.tildacdn.com/tild6132-3666-4163-a466-353231306232/2026-05-10-12-07-45.webp'); filter: grayscale(0.6) brightness(0.7);"></div>
+            <div class="slide" style="background-image: url('https://static.tildacdn.com/tild3732-3534-4466-b534-313938643530/IMG_2552.webp'); filter: grayscale(0.6) brightness(0.7);"></div>
+            <div class="slide" style="background-image: url('https://static.tildacdn.com/tild3738-6134-4531-b830-646163343135/photo.webp'); filter: grayscale(0.6) brightness(0.7);"></div>
+            <div class="slideshow-dots">
+                <button class="dot active" data-index="0"></button>
+                <button class="dot" data-index="1"></button>
+                <button class="dot" data-index="2"></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container hero-content">
+        <div class="hero-grid">
+            <!-- ЛЕВАЯ ЧАСТЬ: текст -->
+            <div class="hero-text">
+                <div class="season-toggle">
+                    <button class="active" data-season="summer">☀️ Лето · Грязь</button>
+                    <button data-season="winter">❄️ Зима · Снег</button>
+                </div>
+
+                <div class="hero-badge">
+                    <span></span> Мещерский заповедник · квадро-прогулки от глэмпинга «Клюква»
+                </div>
+
+                <h1>
+                    Грязь, драйв и тишина Мещеры.<br />
+                    <span class="highlight">Выходные, которые вы запомните</span>
+                </h1>
+
+                <p class="hero-sub">
+                    Квадро-прогулки по Рязанской Мещёре — это не просто прокат, а лесное мини-путешествие на базе глэмпинга «Клюква». Вековые сосны, лесные озёра и грязевые участки — всё с инструктором, в полной экипировке и с фото на память.
+                </p>
+
+                <div class="hero-info">
+                    <span>🚗 3,5 часа от Москвы</span>
+                    <span>📍 1 час от Рязани</span>
+                    <span>💰 От 5 000 ₽ · пассажир в цену включён</span>
+                </div>
+
+                <div class="hero-cta">
+                    <a href="#routes" class="btn-primary">🔥 Выбрать маршрут</a>
+                    <a href="#booking" class="btn-outline">Забронировать сейчас</a>
+                </div>
+
+                <div class="hero-stats">
+                    <span class="stat"><span class="icon">🛡️</span> Полная экипировка</span>
+                    <span class="stat"><span class="icon">🧑‍🏫</span> Инструктор на маршруте</span>
+                    <span class="stat"><span class="icon">📸</span> Фото и видео в подарок</span>
+                    <span class="stat"><span class="icon">👥</span> Пассажир 13+ — бесплатно</span>
+                </div>
+            </div>
+
+            <!-- ПРАВАЯ ЧАСТЬ: ВИДЕО -->
+            <div class="hero-video-wrapper">
+                <div class="hero-video-container">
+                    <video autoplay muted loop playsinline>
+                        <source src="https://strm.yandex.ru/vod/vh-maps-social-ugc-unit-converted/vod-content/vplv7c6y5kcanucsmy4a/97c2b89e-c848-4f0b-a755-6120d0816167/kaltura/desc_4313a7c126a9ea74bbcd6a53e534c474/x/ysign1=2ff826c6f27c330ab7736e54b24747be84dcd91f6bf0d5e39f1d5f843ff935c7,abcID=1238,bstrat=strm,chID=vplc3e5cm3yjfdqx32ya,pfx,sfx,ts=6a59d167,video=vplv7c6y5kcanucsmy4a/master.m3u8?packager=1&packman=1" type="video/mp4">
+                        Ваш браузер не поддерживает видео.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== ДЛЯ КОГО (JTBD) ===== -->
+<section>
+    <div class="container">
+        <h2 class="section-title">Каждый находит в Мещере своё: <span class="accent">романтику, драйв или тишину.</span> Выберите свой.</h2>
+        <p class="section-desc">Для кого этот тур — ваш сценарий. Мы знаем, что вам нужно.</p>
+        <div class="segment-grid">
+            <div class="segment-card">
+                <div class="emoji-big">🔥❤️</div>
+                <h3>Романтический побег</h3>
+                <span class="trigger">JTBD: «хочу устроить побег, но не скучно»</span>
+                <p>Закат над Клепиковскими озёрами на квадроцикле. Будет что вспомнить и показать.</p>
+                <button class="btn-sm" onclick="document.getElementById('tariffs').scrollIntoView({behavior:'smooth'})">Мне подходит →</button>
+            </div>
+            <div class="segment-card">
+                <div class="emoji-big">🤘🔥</div>
+                <h3>Адреналин с друзьями</h3>
+                <span class="trigger">JTBD: «собрать команду для драйвового уикенда»</span>
+                <p>Привези до 8 друзей. Трасса — болота и овраги. Вечер — баня и шашлык.</p>
+                <button class="btn-sm" onclick="document.getElementById('tariffs').scrollIntoView({behavior:'smooth'})">Мне подходит →</button>
+            </div>
+            <div class="segment-card">
+                <div class="emoji-big">🌲🌿</div>
+                <h3>Тишина заповедного леса</h3>
+                <span class="trigger">JTBD: «восстановиться и дышать»</span>
+                <p>Экотропы с аудиогидом по Паустовскому, баня, утро с видом на сосны.</p>
+                <button class="btn-sm" onclick="document.getElementById('tariffs').scrollIntoView({behavior:'smooth'})">Мне подходит →</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== СЦЕНАРИЙ (timeline) ===== -->
+<section>
+    <div class="container">
+        <h2 class="section-title">Два дня, которые перезагрузят вас: <span class="accent">от грязи до полного релакса.</span></h2>
+        <p class="section-desc">Что вас ждёт — ваш идеальный сценарий. Каждый час — максимум эмоций.</p>
+        <div class="timeline">
+            <div class="timeline-day">
+                <h4>День 1. Прибытие и драйв</h4>
+                <div class="timeline-step"><span class="time">10:00</span><span class="what">Встреча, заселение в панорамный домик с тёплым полом</span><span class="emotion">«Наконец-то я здесь»</span></div>
+                <div class="timeline-step"><span class="time">11:00</span><span class="what">Инструктаж, экипировка (шлем, защита от грязи)</span><span class="emotion">«Спокойно, всё под контролем»</span></div>
+                <div class="timeline-step"><span class="time">12:00</span><span class="what">Заезд «Болота и сосны Мещеры» — 2 часа бездорожья</span><span class="emotion">«Драйв! Я это сделал!»</span></div>
+                <div class="timeline-step"><span class="time">14:00</span><span class="what">Пикник на озере Святом — чай, закуски, фото с дрона</span><span class="emotion">«Еда на природе — кайф»</span></div>
+                <div class="timeline-step"><span class="time">19:00</span><span class="what">Баня с пармастером и травяной чай</span><span class="emotion">«Релакс и восстановление»</span></div>
+                <div class="timeline-step"><span class="time">21:00</span><span class="what">Ужин у камина — местная кухня</span><span class="emotion">«Сытный финал дня»</span></div>
+            </div>
+            <div class="timeline-day">
+                <h4>День 2. Заповедное утро</h4>
+                <div class="timeline-step"><span class="time">09:00</span><span class="what">Завтрак с панорамным видом на лес</span><span class="emotion">«Медленное утро в тишине»</span></div>
+                <div class="timeline-step"><span class="time">10:00</span><span class="what">Прогулка по экотропе «Лесной мир Мещеры» (3 км)</span><span class="emotion">«Я дышу и никуда не спешу»</span></div>
+                <div class="timeline-step"><span class="time">12:00</span><span class="what">Выселение, выезд</span><span class="emotion">«Я вернусь сюда»</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== МАРШРУТЫ (Routes) ===== -->
+<section id="routes">
+    <div class="container">
+        <h2 class="section-title">Маршруты квадро-прогулок в Мещёре<br><span class="accent">Выбирайте под настроение и уровень подготовки</span></h2>
+        <p class="section-desc">Все поездки — с инструктором, экипировка включена, пассажир едет бесплатно.</p>
+        <div class="routes-grid">
+            <!-- Знакомство -->
+            <div class="route-card">
+                <span class="badge">⭐ для новичков</span>
+                <h3>«Знакомство» — первый раз на квадроцикле</h3>
+                <div class="price">5 000 ₽ <small>/ квадроцикл</small></div>
+                <div class="desc">40 минут · лёгкая. Идеальный старт: луга, просеки, небольшой заболоченный участок — безопасно, понятно и уже интересно. Подходит для тех, кто впервые садится за руль квадроцикла, для пар и гостей глэмпинга. Пассажир едет бесплатно на одном квадроцикле с вами. А может вы давно планируете покупку квадроцикла и тест-драйв будет решающим шагом?</div>
+                <div class="meta">
+                    <span>⏱ 40 мин</span>
+                    <span>🌲 Лёгкая</span>
+                    <span>👥 Пассажир бесплатно</span>
+                </div>
+            </div>
+
+            <!-- Парк юрского периода -->
+            <div class="route-card">
+                <span class="badge">🌳 вековой лес</span>
+                <h3>«Парк юрского периода» — вековой лес и заповедная речка</h3>
+                <div class="price">8 000 ₽ <small>/ квадроцикл</small></div>
+                <div class="desc">80 минут · лёгкая. Маршрут через вековой лес: высоченные сосны, ели, мхи, папоротники и тихая заповедная речка. Один из самых фотогеничных маршрутов — инструктор делает фото и видео прямо на ходу. Грязи почти нет, зато природы — максимум.</div>
+                <div class="meta">
+                    <span>⏱ 80 мин</span>
+                    <span>🌲 Лёгкая</span>
+                    <span>📸 Фотосессия в подарок</span>
+                </div>
+            </div>
+
+            <!-- 6 озёр -->
+            <div class="route-card">
+                <span class="badge">🏞 настоящее приключение</span>
+                <h3>«6 озёр» — настоящее приключение по Мещёре</h3>
+                <div class="price">20 000 ₽ <small>/ квадроцикл</small></div>
+                <div class="desc">150 минут · средняя. Большой маршрут по лесным озёрам Рязанской Мещёры: смотрите разные водоёмы, купаетесь, проезжаете заболоченные участки с реальным бездорожьем. Это лучший маршрут для тех, кто хочет настоящие приключение.</div>
+                <div class="meta">
+                    <span>⏱ 150 мин</span>
+                    <span>🏕 Средняя</span>
+                    <span>🏊 Купание</span>
+                </div>
+            </div>
+
+            <!-- Сакральное озеро -->
+            <div class="route-card" style="border-color:#e8b13c60;">
+                <span class="badge">🔥 секретное место</span>
+                <h3>«Сакральное озеро» — секретное место Мещёры</h3>
+                <div class="price">25 000 ₽ <small>/ квадроцикл</small></div>
+                <div class="desc">300 минут · лёгкая. Час на квадроциклах по лесам — и последние 2 км пешком по узкой тропинке к озеру, которого нет ни на одной туристической карте. На месте — купание, пикник, полная тишина. Для путешественников, романтических пар, любителей труднодоступных мест.</div>
+                <div class="meta">
+                    <span>⏱ 5 часов</span>
+                    <span>🥾 Пешком 2 км</span>
+                    <span>🌿 Лёгкая</span>
+                </div>
+            </div>
+        </div>
+        <div style="margin-top: 32px; text-align: center;">
+            <a href="#booking" class="btn-gold">Забронировать маршрут</a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== ЧТО ВХОДИТ ===== -->
+<section>
+    <div class="container">
+        <h2 class="section-title">Что входит в стоимость <span class="accent">— без скрытых доплат</span></h2>
+        <p class="section-desc">Цена за квадроцикл, пассажир едет бесплатно. Всё необходимое — уже включено.</p>
+        <div class="includes-grid">
+            <div class="include-item">
+                <div class="icon">🪖</div>
+                <h4>Полная экипировка</h4>
+                <p>Шлем, грязевой костюм, перчатки, сапоги</p>
+            </div>
+            <div class="include-item">
+                <div class="icon">🧑‍🏫</div>
+                <h4>Инструктаж и сопровождение</h4>
+                <p>Инструктор на всём маршруте</p>
+            </div>
+            <div class="include-item">
+                <div class="icon">👥</div>
+                <h4>Пассажир бесплатно</h4>
+                <p>Пассажир 13+ едет вместе с водителем — доплат нет</p>
+            </div>
+            <div class="include-item">
+                <div class="icon">📸</div>
+                <h4>Фото и видеоотчёт</h4>
+                <p>Получаете после поездки</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== КОМУ ПОДОЙДЁТ ===== -->
+<section>
+    <div class="container">
+        <h2 class="section-title">Кому подойдут квадро-прогулки в Мещёре</h2>
+        <div class="audience-grid">
+            <div class="audience-item">
+                <div class="icon">❤️</div>
+                <h4>Парам</h4>
+                <p>Свидание не в ресторане: лес, маршрут, фотосессия и отдых у костра.</p>
+            </div>
+            <div class="audience-item">
+                <div class="icon">👨‍👩‍👧‍👦</div>
+                <h4>Семьям с детьми</h4>
+                <p>Активный день на природе без сложного экстрима. Маршрут «Знакомство» идеален для первого раза с детьми-подростками.</p>
+            </div>
+            <div class="audience-item">
+                <div class="icon">🏕️</div>
+                <h4>Гостям глэмпинга «Клюква»</h4>
+                <p>Добавьте квадро-маршрут к проживанию: выехали с утра, вернулись к бане, вечер у костра. Готовый сценарий выходных.</p>
+            </div>
+            <div class="audience-item">
+                <div class="icon">🎁</div>
+                <h4>В подарок</h4>
+                <p>Подарочный сертификат на любой маршрут. Оформляем электронно за 5 минут.</p>
+            </div>
+            <div class="audience-item">
+                <div class="icon">🚗</div>
+                <h4>Приехавшим без ночёвки</h4>
+                <p>Комбо «Квадро + баня»: катаетесь, пачкаетесь, отмываетесь в бане, уезжаете домой с эмоциями.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- ===== КОМБО (Квадро + глэмпинг/баня) ===== -->
+<section id="combo">
+    <div class="container">
+        <h2 class="section-title">Квадро + глэмпинг или баня <span class="accent">— максимум впечатлений за один день</span></h2>
+        <p class="section-desc">Дополните квадро-прогулку отдыхом в лесном глэмпинге или баней.</p>
+        <div class="combo-grid">
+            <div class="combo-card">
+                <img class="combo-img" src="https://static.tildacdn.com/tild3165-6235-4364-a365-623764393438/Golikov_0165.jpg" alt="Квадро + баня" loading="lazy" />
+                <h4>«Квадро + баня» — день без проживания</h4>
+                <p>Приезжаете → катаетесь → к возвращению готова баня. Один день из Рязани или Москвы — максимум впечатлений. Уточните цену комбо при бронировании.</p>
+            </div>
+            <div class="combo-card">
+                <img class="combo-img" src="https://static.tildacdn.com/tild3364-3435-4233-a535-376339643034/photo_53077071416054.jpg" alt="Уикенд в Клюкве" loading="lazy" />
+                <h4>«Уикенд в Клюкве» — глэмпинг + квадро</h4>
+                <p>Домик в лесу + квадро-маршрут + баня / костёр. Готовый план выходных из Москвы: доехали вечером, утром — в лес на квадро. Пакетная цена при совместном бронировании.</p>
+            </div>
+            <div class="combo-card" style="border-color:#e8b13c40;">
+                <h4>🎁 Подарочный сертификат «Мещера Трейл × Клюква»</h4>
+                <p>Подарите впечатления, а не вещи. Сертификат на любой маршрут — для друга, мужа, папы, коллеги. Оформляем электронно, срок действия — до конца сезона.</p>
+                <a href="#booking" class="btn-gold" style="margin-top:14px; display:inline-block;">Заказать сертификат</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== ПОДАРОЧНЫЙ СЕРТИФИКАТ (отдельный блок) ===== -->
+<section>
+    <div class="container">
+        <h2 class="section-title">🎁 Подарите не вещь. <span class="accent">Подарите грязь, драйв и костёр под звёздами.</span></h2>
+        <p class="section-desc">Сертификат на экстрим-выходные в Мещере — лучший способ сказать «я тебя люблю» или «спасибо за всё». Выбирайте любой тариф или сумму — мы упакуем красиво и вручим с душой.</p>
+        <div class="gift-grid">
+            <div class="gift-content">
+                <div class="big-icon">🎄</div>
+                <h3 style="font-size:1.8rem; color:#f7d48a;">Для любого повода</h3>
+                <p style="color:#bcb0a0; font-size:1.05rem; line-height:1.6;">День рождения, годовщина, Новый год или просто так — подарите эмоции, которые не купишь в магазине. Сертификат действует 12 месяцев.</p>
+                <div class="gift-features">
+                    <span>🎯 Любая сумма</span>
+                    <span>🎨 Красивая упаковка</span>
+                    <span>📱 Мгновенная отправка</span>
+                    <span>♻️ Можно передать другому</span>
+                </div>
+                <button class="btn-primary" style="width:fit-content;" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Заказать сертификат</button>
+            </div>
+            <div class="gift-card-visual">
+                <div class="gift-label">🎁 Подарочный сертификат</div>
+                <div style="font-size:1.2rem; margin-top:12px; color:#d4c5b0;">Мещерский экстрим</div>
+                <div class="price-tag">от 5 000 ₽</div>
+                <div style="color:#8a7a6a; font-size:0.9rem;">Действует 12 месяцев · на любой тур</div>
+                <div style="margin-top:20px; display:flex; gap:8px; justify-content:center; flex-wrap:wrap;">
+                    <span style="background:#2a1f16; padding:4px 16px; border-radius:20px; font-size:0.8rem;">⚡ Квадроциклы</span>
+                    <span style="background:#2a1f16; padding:4px 16px; border-radius:20px; font-size:0.8rem;">🔥 Баня</span>
+                    <span style="background:#2a1f16; padding:4px 16px; border-radius:20px; font-size:0.8rem;">🌲 Глэмпинг</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== ЗИМНИЙ ПЕРИОД ===== -->
+<section>
+    <div class="container">
+        <h2 class="section-title">❄️ Зимняя Мещера — <span class="accent">экстрим на снегу</span></h2>
+        <p class="section-desc">Когда лес засыпает снегом, драйв становится ещё ярче. Специальные зимние маршруты и полное погружение в сказку.</p>
+        <div class="winter-grid">
+            <div class="winter-card">
+                <div class="winter-icon">❄️</div>
+                <h4>Зимний квадро-тур</h4>
+                <p>Мощные квадроциклы на шипованной резине. 2 часа по заснеженным лесам и замёрзшим болотам. Адреналин на максимуме.</p>
+            </div>
+            <div class="winter-card">
+                <div class="winter-icon">🛷</div>
+                <h4>Снегоходная прогулка</h4>
+                <p>Для тех, кто хочет сменить технику. Управляйте снегоходом или катайся пассажиром — впечатления гарантированы.</p>
+            </div>
+            <div class="winter-card">
+                <div class="winter-icon">🔥</div>
+                <h4>Баня по-чёрному</h4>
+                <p>Настоящая зимняя баня с вениками и пармастером. После катания — контрастный душ и чай с мёдом у камина.</p>
+            </div>
+            <div class="winter-card">
+                <div class="winter-icon">🌌</div>
+                <h4>Зимнее небо Мещеры</h4>
+                <p>Прозрачный воздух и отсутствие городской засветки — идеальные условия для наблюдения за звёздами. Романтика высшего класса.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== БЛОК ЯНДЕКС ОТЗЫВЫ ===== -->
+<section>
+    <div class="container">
+        <h2 class="section-title">Нас оценили на <span class="accent">5 звёзд</span></h2>
+        <p class="section-desc">Реальные отзывы наших гостей на Яндекс.Картах</p>
+        <div class="yandex-reviews">
+            <div class="left">
+                <div class="rating">
+                    <div class="score">5.0</div>
+                    <div>
+                        <div class="stars">★★★★★</div>
+                        <div class="label">средний рейтинг</div>
+                    </div>
+                </div>
+                <div class="reviews-link">
+                    <svg class="ya-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20Z" fill="#F7D48A"/>
+                        <path d="M13 7H11V13H13V7ZM13 15H11V17H13V15Z" fill="#F7D48A"/>
+                    </svg>
+                    <a href="https://yandex.ru/profile/166810456908?lang=ru" target="_blank" rel="noopener noreferrer">
+                        Читать отзывы на Яндекс
+                    </a>
+                </div>
+            </div>
+            <div class="count">
+                <span>★ 5.0 · более 20 отзывов</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== ОТЗЫВЫ ГОСТЕЙ ===== -->
+<section id="reviews">
+    <div class="container">
+        <h2 class="section-title">Гости говорят <span class="accent">спасибо</span></h2>
+        <p class="section-desc">Искренние отзывы тех, кто уже побывал в Мещере и вернётся снова.</p>
+        <div class="review-grid">
+            <div class="review-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <div class="text">«Мы с мужем давно хотели устроить побег из города. Но чтобы и драйв, и романтика — это было невероятно! Закат на квадроциклах, баня, уютный домик. Вернёмся зимой!»</div>
+                <div class="author">
+                    <div class="avatar">А</div>
+                    <div>
+                        <div class="name">Анна и Дмитрий</div>
+                        <div class="from">Москва, август 2025</div>
+                    </div>
+                </div>
+            </div>
+            <div class="review-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <div class="text">«Собрали компанию из 6 друзей. Это был лучший уикенд в году! Трасса реально экстрим, но проводник — мастер своего дела. А вечером шашлык и гитара у костра. Всё супер!»</div>
+                <div class="author">
+                    <div class="avatar">С</div>
+                    <div>
+                        <div class="name">Сергей и компания</div>
+                        <div class="from">Рязань, сентябрь 2025</div>
+                    </div>
+                </div>
+            </div>
+            <div class="review-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <div class="text">«Приехали с детьми — 10 и 12 лет. Инструктор нашёл подход ко всем, дети в восторге от экотропы и наблюдения за бобрами. А нам с мужем понравилась баня и тишина. Спасибо!»</div>
+                <div class="author">
+                    <div class="avatar">Е</div>
+                    <div>
+                        <div class="name">Елена и Игорь</div>
+                        <div class="from">Казань, июль 2025</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== ПОЧЕМУ МЫ ===== -->
+<section>
+    <div class="container">
+        <h2 class="section-title">Почему Мещера — уникальна: <span class="accent">единственный глэмпинг в заповеднике, техника высшего класса и культурный код</span></h2>
+        <p class="section-desc">Только здесь вы получите полный пакет: природа, сервис и драйв.</p>
+        <div class="advantage-grid">
+            <div class="advantage-item"><h4>🌲 Единственный глэмпинг в заповеднике</h4><p>Вся территория — Рамсарское угодье. Соседи — лоси, бобры, зубры.</p></div>
+            <div class="advantage-item"><h4>📖 Культурный код Мещеры</h4><p>Экотропы по мотивам Паустовского и Есенина. Аудиогид.</p></div>
+            <div class="advantage-item"><h4>⚡ Техника высшего класса</h4><p>CFMOTO CFORCE 500 HO 2021, усиленная резина 27”. Апгрейд до BRP Outlander.</p></div>
+            <div class="advantage-item"><h4>🤝 Бесповоротная забота</h4><p>Ответ за X минут, помощь с багажом, домик по вашим пожеланиям.</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== КАК ДОБРАТЬСЯ ===== -->
+<section id="how-to-get">
+    <div class="container">
+        <h2 class="section-title">Даже навигатор не подведёт: <span class="accent">асфальт до самых ворот</span></h2>
+        <p class="section-desc">Забудьте про «последние 10 км по грунтовке». Дорога до нас — это 223 км чистого асфальта от Москвы. Ваш седан доедет без проблем в любой сезон.</p>
+
+        <div class="how-to-get-grid">
+            <div class="how-to-get-card">
+                <div class="icon">🚗</div>
+                <h4>На машине</h4>
+                <p>Из Москвы — 223 км, 3–4 часа в пути. Летом бывают заторы, но серьёзных пробок нет.</p>
+                <a href="https://yandex.ru/navi/?from=navi&lang=ru&ll=39.952016%2C55.098146&mode=routes&rtext=~55.165014%2C39.896374&rtt=auto&ruri=~ymapsbm1%3A%2F%2Forg%3Foid%3D160874641090&z=11" target="_blank" rel="noopener noreferrer">🗺️ Построить маршрут →</a>
+            </div>
+            <div class="how-to-get-card">
+                <div class="icon">🚌</div>
+                <h4>На автобусе</h4>
+                <p>Из Москвы до Спас-Клепиков. Билет ~800 ₽. Мы встретим вас на автовокзале и довезём до глэмпинга.</p>
+                <div class="price-tag">Трансфер: 1 000 ₽ / до 4 чел. в одну сторону</div>
+            </div>
+            <div class="how-to-get-card">
+                <div class="icon">🚆</div>
+                <h4>На поезде</h4>
+                <p>Из Москвы до Рязани. Билет ~1 000 ₽. Встретим на вокзале и привезём на комфортабельном авто.</p>
+                <div class="price-tag">Трансфер: ~2 500 ₽ / до 4 чел. в одну сторону</div>
+            </div>
+        </div>
+
+        <div class="how-to-get-bottom">
+            <div>
+                <div class="info">📍 Глэмпинг «Клюква» — в сердце Мещерского заповедника</div>
+                <div class="sub">По дороге можно заехать в гипермаркет и купить всё необходимое</div>
+            </div>
+            <a href="https://yandex.ru/navi/?from=navi&lang=ru&ll=39.952016%2C55.098146&mode=routes&rtext=~55.165014%2C39.896374&rtt=auto&ruri=~ymapsbm1%3A%2F%2Forg%3Foid%3D160874641090&z=11" target="_blank" rel="noopener noreferrer" class="btn-gold" style="white-space:nowrap;">🗺️ Проложить маршрут</a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== ГДЕ ЖИТЬ ===== -->
+<section id="houses">
+    <div class="container">
+        <h2 class="section-title">Вернуться в домик — как в свой <span class="accent">уютный мир</span></h2>
+        <p class="section-desc">За дверью — дикий лес. Внутри — всё, чтобы забыть, что ты в походе. Панорамные окна, тёплый пол и королевские матрасы.</p>
+
+        <div class="houses-features">
+            <div class="houses-feature">
+                <div class="icon">🪟</div>
+                <h4>Панорамные окна</h4>
+                <p>Лесной пейзаж прямо с кровати</p>
+            </div>
+            <div class="houses-feature">
+                <div class="icon">🔥</div>
+                <h4>Тёплый пол</h4>
+                <p>Комфортно даже в -25°C</p>
+            </div>
+            <div class="houses-feature">
+                <div class="icon">🛏️</div>
+                <h4>Королевские матрасы</h4>
+                <p>Спится как дома</p>
+            </div>
+            <div class="houses-feature">
+                <div class="icon">🍳</div>
+                <h4>Своя кухня</h4>
+                <p>Всё для готовки и чаепития</p>
+            </div>
+        </div>
+
+        <div class="houses-main">
+            <div class="left">
+                <div style="font-size:1.2rem; font-weight:700; color:#f7d48a; margin-bottom:8px;">Скандинавские модули «Клюква»</div>
+                <ul>
+                    <li>Санузел и душ в каждом домике</li>
+                    <li>Кондиционер</li>
+                    <li>Скандинавский стиль и дизайн</li>
+                    <li>Полная приватность и тишина</li>
+                </ul>
+                <div class="quote">
+                    «Приезжайте, я с удовольствием поделюсь любимыми маршрутами» — Александр, хозяин глэмпинга
+                </div>
+            </div>
+            <div class="right">
+                <div class="icon-big">🏕️</div>
+                <div class="title">Эко-отель «Клюква»</div>
+                <div class="sub">Лесной глэмпинг в Мещере</div>
+                <a href="#booking" class="btn-gold" style="margin-top:16px; display:inline-block;">Забронировать домик</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section id="faq">
+    <div class="container">
+        <h2 class="section-title">Часто задаваемые <span class="accent">вопросы</span></h2>
+        <div class="faq-grid">
+            <div class="faq-item">
+                <h4>❓ Нужны ли права?</h4>
+                <p>Да, водителю нужны права категории А или В. Пассажиру — не нужны, возраст от 13 лет.</p>
+            </div>
+            <div class="faq-item">
+                <h4>❓ Можно ли ехать вдвоём на одном квадроцикле?</h4>
+                <p>Да, пассажир включён в стоимость.</p>
+            </div>
+            <div class="faq-item">
+                <h4>❓ Подходит ли для новичков?</h4>
+                <p>Да. Все поездки начинаются с инструктажа, инструктор сопровождает весь маршрут.</p>
+            </div>
+            <div class="faq-item">
+                <h4>❓ Что надеть?</h4>
+                <p>Грязевой костюм выдаётся. Под него — любая удобная одежда.</p>
+            </div>
+            <div class="faq-item">
+                <h4>❓ Можно ли в дождь?</h4>
+                <p>Лёгкий дождь — не проблема. При грозе маршрут переносится.</p>
+            </div>
+            <div class="faq-item">
+                <h4>❓ Как забронировать?</h4>
+                <p>Напишите в WhatsApp / Telegram или позвоните. Уточним дату, состав и маршрут.</p>
+            </div>
+            <div class="faq-item">
+                <h4>❓ Есть ли сертификаты?</h4>
+                <p>Да, оформляем электронно за 5 минут.</p>
+            </div>
+            <div class="faq-item">
+                <h4>❓ Можно ли совместить с баней?</h4>
+                <p>Да, комбо «Квадро + баня» — отличный вариант для однодневного выезда.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== БРОНИРОВАНИЕ ===== -->
+<section id="booking">
+    <div class="container">
+        <h2 class="section-title">Как забронировать <span class="accent">ваш тур</span></h2>
+        <p class="section-desc">Три простых шага — и вы в Мещере.</p>
+        <div class="booking-grid">
+            <div class="booking-steps">
+                <div class="step"><span class="step-num">1</span><span class="step-text">Выберите тур и даты в календаре</span></div>
+                <div class="step"><span class="step-num">2</span><span class="step-text">Оставьте контакты — мы перезвоним за 15 минут</span></div>
+                <div class="step"><span class="step-num">3</span><span class="step-text">Внесите предоплату 30% — ваш квадроцикл ждёт</span></div>
+                <div style="margin-top:10px; color:#bcb0a0;">📅 Календарь бронирования (интерактивный виджет)</div>
+            </div>
+            <div class="form-wrap">
+                <h4 style="color:#f7d48a; margin-bottom:20px;">Оставьте заявку</h4>
+                <form>
+                    <input type="text" placeholder="Ваше имя" required>
+                    <input type="tel" placeholder="Телефон" required>
+                    <input type="email" placeholder="E-mail">
+                    <select>
+                        <option>«Мещерский экстрим»</option>
+                        <option>«Романтика на квадроцикле»</option>
+                        <option>Доп. час катания</option>
+                        <option>🎁 Подарочный сертификат</option>
+                    </select>
+                    <input type="date" placeholder="Дата заезда">
+                    <textarea rows="2" placeholder="Комментарий, пожелания"></textarea>
+                    <button type="submit">🔥 Забронировать тур</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+    <div class="container footer">
+        <div>
+            <strong style="color:#f0ede8; font-size:1.2rem;">Мещера Трейл</strong>
+            <div style="margin:10px 0; color:#bcb0a0;">прокат квадроциклов в Мещёре</div>
+            <div>📞 <a href="tel:+79035844064">+7 (903) 584-40-64</a></div>
+            <div>📧 <a href="mailto:alxphil@yandex.ru">alxphil@yandex.ru</a></div>
+        </div>
+        <div>
+            <div style="display:flex; gap:20px; flex-wrap:wrap;">
+                <a href="https://yandex.ru/profile/166810456908?lang=ru" target="_blank" rel="noopener noreferrer">Отзывы на Яндекс</a>
+                <a href="#">ВКонтакте</a>
+                <a href="#">Telegram</a>
+                <a href="#">Политика конфиденциальности</a>
+            </div>
+            <div style="margin-top:12px; color:#7a6e5e; font-size:0.85rem;">Схема проезда — интерактивная карта</div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // ===== SEASON TOGGLE =====
+    const heroSection = document.getElementById('hero');
+    const toggleBtns = document.querySelectorAll('.season-toggle button');
+
+    toggleBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            toggleBtns.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+
+            const season = this.dataset.season;
+            heroSection.classList.remove('season-summer', 'season-winter');
+            heroSection.classList.add('season-' + season);
+        });
+    });
+
+    // ===== SLIDESHOW (hero) =====
+    function initSlideshow(containerId, dotContainerId) {
+        const container = document.getElementById(containerId);
+        if (!container) return;
+        const slides = container.querySelectorAll('.slide');
+        const dots = container.querySelectorAll('.dot');
+        let current = 0;
+        let interval;
+
+        function goTo(index) {
+            slides.forEach((s, i) => s.classList.toggle('active', i === index));
+            dots.forEach((d, i) => d.classList.toggle('active', i === index));
+            current = index;
+        }
+
+        function next() {
+            goTo((current + 1) % slides.length);
+        }
+
+        dots.forEach(dot => {
+            dot.addEventListener('click', function() {
+                clearInterval(interval);
+                goTo(parseInt(this.dataset.index));
+                interval = setInterval(next, 5000);
+            });
+        });
+
+        interval = setInterval(next, 5000);
+        return { goTo, next, interval };
+    }
+
+    // Init summer slideshow
+    initSlideshow('heroSlideshow', 'heroDots');
+    // Init winter slideshow (same logic, different container)
+    const winterContainer = document.getElementById('heroWinterSlideshow');
+    if (winterContainer) {
+        const winterSlides = winterContainer.querySelectorAll('.slide');
+        const winterDots = winterContainer.querySelectorAll('.dot');
+        let winterCurrent = 0;
+        let winterInterval;
+
+        function winterGoTo(index) {
+            winterSlides.forEach((s, i) => s.classList.toggle('active', i === index));
+            winterDots.forEach((d, i) => d.classList.toggle('active', i === index));
+            winterCurrent = index;
+        }
+
+        function winterNext() {
+            winterGoTo((winterCurrent + 1) % winterSlides.length);
+        }
+
+        winterDots.forEach(dot => {
+            dot.addEventListener('click', function() {
+                clearInterval(winterInterval);
+                winterGoTo(parseInt(this.dataset.index));
+                winterInterval = setInterval(winterNext, 5000);
+            });
+        });
+
+        winterInterval = setInterval(winterNext, 5000);
+    }
+</script>
+
+</body>
+</html>
