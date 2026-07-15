@@ -544,9 +544,8 @@
             transform: scale(1.2);
         }
 
-        /* ----- СЛАЙД-ШОУ (горизонтальные, компактные) ----- */
-        .route-slideshow,
-        .houses-slideshow {
+        /* ----- НОВОЕ СЛАЙД-ШОУ (горизонтальные фото, компактное) ----- */
+        .route-slideshow {
             position: relative;
             width: 100%;
             overflow: hidden;
@@ -555,8 +554,7 @@
             aspect-ratio: 16 / 9;
         }
 
-        .route-slideshow .slide,
-        .houses-slideshow .slide {
+        .route-slideshow .slide {
             position: absolute;
             inset: 0;
             background-size: cover;
@@ -565,13 +563,11 @@
             transition: opacity 1s ease;
         }
 
-        .route-slideshow .slide.active,
-        .houses-slideshow .slide.active {
+        .route-slideshow .slide.active {
             opacity: 1;
         }
 
-        .route-slideshow .slideshow-dots,
-        .houses-slideshow .slideshow-dots {
+        .route-slideshow .slideshow-dots {
             position: absolute;
             bottom: 16px;
             left: 50%;
@@ -581,8 +577,7 @@
             z-index: 5;
         }
 
-        .route-slideshow .slideshow-dots .dot,
-        .houses-slideshow .slideshow-dots .dot {
+        .route-slideshow .slideshow-dots .dot {
             width: 10px;
             height: 10px;
             border-radius: 50%;
@@ -592,8 +587,7 @@
             border: none;
         }
 
-        .route-slideshow .slideshow-dots .dot.active,
-        .houses-slideshow .slideshow-dots .dot.active {
+        .route-slideshow .slideshow-dots .dot.active {
             background: #e8b13c;
             transform: scale(1.2);
         }
@@ -1670,7 +1664,7 @@
     </div>
 </section>
 
-<!-- ===== СЛАЙД-ШОУ (фото с маршрутов) ===== -->
+<!-- ===== НОВОЕ СЛАЙД-ШОУ (фото с маршрутов) ===== -->
 <section>
     <div class="container">
         <h2 class="section-title">Фото с маршрутов <span class="accent">— реальные кадры</span></h2>
@@ -2049,7 +2043,7 @@
     </div>
 </section>
 
-<!-- ===== ГДЕ ЖИТЬ (HOUSES) ===== -->
+<!-- ===== ГДЕ ЖИТЬ ===== -->
 <section id="houses">
     <div class="container">
         <h2 class="section-title">Вернуться в домик — как в свой <span class="accent">уютный мир</span></h2>
@@ -2096,50 +2090,6 @@
                 <div class="title">Эко-отель «Клюква»</div>
                 <div class="sub">Лесной глэмпинг в Мещере</div>
                 <a href="#booking" class="btn-gold" style="margin-top:16px; display:inline-block;">Забронировать домик</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ===== НОВОЕ СЛАЙД-ШОУ (интерьеры и домики) ===== -->
-<section>
-    <div class="container">
-        <h2 class="section-title">Уютные домики в деталях <span class="accent">— интерьеры и атмосфера</span></h2>
-        <p class="section-desc">Посмотрите, как выглядит отдых в Клюкве: панорамные окна, тёплый пол и каждая мелочь для комфорта.</p>
-        <div class="houses-slideshow" id="housesSlideshow">
-            <!-- Слайды -->
-            <div class="slide active" style="background-image: url('https://static.tildacdn.com/tild3161-6534-4239-a230-336138393062/TSR_8991_1920.jpg');"></div>
-            <div class="slide" style="background-image: url('https://static.tildacdn.com/tild3133-3331-4962-b032-643932363938/4.jpg');"></div>
-            <div class="slide" style="background-image: url('https://static.tildacdn.com/tild6265-3235-4863-a638-383233303533/photo_52449408632038.jpg');"></div>
-            <div class="slide" style="background-image: url('https://static.tildacdn.com/tild3866-6263-4531-b264-313930393331/4.jpg');"></div>
-            <div class="slide" style="background-image: url('https://static.tildacdn.com/tild3763-3062-4837-a233-326234343936/photo_6_2023-10-24_1.jpg');"></div>
-            <div class="slide" style="background-image: url('https://static.tildacdn.com/tild6537-6632-4863-b032-356163373462/photo_52155174123534.jpg');"></div>
-            <div class="slide" style="background-image: url('https://static.tildacdn.com/tild6232-3935-4334-b238-636236353064/photo_52715596059205.jpg');"></div>
-            <div class="slide" style="background-image: url('https://static.tildacdn.com/tild3431-3539-4632-b561-623663666534/photo_2026-04-05_170.jpeg');"></div>
-            <div class="slide" style="background-image: url('https://static.tildacdn.com/tild3665-6633-4162-b637-343137373131/photo_52155174123534.jpg');"></div>
-            <div class="slide" style="background-image: url('https://static.tildacdn.com/tild3135-6664-4335-b433-336463303566/photo_2_2023-10-24_1.jpg');"></div>
-            <div class="slide" style="background-image: url('https://static.tildacdn.com/tild6266-6535-4264-b433-373832646331/photo_53077071416054.jpg');"></div>
-            <div class="slide" style="background-image: url('https://static.tildacdn.com/tild6335-3539-4030-b631-316337363835/IMG_9366_1_.jpg');"></div>
-            <div class="slide" style="background-image: url('https://static.tildacdn.com/tild6466-6161-4734-b034-633565363963/photo_52155174123534.jpg');"></div>
-            <div class="slide" style="background-image: url('https://static.tildacdn.com/tild6262-3434-4331-a537-333539663837/photo_3_2023-10-24_1.jpg');"></div>
-            <div class="slide" style="background-image: url('https://static.tildacdn.com/tild6333-3936-4433-a465-386532316464/photo_52715596059205.jpg');"></div>
-            <!-- Точки навигации -->
-            <div class="slideshow-dots" id="housesDots">
-                <button class="dot active" data-index="0"></button>
-                <button class="dot" data-index="1"></button>
-                <button class="dot" data-index="2"></button>
-                <button class="dot" data-index="3"></button>
-                <button class="dot" data-index="4"></button>
-                <button class="dot" data-index="5"></button>
-                <button class="dot" data-index="6"></button>
-                <button class="dot" data-index="7"></button>
-                <button class="dot" data-index="8"></button>
-                <button class="dot" data-index="9"></button>
-                <button class="dot" data-index="10"></button>
-                <button class="dot" data-index="11"></button>
-                <button class="dot" data-index="12"></button>
-                <button class="dot" data-index="13"></button>
-                <button class="dot" data-index="14"></button>
             </div>
         </div>
     </div>
@@ -2256,13 +2206,12 @@
         });
     });
 
-    // ===== УНИВЕРСАЛЬНАЯ ФУНКЦИЯ ДЛЯ СЛАЙД-ШОУ =====
+    // ===== SLIDESHOW (hero) =====
     function initSlideshow(containerId, dotContainerId) {
         const container = document.getElementById(containerId);
         if (!container) return;
         const slides = container.querySelectorAll('.slide');
         const dots = container.querySelectorAll('.dot');
-        if (slides.length === 0) return;
         let current = 0;
         let interval;
 
@@ -2288,11 +2237,39 @@
         return { goTo, next, interval };
     }
 
-    // Инициализация всех слайд-шоу
+    // Init summer slideshow
     initSlideshow('heroSlideshow', 'heroDots');
-    initSlideshow('heroWinterSlideshow', null); // у зимнего нет отдельных точек, но они есть внутри
+    // Init winter slideshow
+    const winterContainer = document.getElementById('heroWinterSlideshow');
+    if (winterContainer) {
+        const winterSlides = winterContainer.querySelectorAll('.slide');
+        const winterDots = winterContainer.querySelectorAll('.dot');
+        let winterCurrent = 0;
+        let winterInterval;
+
+        function winterGoTo(index) {
+            winterSlides.forEach((s, i) => s.classList.toggle('active', i === index));
+            winterDots.forEach((d, i) => d.classList.toggle('active', i === index));
+            winterCurrent = index;
+        }
+
+        function winterNext() {
+            winterGoTo((winterCurrent + 1) % winterSlides.length);
+        }
+
+        winterDots.forEach(dot => {
+            dot.addEventListener('click', function() {
+                clearInterval(winterInterval);
+                winterGoTo(parseInt(this.dataset.index));
+                winterInterval = setInterval(winterNext, 5000);
+            });
+        });
+
+        winterInterval = setInterval(winterNext, 5000);
+    }
+
+    // ===== НОВОЕ СЛАЙД-ШОУ (фото с маршрутов) =====
     initSlideshow('routeSlideshow', 'routeDots');
-    initSlideshow('housesSlideshow', 'housesDots');
 </script>
 
 </body>
