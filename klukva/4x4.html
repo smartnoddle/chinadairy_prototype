@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Мещерский экстрим — грязь, драйв и тишина</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,700;14..32,800;14..32,900&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Manrope', sans-serif;
+            background: #0b0a0a;
+            color: #f0ede8;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: #0b0a0a;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(circle at 20% 40%, rgba(80, 40, 10, 0.8) 0%, transparent 60%),
+                radial-gradient(circle at 80% 70%, rgba(30, 20, 10, 0.9) 0%, transparent 50%),
+                linear-gradient(135deg, #0a0806 0%, #1f170e 100%);
+            z-index: 0;
+        }
+
+        .hero-video-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            overflow: hidden;
+            opacity: 0.35;
+        }
+
+        .hero-video-bg video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(0.4) contrast(1.2) brightness(0.6);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            padding: 60px 0 80px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(8px);
+            border: 1px solid #c8a87c40;
+            padding: 8px 20px 8px 16px;
+            border-radius: 60px;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #d4c5a2;
+            margin-bottom: 30px;
+            width: fit-content;
+        }
+
+        .hero-badge span {
+            background: #c8a87c;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .hero h1 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 900;
+            font-size: clamp(2.6rem, 10vw, 5.2rem);
+            line-height: 1.05;
+            letter-spacing: -0.03em;
+            color: #f5ede0;
+            text-shadow: 0 8px 30px rgba(0,0,0,0.8);
+            max-width: 900px;
+        }
+
+        .hero h1 .highlight {
+            background: linear-gradient(135deg, #f7c948, #d98c2e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 40px #d98c2e40;
+        }
+
+        .hero-sub {
+            font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+            font-weight: 600;
+            color: #cdc0ab;
+            max-width: 640px;
+            margin: 24px 0 32px;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.7);
+            line-height: 1.4;
+        }
+
+        .hero-cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            align-items: center;
+            margin: 20px 0 40px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #e8b13c, #c47d1a);
+            border: none;
+            padding: 16px 44px;
+            border-radius: 60px;
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: #0b0a0a;
+            letter-spacing: 0.5px;
+            box-shadow: 0 8px 30px rgba(196, 125, 26, 0.5);
+            transition: all 0.25s;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-family: 'Manrope', sans-serif;
+            border: 1px solid #f7d48a;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.03);
+            box-shadow: 0 12px 40px rgba(196, 125, 26, 0.7);
+            background: linear-gradient(135deg, #f7c84a, #d48d20);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #c8a87c;
+            padding: 14px 40px;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #f0ede8;
+            transition: all 0.2s;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-family: 'Manrope', sans-serif;
+        }
+
+        .btn-outline:hover {
+            background: #c8a87c20;
+            border-color: #f0dbb0;
+            transform: scale(1.02);
+        }
+
+        .trust-strip {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px 40px;
+            margin-top: 16px;
+            padding-top: 24px;
+            border-top: 1px solid #c8a87c30;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #cfc3ae;
+        }
+
+        .trust-item .icon {
+            font-size: 1.4rem;
+        }
+
+        section {
+            padding: 100px 0;
+            border-bottom: 1px solid #2a221b;
+        }
+
+        .section-title {
+            font-family: 'Inter', sans-serif;
+            font-weight: 800;
+            font-size: clamp(2.2rem, 4.2vw, 3.4rem);
+            letter-spacing: -0.02em;
+            margin-bottom: 16px;
+            color: #f5ede0;
+            line-height: 1.1;
+        }
+
+        .section-title .accent {
+            color: #e8b13c;
+        }
+
+        .section-desc {
+            font-size: 1.15rem;
+            color: #bcb0a0;
+            max-width: 720px;
+            margin-bottom: 48px;
+            font-weight: 600;
+        }
+
+        .segment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+
+        .segment-card {
+            background: #16120e;
+            border-radius: 28px;
+            padding: 36px 28px;
+            border: 1px solid #2f251e;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .segment-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #e8b13c, #a5712a);
+            opacity: 0.5;
+        }
+
+        .segment-card:hover {
+            transform: translateY(-6px);
+            border-color: #c8a87c60;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+        }
+
+        .segment-card .emoji-big {
+            font-size: 3rem;
+            margin-bottom: 12px;
+        }
+
+        .segment-card h3 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 6px;
+            color: #f0e3d4;
+        }
+
+        .segment-card .trigger {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #d4b68a;
+            background: #2a1f16;
+            display: inline-block;
+            padding: 4px 14px;
+            border-radius: 30px;
+            margin: 8px 0 14px;
+        }
+
+        .segment-card p {
+            color: #c9bbaa;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .btn-sm {
+            background: transparent;
+            border: 1.5px solid #c8a87c;
+            padding: 10px 28px;
+            border-radius: 40px;
+            color: #f0ede8;
+            font-weight: 700;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: 'Manrope', sans-serif;
+        }
+
+        .btn-sm:hover {
+            background: #c8a87c20;
+            border-color: #e8d5b0;
+        }
+
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            margin: 30px 0 20px;
+        }
+
+        .timeline-day {
+            background: #14100c;
+            border-radius: 24px;
+            padding: 28px 32px;
+            border-left: 6px solid #c8a87c;
+        }
+
+        .timeline-day h4 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #e8d5b0;
+            margin-bottom: 16px;
+        }
+
+        .timeline-step {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 12px 20px;
+            padding: 14px 0;
+            border-bottom: 1px solid #2a1f16;
+        }
+
+        .timeline-step:last-child {
+            border-bottom: 0;
+        }
+
+        .time {
+            font-weight: 700;
+            color: #e8b13c;
+            min-width: 60px;
+            font-size: 0.9rem;
+        }
+
+        .what {
+            font-weight: 700;
+            color: #f0ede8;
+            flex: 1;
+            min-width: 180px;
+        }
+
+        .emotion {
+            color: #bcb0a0;
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+
+        .tariff-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 34px;
+            margin-top: 24px;
+        }
+
+        .tariff-card {
+            background: #16120e;
+            border-radius: 28px;
+            padding: 36px 28px;
+            border: 1px solid #2f251e;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .tariff-card.popular {
+            border-color: #e8b13c;
+            box-shadow: 0 0 30px #e8b13c20;
+        }
+
+        .tariff-card .price {
+            font-size: 2.4rem;
+            font-weight: 900;
+            color: #f7d48a;
+            margin: 16px 0 8px;
+        }
+
+        .tariff-card .price small {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #bcb0a0;
+        }
+
+        .tariff-card ul {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .tariff-card ul li {
+            padding: 6px 0;
+            color: #d4c5b0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .tariff-card ul li::before {
+            content: '⚡';
+            color: #e8b13c;
+        }
+
+        .btn-gold {
+            background: #e8b13c;
+            border: none;
+            padding: 14px 0;
+            width: 100%;
+            border-radius: 60px;
+            font-weight: 800;
+            font-size: 1rem;
+            color: #0b0a0a;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: 'Manrope', sans-serif;
+        }
+
+        .btn-gold:hover {
+            background: #f7c84a;
+            transform: scale(1.02);
+        }
+
+        .badge-season {
+            background: #2a1f16;
+            color: #e8b13c;
+            font-size: 0.75rem;
+            padding: 6px 16px;
+            border-radius: 30px;
+            display: inline-block;
+            margin-top: 12px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .advantage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 34px;
+        }
+
+        .advantage-item {
+            background: #14100c;
+            padding: 32px 26px;
+            border-radius: 24px;
+            border: 1px solid #2a1f16;
+        }
+
+        .advantage-item h4 {
+            font-size: 1.4rem;
+            color: #f0e3d4;
+            margin-bottom: 8px;
+        }
+
+        .advantage-item p {
+            color: #bcb0a0;
+            font-size: 0.95rem;
+        }
+
+        .gift-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .gift-content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .gift-content .big-icon {
+            font-size: 4rem;
+        }
+
+        .gift-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .gift-features span {
+            background: #2a1f16;
+            padding: 8px 20px;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            color: #d4c5b0;
+            border: 1px solid #3a2f26;
+        }
+
+        .gift-card-visual {
+            background: linear-gradient(145deg, #1f180f, #0b0a0a);
+            border-radius: 28px;
+            padding: 40px 32px;
+            border: 2px solid #e8b13c;
+            text-align: center;
+            box-shadow: 0 0 60px #e8b13c20;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gift-card-visual::before {
+            content: '🎁';
+            font-size: 6rem;
+            position: absolute;
+            opacity: 0.05;
+            right: -20px;
+            bottom: -20px;
+            transform: rotate(15deg);
+        }
+
+        .gift-card-visual .price-tag {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #f7d48a;
+            margin: 16px 0;
+        }
+
+        .gift-card-visual .gift-label {
+            background: #e8b13c;
+            color: #0b0a0a;
+            font-weight: 800;
+            padding: 6px 24px;
+            border-radius: 40px;
+            display: inline-block;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .review-card {
+            background: #14100c;
+            border-radius: 24px;
+            padding: 30px 28px;
+            border: 1px solid #2a1f16;
+            transition: all 0.3s;
+        }
+
+        .review-card:hover {
+            border-color: #c8a87c40;
+            transform: translateY(-4px);
+        }
+
+        .review-card .stars {
+            color: #f7c948;
+            font-size: 1.2rem;
+            letter-spacing: 3px;
+            margin-bottom: 12px;
+        }
+
+        .review-card .text {
+            font-size: 1rem;
+            color: #d4c5b0;
+            line-height: 1.6;
+            margin-bottom: 16px;
+            font-style: italic;
+        }
+
+        .review-card .author {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .review-card .avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2a1f16, #3a2f26);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #e8b13c;
+        }
+
+        .review-card .name {
+            font-weight: 700;
+            color: #f0ede8;
+        }
+
+        .review-card .from {
+            font-size: 0.8rem;
+            color: #8a7a6a;
+        }
+
+        .winter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 34px;
+        }
+
+        .winter-card {
+            background: #14100c;
+            border-radius: 24px;
+            padding: 32px 28px;
+            border: 1px solid #2a1f16;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .winter-card:hover {
+            border-color: #6ab0e6;
+            transform: translateY(-4px);
+            box-shadow: 0 10px 40px rgba(106, 176, 230, 0.1);
+        }
+
+        .winter-card .winter-icon {
+            font-size: 2.8rem;
+            margin-bottom: 12px;
+        }
+
+        .winter-card h4 {
+            font-size: 1.4rem;
+            color: #f0e3d4;
+            margin-bottom: 8px;
+        }
+
+        .winter-card p {
+            color: #bcb0a0;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .booking-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 24px;
+        }
+
+        .booking-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .step {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            background: #14100c;
+            padding: 18px 24px;
+            border-radius: 60px;
+            border: 1px solid #2a1f16;
+        }
+
+        .step-num {
+            background: #e8b13c;
+            color: #0b0a0a;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+        }
+
+        .step-text {
+            font-weight: 700;
+            color: #f0ede8;
+        }
+
+        .form-wrap {
+            background: #14100c;
+            padding: 36px;
+            border-radius: 28px;
+            border: 1px solid #2f251e;
+        }
+
+        .form-wrap input, .form-wrap select, .form-wrap textarea {
+            width: 100%;
+            padding: 14px 18px;
+            margin-bottom: 16px;
+            background: #201b16;
+            border: 1px solid #2f251e;
+            border-radius: 14px;
+            color: #f0ede8;
+            font-family: 'Manrope', sans-serif;
+            font-size: 1rem;
+        }
+
+        .form-wrap input:focus, .form-wrap select:focus {
+            outline: 2px solid #e8b13c;
+            border-color: transparent;
+        }
+
+        .form-wrap button {
+            width: 100%;
+            padding: 16px;
+            background: #e8b13c;
+            border: none;
+            border-radius: 60px;
+            font-weight: 800;
+            font-size: 1.1rem;
+            color: #0b0a0a;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .form-wrap button:hover {
+            background: #f7c84a;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .faq-item {
+            background: #14100c;
+            padding: 28px;
+            border-radius: 20px;
+            border: 1px solid #2a1f16;
+        }
+
+        .faq-item h4 {
+            color: #f7d48a;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .faq-item p {
+            color: #c9bbaa;
+            font-size: 0.95rem;
+        }
+
+        .footer {
+            padding: 60px 0 40px;
+            border-top: 1px solid #2a1f16;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .footer a {
+            color: #bcb0a0;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .footer a:hover {
+            color: #f7d48a;
+        }
+
+        @media (max-width: 800px) {
+            .booking-grid,
+            .gift-grid {
+                grid-template-columns: 1fr;
+            }
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            .trust-strip {
+                gap: 12px;
+            }
+            section {
+                padding: 70px 0;
+            }
+            .gift-card-visual {
+                padding: 28px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-video-bg">
+        <video autoplay muted loop playsinline>
+            <source src="https://player.vimeo.com/external/490790508.hd.mp4?s=0f9ac48a3f6f46ae1b145c2e1d5a1aa3&profile_id=175" type="video/mp4">
+        </video>
+    </div>
+    <div class="container hero-content">
+        <div class="hero-badge">
+            <span></span> Мещерский заповедник · единственный в Рязанской области
+        </div>
+        <h1>
+            Грязь, драйв и тишина Мещеры.<br>
+            <span class="highlight">Выходные, которые вы запомните</span>
+        </h1>
+        <div class="hero-sub">
+            Единственный в Рязанской области тур, где квадро-экстрим по диким лесам сочетается с VIP-отдыхом в глэмпинге в сердце национального парка «Мещёрский».
+        </div>
+        <div class="hero-cta">
+            <button class="btn-primary" onclick="document.getElementById('tariffs').scrollIntoView({behavior:'smooth'})">🔥 Выбрать тур</button>
+            <button class="btn-outline" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Забронировать сейчас</button>
+        </div>
+        <div class="trust-strip">
+            <span class="trust-item"><span class="icon">⏳</span> Работаем круглый год · межсезонье +20% за настоящий экстрим</span>
+            <span class="trust-item"><span class="icon">🦌</span> Проводники — местные егеря</span>
+            <span class="trust-item"><span class="icon">⚙️</span> CFMOTO CFORCE 500 HO 2021 · полная защита</span>
+        </div>
+    </div>
+</section>
+
+<!-- ДЛЯ КОГО -->
+<section>
+    <div class="container">
+        <h2 class="section-title">Каждый находит в Мещере своё: <span class="accent">романтику, драйв или тишину.</span> Выберите свой.</h2>
+        <p class="section-desc">Для кого этот тур — ваш сценарий. Мы знаем, что вам нужно.</p>
+        <div class="segment-grid">
+            <div class="segment-card">
+                <div class="emoji-big">🔥❤️</div>
+                <h3>Романтический побег</h3>
+                <span class="trigger">JTBD: «хочу устроить побег, но не скучно»</span>
+                <p>Закат над Клепиковскими озёрами на квадроцикле. Будет что вспомнить и показать.</p>
+                <button class="btn-sm" onclick="document.getElementById('tariffs').scrollIntoView({behavior:'smooth'})">Мне подходит →</button>
+            </div>
+            <div class="segment-card">
+                <div class="emoji-big">🤘🔥</div>
+                <h3>Адреналин с друзьями</h3>
+                <span class="trigger">JTBD: «собрать команду для драйвового уикенда»</span>
+                <p>Привези до 8 друзей. Трасса — болота и овраги. Вечер — баня и шашлык.</p>
+                <button class="btn-sm" onclick="document.getElementById('tariffs').scrollIntoView({behavior:'smooth'})">Мне подходит →</button>
+            </div>
+            <div class="segment-card">
+                <div class="emoji-big">🌲🌿</div>
+                <h3>Тишина заповедного леса</h3>
+                <span class="trigger">JTBD: «восстановиться и дышать»</span>
+                <p>Экотропы с аудиогидом по Паустовскому, баня, утро с видом на сосны.</p>
+                <button class="btn-sm" onclick="document.getElementById('tariffs').scrollIntoView({behavior:'smooth'})">Мне подходит →</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- СЦЕНАРИЙ -->
+<section>
+    <div class="container">
+        <h2 class="section-title">Два дня, которые перезагрузят вас: <span class="accent">от грязи до полного релакса.</span></h2>
+        <p class="section-desc">Что вас ждёт — ваш идеальный сценарий. Каждый час — максимум эмоций.</p>
+        <div class="timeline">
+            <div class="timeline-day">
+                <h4>День 1. Прибытие и драйв</h4>
+                <div class="timeline-step"><span class="time">10:00</span><span class="what">Встреча, заселение в панорамный домик с тёплым полом</span><span class="emotion">«Наконец-то я здесь»</span></div>
+                <div class="timeline-step"><span class="time">11:00</span><span class="what">Инструктаж, экипировка (шлем, защита от грязи)</span><span class="emotion">«Спокойно, всё под контролем»</span></div>
+                <div class="timeline-step"><span class="time">12:00</span><span class="what">Заезд «Болота и сосны Мещеры» — 2 часа бездорожья</span><span class="emotion">«Драйв! Я это сделал!»</span></div>
+                <div class="timeline-step"><span class="time">14:00</span><span class="what">Пикник на озере Святом — чай, закуски, фото с дрона</span><span class="emotion">«Еда на природе — кайф»</span></div>
+                <div class="timeline-step"><span class="time">19:00</span><span class="what">Баня с пармастером и травяной чай</span><span class="emotion">«Релакс и восстановление»</span></div>
+                <div class="timeline-step"><span class="time">21:00</span><span class="what">Ужин у камина — местная кухня</span><span class="emotion">«Сытный финал дня»</span></div>
+            </div>
+            <div class="timeline-day">
+                <h4>День 2. Заповедное утро</h4>
+                <div class="timeline-step"><span class="time">09:00</span><span class="what">Завтрак с панорамным видом на лес</span><span class="emotion">«Медленное утро в тишине»</span></div>
+                <div class="timeline-step"><span class="time">10:00</span><span class="what">Прогулка по экотропе «Лесной мир Мещеры» (3 км)</span><span class="emotion">«Я дышу и никуда не спешу»</span></div>
+                <div class="timeline-step"><span class="time">12:00</span><span class="what">Выселение, выезд</span><span class="emotion">«Я вернусь сюда»</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ТАРИФЫ -->
+<section id="tariffs">
+    <div class="container">
+        <h2 class="section-title">Цена — это просто цифры. <span class="accent">Ваши эмоции — бесценны.</span></h2>
+        <p class="section-desc">Мы не экономим на вашей безопасности и кайфе. Каждый тур включает подготовку техники высшего класса. Выбирайте свой пакет и просто кайфуйте.</p>
+        <div class="tariff-grid">
+            <div class="tariff-card">
+                <h3>«Мещерский экстрим»</h3>
+                <div class="price">18 000 ₽ <small>/ за двоих</small></div>
+                <ul>
+                    <li>2 дня / 1 ночь</li>
+                    <li>Заезд 2 часа</li>
+                    <li>Баня, завтрак, ужин</li>
+                </ul>
+                <button class="btn-gold">Выбрать тур</button>
+                <div class="badge-season">⚡ межсезонье +20%</div>
+            </div>
+            <div class="tariff-card popular">
+                <h3>«Романтика на квадроцикле»</h3>
+                <div class="price">14 400 ₽ <small>/ за двоих</small></div>
+                <ul>
+                    <li>Закатный заезд</li>
+                    <li>Шампанское у костра</li>
+                    <li>1 ночь в глэмпинге</li>
+                </ul>
+                <button class="btn-gold">Выбрать тур</button>
+                <div class="badge-season">❤️ самый популярный</div>
+            </div>
+            <div class="tariff-card">
+                <h3>Доп. час катания</h3>
+                <div class="price">2 000 ₽ <small>/ час</small></div>
+                <ul>
+                    <li>+60 минут бездорожья</li>
+                    <li>Полная экипировка</li>
+                    <li>Сопровождение егеря</li>
+                </ul>
+                <button class="btn-gold">Добавить</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ПОДАРОЧНЫЙ СЕРТИФИКАТ -->
+<section>
+    <div class="container">
+        <h2 class="section-title">🎁 Подарите не вещь. <span class="accent">Подарите грязь, драйв и костёр под звёздами.</span></h2>
+        <p class="section-desc">Сертификат на экстрим-выходные в Мещере — лучший способ сказать «я тебя люблю» или «спасибо за всё». Выбирайте любой тариф или сумму — мы упакуем красиво и вручим с душой.</p>
+        <div class="gift-grid">
+            <div class="gift-content">
+                <div class="big-icon">🎄</div>
+                <h3 style="font-size:1.8rem; color:#f7d48a;">Для любого повода</h3>
+                <p style="color:#bcb0a0; font-size:1.05rem; line-height:1.6;">День рождения, годовщина, Новый год или просто так — подарите эмоции, которые не купишь в магазине. Сертификат действует 12 месяцев.</p>
+                <div class="gift-features">
+                    <span>🎯 Любая сумма</span>
+                    <span>🎨 Красивая упаковка</span>
+                    <span>📱 Мгновенная отправка</span>
+                    <span>♻️ Можно передать другому</span>
+                </div>
+                <button class="btn-primary" style="width:fit-content;" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Заказать сертификат</button>
+            </div>
+            <div class="gift-card-visual">
+                <div class="gift-label">🎁 Подарочный сертификат</div>
+                <div style="font-size:1.2rem; margin-top:12px; color:#d4c5b0;">Мещерский экстрим</div>
+                <div class="price-tag">от 5 000 ₽</div>
+                <div style="color:#8a7a6a; font-size:0.9rem;">Действует 12 месяцев · на любой тур</div>
+                <div style="margin-top:20px; display:flex; gap:8px; justify-content:center; flex-wrap:wrap;">
+                    <span style="background:#2a1f16; padding:4px 16px; border-radius:20px; font-size:0.8rem;">⚡ Квадроциклы</span>
+                    <span style="background:#2a1f16; padding:4px 16px; border-radius:20px; font-size:0.8rem;">🔥 Баня</span>
+                    <span style="background:#2a1f16; padding:4px 16px; border-radius:20px; font-size:0.8rem;">🌲 Глэмпинг</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ЗИМНИЙ ПЕРИОД -->
+<section>
+    <div class="container">
+        <h2 class="section-title">❄️ Зимняя Мещера — <span class="accent">экстрим на снегу</span></h2>
+        <p class="section-desc">Когда лес засыпает снегом, драйв становится ещё ярче. Специальные зимние маршруты и полное погружение в сказку.</p>
+        <div class="winter-grid">
+            <div class="winter-card">
+                <div class="winter-icon">❄️</div>
+                <h4>Зимний квадро-тур</h4>
+                <p>Мощные квадроциклы на шипованной резине. 2 часа по заснеженным лесам и замёрзшим болотам. Адреналин на максимуме.</p>
+            </div>
+            <div class="winter-card">
+                <div class="winter-icon">🛷</div>
+                <h4>Снегоходная прогулка</h4>
+                <p>Для тех, кто хочет сменить технику. Управляйте снегоходом или катайся пассажиром — впечатления гарантированы.</p>
+            </div>
+            <div class="winter-card">
+                <div class="winter-icon">🔥</div>
+                <h4>Баня по-чёрному</h4>
+                <p>Настоящая зимняя баня с вениками и пармастером. После катания — контрастный душ и чай с мёдом у камина.</p>
+            </div>
+            <div class="winter-card">
+                <div class="winter-icon">🌌</div>
+                <h4>Зимнее небо Мещеры</h4>
+                <p>Прозрачный воздух и отсутствие городской засветки — идеальные условия для наблюдения за звёздами. Романтика высшего класса.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ОТЗЫВЫ -->
+<section>
+    <div class="container">
+        <h2 class="section-title">Гости говорят <span class="accent">спасибо</span></h2>
+        <p class="section-desc">Искренние отзывы тех, кто уже побывал в Мещере и вернётся снова.</p>
+        <div class="review-grid">
+            <div class="review-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <div class="text">«Мы с мужем давно хотели устроить побег из города. Но чтобы и драйв, и романтика — это было невероятно! Закат на квадроциклах, баня, уютный домик. Вернёмся зимой!»</div>
+                <div class="author">
+                    <div class="avatar">А</div>
+                    <div>
+                        <div class="name">Анна и Дмитрий</div>
+                        <div class="from">Москва, август 2025</div>
+                    </div>
+                </div>
+            </div>
+            <div class="review-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <div class="text">«Собрали компанию из 6 друзей. Это был лучший уикенд в году! Трасса реально экстрим, но проводник — мастер своего дела. А вечером шашлык и гитара у костра. Всё супер!»</div>
+                <div class="author">
+                    <div class="avatar">С</div>
+                    <div>
+                        <div class="name">Сергей и компания</div>
+                        <div class="from">Рязань, сентябрь 2025</div>
+                    </div>
+                </div>
+            </div>
+            <div class="review-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <div class="text">«Приехали с детьми — 10 и 12 лет. Инструктор нашёл подход ко всем, дети в восторге от экотропы и наблюдения за бобрами. А нам с мужем понравилась баня и тишина. Спасибо!»</div>
+                <div class="author">
+                    <div class="avatar">Е</div>
+                    <div>
+                        <div class="name">Елена и Игорь</div>
+                        <div class="from">Казань, июль 2025</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ПОЧЕМУ МЫ -->
+<section>
+    <div class="container">
+        <h2 class="section-title">Почему Мещера — уникальна: <span class="accent">единственный глэмпинг в заповеднике, техника высшего класса и культурный код</span></h2>
+        <p class="section-desc">Только здесь вы получите полный пакет: природа, сервис и драйв.</p>
+        <div class="advantage-grid">
+            <div class="advantage-item"><h4>🌲 Единственный глэмпинг в заповеднике</h4><p>Вся территория — Рамсарское угодье. Соседи — лоси, бобры, зубры.</p></div>
+            <div class="advantage-item"><h4>📖 Культурный код Мещеры</h4><p>Экотропы по мотивам Паустовского и Есенина. Аудиогид.</p></div>
+            <div class="advantage-item"><h4>⚡ Техника высшего класса</h4><p>CFMOTO CFORCE 500 HO 2021, усиленная резина 27”. Апгрейд до BRP Outlander.</p></div>
+            <div class="advantage-item"><h4>🤝 Бесповоротная забота</h4><p>Ответ за X минут, помощь с багажом, домик по вашим пожеланиям.</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- БРОНИРОВАНИЕ -->
+<section id="booking">
+    <div class="container">
+        <h2 class="section-title">Как забронировать <span class="accent">ваш тур</span></h2>
+        <p class="section-desc">Три простых шага — и вы в Мещере.</p>
+        <div class="booking-grid">
+            <div class="booking-steps">
+                <div class="step"><span class="step-num">1</span><span class="step-text">Выберите тур и даты в календаре</span></div>
+                <div class="step"><span class="step-num">2</span><span class="step-text">Оставьте контакты — мы перезвоним за 15 минут</span></div>
+                <div class="step"><span class="step-num">3</span><span class="step-text">Внесите предоплату 30% — ваш квадроцикл ждёт</span></div>
+                <div style="margin-top:10px; color:#bcb0a0;">📅 Календарь бронирования (интерактивный виджет)</div>
+            </div>
+            <div class="form-wrap">
+                <h4 style="color:#f7d48a; margin-bottom:20px;">Оставьте заявку</h4>
+                <form>
+                    <input type="text" placeholder="Ваше имя" required>
+                    <input type="tel" placeholder="Телефон" required>
+                    <input type="email" placeholder="E-mail">
+                    <select>
+                        <option>«Мещерский экстрим»</option>
+                        <option>«Романтика на квадроцикле»</option>
+                        <option>Доп. час катания</option>
+                        <option>🎁 Подарочный сертификат</option>
+                    </select>
+                    <input type="date" placeholder="Дата заезда">
+                    <textarea rows="2" placeholder="Комментарий, пожелания"></textarea>
+                    <button type="submit">🔥 Забронировать тур</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section>
+    <div class="container">
+        <h2 class="section-title">Вопросы, которые <span class="accent">важны</span></h2>
+        <p class="section-desc">Ответим на главное, чтобы вы ехали уверенно.</p>
+        <div class="faq-grid">
+            <div class="faq-item"><h4>❓ Я никогда не ездил на квадроцикле — я справлюсь?</h4><p>Да. Маршрут для новичков, полный инструктаж. Управление с 18 лет, пассажиры с 10 лет.</p></div>
+            <div class="faq-item"><h4>❓ Что делать, если плохая погода?</h4><p>В межсезонье «плохая погода» = лучший экстрим. Костюмы защищают от грязи и воды. Маршрут адаптируется.</p></div>
+            <div class="faq-item"><h4>❓ Как получить разрешение на посещение заповедника?</h4><p>Мы оформляем все разрешения автоматически — вы получаете готовый пакет документов при бронировании.</p></div>
+            <div class="faq-item"><h4>❓ Чем заняться, если не хочу кататься каждый день?</h4><p>Баня, прогулки, наблюдение за птицами, рыбалка, экскурсии по историческим местам.</p></div>
+            <div class="faq-item"><h4>❓ Можно ли приехать зимой?</h4><p>Да, зима — наше любимое время! Специальные маршруты, шипованная резина, снегоходы и баня по-чёрному.</p></div>
+            <div class="faq-item"><h4>❓ Подарочный сертификат — как получить?</h4><p>Выберите сумму или тариф, мы отправим электронный сертификат на почту или упакуем бумажный для личной передачи.</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container footer">
+        <div>
+            <strong style="color:#f0ede8; font-size:1.2rem;">Мещерский экстрим</strong>
+            <div style="margin:10px 0; color:#bcb0a0;">Спас-Клепики, Рязанская обл.</div>
+            <div>📞 <a href="tel:+79000000000">+7 (900) 000-00-00</a></div>
+            <div>📧 <a href="mailto:info@meshera.ru">info@meshera.ru</a></div>
+        </div>
+        <div>
+            <div style="display:flex; gap:20px; flex-wrap:wrap;">
+                <a href="#">ВКонтакте</a>
+                <a href="#">Telegram</a>
+                <a href="#">Политика конфиденциальности</a>
+            </div>
+            <div style="margin-top:12px; color:#7a6e5e; font-size:0.85rem;">Схема проезда — интерактивная карта</div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
